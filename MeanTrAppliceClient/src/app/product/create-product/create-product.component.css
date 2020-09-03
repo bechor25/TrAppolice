@@ -1,0 +1,13 @@
+.mat-stepper-vertical {
+    margin-top: 2px;
+    opacity: 1;
+    background-color: white;
+}
+
+.mat-form-field {
+    text-align: right;
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}

@@ -1,0 +1,165 @@
+<div class="container ">
+    <div class="row">
+
+        <div class="col-md-4 text-left ">
+            <a routerLink="/backend/product/create" class="btn btn-success btn-sm">הנפקת דוח</a>
+        </div>
+        <div class="col-md-8 text-right">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+    <hr />
+
+    <div class="table-responsive bg-light text-dark">
+        <table matSort (matSortChange)="sortData($event)" class="table table-stripped table-bordered">
+            <tr class="thead-dark col-md-12 text-right">
+                <th>מידע נוסף</th>
+                <th>אפשרויות</th>
+                <th mat-sort-header="First_Name">שם פרטי</th>
+                <th mat-sort-header="ID_Number">מספר ת.ז</th>
+                <th mat-sort-header="DrivingLicenseNumber">מספר רשיון נהיגה</th>
+                <th mat-sort-header="Whom">מקבל הדוח</th>
+                <th mat-sort-header="id">מספר דוח</th>
+            </tr>
+            <ng-container *ngFor="let row of sortedData | paginate: { itemsPerPage: limit, currentPage: p, totalItems: total };index as i  ">
+                <tr class="text-right">
+                    <td>
+                        <!--
+                        <span *ngIf="row.is_active" class="badge badge-success">פעיל</span>
+                        <span *ngIf="!row.is_active" class="badge badge-danger">לא פעיל</span>
+                        -->
+                        <button *ngIf="!viewDiteilsReport" class="btn btn-sm btn-info mr-2" (click)="viewDiteilsReport=true && viewId=row.id">פרטים נוספים</button>
+                        <button *ngIf="viewDiteilsReport && viewId==row.id" class="btn btn-sm btn-danger" (click)="viewDiteilsReport=false">סגור</button>
+                    </td>
+                    <td>
+                        <a [routerLink]="['/backend/product/edit', row.id]" class="btn btn-sm btn-info mr-2">עריכת דוח</a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" (click)="deleteProduct(row.id)">מחיקת דוח</a>
+                    </td>
+                    <td>{{row.First_Name}}</td>
+                    <td>{{row.ID_Number}}</td>
+                    <td>{{row.DrivingLicenseNumber}}</td>
+                    <td>{{row.Whom}}</td>
+                    <td>{{row.id}}</td>
+                </tr>
+
+            </ng-container>
+            <tr *ngIf="sortedData.length == 0">
+                <td colspan="6" class="text-center">אין דוחות זמינים</td>
+            </tr>
+        </table>
+        <ng-container *ngFor="let row of sortedData | paginate: { itemsPerPage: limit, currentPage: p, totalItems: total };index as i  ">
+
+            <div class="table-responsive ">
+                <table class="table table-stripped table-bordered" *ngIf=" viewDiteilsReport && viewId==row.id">
+                    <button class="btn btn-success btn-sm"> {{row.id}} - מספר דוח </button>
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>מספר בית</th>
+                        <th>רחוב</th>
+                        <th>עיר</th>
+                        <th>שם משפחה</th>
+
+                    </tr>
+
+                    <tr class="text-right">
+                        <td>{{row.Home_Number}}</td>
+                        <td>{{row.Street}}</td>
+                        <td>{{row.City}}</td>
+                        <td>{{row.Last_Name}}</td>
+                    </tr>
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>תוצר הרכב</th>
+                        <th>סוג לוחית</th>
+                        <th>איימל</th>
+                        <th>שם נייד</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>{{row.Car_Manufacturer}}</td>
+                        <td>{{row.Plate_Type}}</td>
+                        <td>{{row.EMail}}</td>
+                        <td>{{row.Phone_Number}}</td>
+                    </tr>
+
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>שעה</th>
+                        <th>תאריך</th>
+                        <th>צבע הרכב</th>
+                        <th>סוג הרכב</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>{{row.Hour}}</td>
+                        <td>{{row.Date}}</td>
+                        <td>{{row.Car_Color}}</td>
+                        <td>{{row.Car_Type}}</td>
+                    </tr>
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>נקודות</th>
+                        <th>סעיפי עבירה</th>
+                        <th>תיאור מיקום העבירה</th>
+                        <th>מקום העבירה</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>{{row.Points}}</td>
+                        <td>{{row.Offense_Description}}</td>
+                        <td>{{row.Offense_Place_Description}}</td>
+                        <td>{{row.Offense_Place}}</td>
+                    </tr>
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>סכום הקנס במילים</th>
+                        <th>סכום הקנס בספרות</th>
+                        <th>מכשור עזר בשימוש בדו"ח</th>
+                        <th>סמל סעיף</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>{{row.Report_Amount_inWords}}</td>
+                        <td>{{row.Report_Amount}}</td>
+                        <td>{{row.Speedometer_Type}}</td>
+                        <td>{{row.Offense_Number}}</td>
+                    </tr>
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>מ.א או ת.ז עד שני</th>
+                        <th>שם מלא</th>
+                        <th> מ.א או ת.ז עד ראשון</th>
+                        <th>תאריך אחרון לתשלום</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>{{row.Second_Witness_ID}}</td>
+                        <td>{{row.First_Witness_Full_Name}}</td>
+                        <td>{{row.First_Witness_ID}}</td>
+                        <td>{{row.Last_Date_To_Pay}}</td>
+                    </tr>
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>מרחק במטרים</th>
+                        <th>מהירות נסיעה</th>
+                        <th> נסיבות מיוחדות של המקרה</th>
+                        <th>שם מלא</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>{{row.Distance}}</td>
+                        <td>{{row.Kmh}}</td>
+                        <td>{{row.Full_Description}}</td>
+                        <td>{{row.Second_Witness_Full_Name}}</td>
+                    </tr>
+                    <tr class="thead-dark col-md-12 text-right">
+                        <th>חתימה</th>
+                        <th>מספר רכב</th>
+                        <th> תאריך אישור קבלת הדוח</th>
+                        <th>חתימה</th>
+                    </tr>
+                    <tr class="text-right">
+                        <td>{{row.Citizen_Signture}}</td>
+                        <td>{{row.Car_Number}}</td>
+                        <td>{{row.Citizen_Date_Confirmed}}</td>
+                        <td>{{row. GivenNotGiven_Continuation_Of_The_Case}}</td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </ng-container>
+
+    </div>
+    <div class=" pagination-sm m-0 text-center">
+        <pagination-controls (pageChange)="getPage($event)" nextLabel="הבא" previousLabel="קודם"></pagination-controls>
+    </div>
+
+</div>

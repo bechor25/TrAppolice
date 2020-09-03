@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" routerLink="/backend/cms">TrAppolice</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/backend/cms">עמוד ראשי</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/backend/product">דוחות שהונפקו</a>
+            </li>
+            <li class="nav-item active">
+                <a routerLink="/backend/product/create" class="nav-link">הנפקת דוח</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/backend/dashboard">חיפוש עבירה</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/backend/auth">הרשמת שוטר למערכת</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <button class="btn btn-danger" href="javaScript:void(0)" (click)="logout()">יציאה מהמערכת</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<app-message></app-message>

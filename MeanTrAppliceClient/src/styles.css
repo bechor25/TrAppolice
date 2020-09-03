@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.container {
+    max-width: 90%;
+    background-color: transparent !important
+}
+
+.label {
+    color: white;
+}
+
+.h1 {
+    color: white;
+}
+
+.content-wrap {
+    min-height: 550px;
+}
+
+.backend-wrap {
+    min-height: 550px;
+}
+
+.brand {
+    cursor: pointer;
+}
+
+.footer {
+    padding: 1.5rem 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: #333;
+}
+
+.backend-footer {
+    padding: 1.5rem 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: #333;
+}
+
+.error {
+    color: #ff0000
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.trappolice {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-image: url('http://www.up2me.co.il/imgs/23749545.png');
+    background-size: 20;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 170px;
+}
+
+.notfuond404 {
+    background-image: url('http://up419.siz.co.il/up2/yjymt0miyzyf.png');
+    background-size: 100;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 400px;
+}
+
+@media screen and (max-width: 960px) {
+    #wrapper {
+        width: 758px;
+        overflow: hidden;
+    }
+    section {
+        width: 420px;
+    }
+    aside {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 758px) {
+    #wrapper {
+        width: 480px;
+    }
+    section,
+    aside {
+        float: none;
+        width: 440px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #wrapper {
+        max-width: 480px;
+        width: auto;
+        margin: 20px;
+    }
+    section,
+    aside {
+        float: none;
+        width: 92%;
+        padding: 4%;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
