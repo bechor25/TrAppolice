@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container example-container mat-elevation-z8">
     <h1 style="text-align: center">{{title}}</h1>
     <hr />
     <div class="row" style="text-align: right;">
@@ -535,6 +535,20 @@
 
                             </div>
                         </div>
+                        <div class="form-group row justify-content-md-center col-md-10">
+                            <div class="form-row">
+                                <mat-form-field>
+                                    <mat-label>דרגת השוטר ושם מלא</mat-label>
+                                    <input formControlName="Rank_first_last_name_officer" class="form-control" placeholder=" רס'ר ישראל ישראלי" required matInput>
+                                    <small class="error" *ngIf="f.Rank_first_last_name_officer.invalid && (f.Rank_first_last_name_officer.dirty || f.Rank_first_last_name_officer.touched)">
+
+                                  <div *ngIf="f.Rank_first_last_name_officer.hasError('required')">הכנס דרגה ושם מלא</div>
+                              </small>
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+
                         <strong class=" row justify-content-md-center col-md-10">חתימת המקבל/ת</strong>
                         <div class="form-group row justify-content-md-center col-md-10">
                             <div class="form-row">
@@ -552,6 +566,9 @@
                         <ng-template matStepLabel>שליחת הדוח</ng-template>
                         <strong class=" row justify-content-md-center col-md-12" style="color: red;">
                            !אנא וודא שכל פרטי הדוח תקינים ונכונים ואשר מטה</strong>
+                        <strong class=" row justify-content-md-center col-md-12" style="color: red;">
+                          דרגת השוטר ושם מלא:  {{productForm.value.Rank_first_last_name_officer}}</strong>
+
                         <div class="table-responsive ">
                             <table class="table table-stripped table-bordered">
                                 <tr class="thead-dark text-right">
@@ -655,14 +672,18 @@
                                     <th>חתימה</th>
                                     <th>מספר רכב</th>
                                     <th> תאריך אישור קבלת הדוח</th>
+
                                     <th>חתימה</th>
                                 </tr>
                                 <tr class="text-right">
                                     <td>{{productForm.value.Citizen_Signture}}</td>
                                     <td>{{productForm.value.Car_Number}}</td>
                                     <td>{{productForm.value.Citizen_Date_Confirmed}}</td>
+
                                     <td>{{productForm.value. GivenNotGiven_Continuation_Of_The_Case}}</td>
+
                                 </tr>
+
                             </table>
                         </div>
                         <div class="form-group row justify-content-md-center col-md-10 ">
@@ -681,7 +702,7 @@
                                 <label class="col-md-3"></label>
                                 <div class="col-md-4">
 
-                                    <button class="btn btn-success mr-2" [disabled]="!productForm.valid">הנפקה</button>
+                                    <button class="btn btn-success mr-2">הנפקה</button>
                                     <button class="btn btn-danger" (click)="goBack()">ביטול</button>
                                 </div>
                             </div>

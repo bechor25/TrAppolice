@@ -15,6 +15,10 @@ let model = {
     getUsur: (cb) => {
         return db.query("SELECT * FROM users", cb)
     },
+    //get report date
+    getProductDate: (cb) => {
+        return db.query("SELECT * FROM products", cb)
+    },
     getUsers: (id, cb) => {
         return db.query("SELECT * FROM users WHERE id=?", [id], cb)
     },
@@ -60,6 +64,7 @@ let model = {
             Citizen_Signture: input.Citizen_Signture,
             Last_Date_To_Pay: input.Last_Date_To_Pay,
             Car_Number: input.Car_Number,
+            Rank_first_last_name_officer: input.Rank_first_last_name_officer,
             is_active: input.is_active,
             created_at: currentDate
         }

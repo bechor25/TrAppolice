@@ -1,8 +1,11 @@
-import { Sort } from '@angular/material/sort';
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit ,ViewChild} from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { Router } from '@angular/router';
+import { MatSort, Sort } from '@angular/material/sort';
+import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-product-list',
@@ -10,11 +13,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-
+  displayedColumns = ['More_details','Rank_first_last_name_officer','ID_Number','Date'];
+  @ViewChild(MatSort) sort: MatSort;
+  dataSource: MatTableDataSource<Product>;
   title: string;
   rows: Product[] = [];
-  desserts :Product[]= [];
-  sortedData :Product[] = [];
+
   viewDiteilsReport:boolean=false;
   viewId:number=null;
 
@@ -26,7 +30,9 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private router: Router
-  ) {  this.sortedData = this.desserts.slice();}
+  ) {
+
+   }
 
   ngOnInit() {
     this.title = 'פרטי דוחות';
@@ -37,12 +43,19 @@ export class ProductListComponent implements OnInit {
     let offset = (p - 1) * this.limit;
     this.productService.getProducts(offset, this.limit).subscribe(
       result => {
-        this.desserts = result.data;
-        this.sortedData = result.data;
+        this.rows = result.data;
         this.total = result.total;
+        this.dataSource = new MatTableDataSource(result.data);
+        this.dataSource.sort = this.sort;
 
       }
     )
+  }
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+
   }
 
   getPage(pageNo: number) {
@@ -65,32 +78,8 @@ export class ProductListComponent implements OnInit {
       )
     }
   }
-  //sort
-  sortData(sort: Sort) {
 
-    const data = this.desserts.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'First_Name': return compare(a.First_Name, b.First_Name, isAsc);
-        case 'ID_Number': return compare(a.ID_Number, b.ID_Number, isAsc);
-        case 'DrivingLicenseNumber': return compare(a.DrivingLicenseNumber, b.DrivingLicenseNumber, isAsc);
-        case 'Whom': return compare(a.Whom, b.Whom, isAsc);
-        case 'id': return compare(a.id, b.id, isAsc);
-
-        default: return 0;
-      }
-    });
-  }
 }
-  function compare(a: number | string | Date, b: number | string | Date, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-  } //sort
 
 
 

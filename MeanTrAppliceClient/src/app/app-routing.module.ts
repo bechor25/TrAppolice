@@ -8,7 +8,7 @@ import { DEFAULT_ROUTES } from './routes/default-layout-routes';
 
 
 const routes: Routes = [
-  {path: '', component: DefaultLayoutComponent,children: DEFAULT_ROUTES },
+  {path: '', component: DefaultLayoutComponent,children: DEFAULT_ROUTES},
   {path: 'backend',component:BackendLayoutComponent,children: BACKEND_ROUTES},
   { path: '**', redirectTo:'backend/cms/404'}
 

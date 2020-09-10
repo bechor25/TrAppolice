@@ -80,6 +80,7 @@ export class CreateProductComponent implements OnInit {
             Citizen_Signture:[''],
             Citizen_Date_Confirmed: [''],
             Car_Number: [''],
+            Rank_first_last_name_officer: [''],
       is_active: [1]
     })
   }
@@ -100,9 +101,9 @@ export class CreateProductComponent implements OnInit {
         console.log(result);
         if ( ! result.error) {
           alert(`הדוח נשלח בהצלחה`);
-          this.router.navigateByUrl('/backend/product');
+          this.router.navigateByUrl('/backend/cms');
         } else {
-          alert('הדוח לא נשלח בהצלחה');
+          alert('הדוח לא הונפק בהצלחה');
         }
       }
     )
@@ -115,9 +116,9 @@ export class CreateProductComponent implements OnInit {
       result => {
         console.log(result);
         if ( ! result.error) {
-          this.router.navigateByUrl('/backend/product');
+          this.router.navigateByUrl('/backend/cms');
         } else {
-          alert('הדוח לא נשלח בהצלחה');
+          alert('הדוח לא עודכן בהצלחה');
         }
       }
     )

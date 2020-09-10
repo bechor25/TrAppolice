@@ -1,6 +1,41 @@
-<div class="container ">
-    <div class="table-responsive bg-light text-dark">
-        <table matSort (matSortChange)="sortData($event)" class="table table-stripped table-bordered">
+<div class="container example-container mat-elevation-z8">
+    <h1 style="text-align: center;">חיפוש שוטרים לפי שם פרטי/ משפחה/ שם משתמש</h1>
+    <div class="example-header">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="הזן מילת חיפוש">
+        </mat-form-field>
+    </div>
+
+    <div class=" table table-stripped table-bordered table-responsive bg-light text-dark example-container mat-elevation-z8">
+        <mat-table [dataSource]="dataSource" matSort>
+
+            <!-- last_name -->
+            <ng-container matColumnDef="last_name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> שם משפחה </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.last_name}} </mat-cell>
+            </ng-container>
+            <!-- first_name -->
+            <ng-container matColumnDef="first_name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> שם פרטי </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.first_name}} </mat-cell>
+            </ng-container>
+            <!-- rank -->
+            <ng-container matColumnDef="rank">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> דרגה </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.rank}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5,10,20]"></mat-paginator>
+    </div>
+</div>
+
+<!--
+       <table matSort (matSortChange)="sortData($event)" class="table table-stripped table-bordered">
             <tr class="thead-dark col-md-12 text-right">
                 <th mat-sort-header="username">שם משתמש</th>
                 <th mat-sort-header="first_name">שם פרטי </th>
@@ -16,5 +51,4 @@
             </ng-container>
 
         </table>
-    </div>
-</div>
+-->

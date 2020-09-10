@@ -38,6 +38,13 @@ export class ProductService {
     )
   }
 
+  getProductDate(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}`)
+    .pipe(
+      catchError(this.handleError('getProductDate', []))
+    )
+  }
+
   getProduct(id: number) {
     return this.http.get<Product>(`${this.apiUrl}/${id}`)
     .pipe(

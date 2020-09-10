@@ -5,6 +5,7 @@ import { AuthGuard } from '../auth/auth.guard';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { ProductListServerComponent } from './product-list-server/product-list-server.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'userlist',
         component: UserListComponent
+      },
+      {
+        path: 'userlist-server',
+        component: ProductListServerComponent
       },
       {
         path: 'create',
