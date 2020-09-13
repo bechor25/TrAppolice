@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { HttpErrorHandler, HandleError } from '../../services/http-error-handler.service';
@@ -30,18 +30,26 @@ export class ProductService {
   ) {
     this.handleError = this.httpErrorHandler.createHandleError('ProductService')
   }
-
+/*
   getProducts(offset: number, limit: number) {
     return this.http.get(`${this.apiUrl}/${offset}/${limit}`)
     .pipe(
       catchError(this.handleError('getProducts', null))
     )
   }
-
-  getProductDate(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}`)
+  */
+  //get all reports between
+  getProductDate(date1:number,date2:number) :Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.apiUrl}/${date1}/${date2}`)
     .pipe(
-      catchError(this.handleError('getProductDate', []))
+      catchError(this.handleError('getProductDate', null))
+    )
+  }
+//get report name officer pilter
+  getProductName(params1:string) :Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.apiUrl}/${params1}`)
+    .pipe(
+      catchError(this.handleError('getProductName', null))
     )
   }
 
@@ -51,7 +59,7 @@ export class ProductService {
       catchError(this.handleError('getProduct', null))
     )
   }
-  //get all users
+  //get all officer
   getUser(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}`)
     .pipe(

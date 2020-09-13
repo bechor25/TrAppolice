@@ -1,11 +1,34 @@
 <div class="container">
-    <ng-container *ngFor="let row of rows">
-        <table class="table table-stripped table-bordered">
-            <tr class="thead-dark col-md-12 text-right">
-                <td>{{row.First_Name}}</td>
-                <td>{{row.Whom}}</td>
-                <td>{{row.DrivingLicenseNumber}}</td>
-            </tr>
-        </table>
-    </ng-container>
+    <form [formGroup]="productFormDate" (ngSubmit)="onSubmitDate()">
+        <div class="form-group justify-content-md-center col-md-10">
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>תאריך א</mat-label>
+                    <input type="date" formControlName="date1" class="form-control" matInput>
+                    <small class="error" *ngIf="fDate.date1.invalid && (fDate.date1.dirty || fDate.date1.touched)">
+            </small>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group justify-content-md-center col-md-10">
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>תאריך ב</mat-label>
+                    <input type="date" formControlName="date2" class="form-control" matInput>
+                    <small class="error" *ngIf="fDate.date2.invalid && (fDate.date2.dirty || fDate.date2.touched)">
+    </small>
+                </mat-form-field>
+            </div>
+        </div>
+        <ng-container *ngFor="let row of rows">
+            <table class="table table-stripped table-bordered">
+                <tr class="thead-dark col-md-12 text-right">
+                    <td>{{row.First_Name}}</td>
+                    <td>{{row.Whom}}</td>
+                    <td>{{row.DrivingLicenseNumber}}</td>
+                </tr>
+            </table>
+        </ng-container>
+        <button class="btn btn-success mr-2">חיפוש</button>
+    </form>
 </div>

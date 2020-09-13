@@ -2,9 +2,15 @@ var db = require("../db");
 var dateFormat = require('dateformat')
 
 let model = {
+    //get report date 
+    getProductDate: (date1, date2, cb) => {
+        return db.query("SELECT * FROM products WHERE Date BETWEEN ? AND ?", [date1, date2], cb)
+    },
+    /*
     getProducts: (offset, limit, cb) => {
         return db.query("SELECT * FROM products LIMIT ?, ?", [+offset, +limit], cb)
     },
+    */
     getTotalProducts: (cb) => {
         return db.query("SELECT COUNT(*) AS total FROM products", cb);
     },
@@ -15,10 +21,11 @@ let model = {
     getUsur: (cb) => {
         return db.query("SELECT * FROM users", cb)
     },
-    //get report date
-    getProductDate: (cb) => {
-        return db.query("SELECT * FROM products", cb)
+    //get report name officer
+    getProductName: (params1, cb) => {
+        return db.query("SELECT * FROM products WHERE  Rank_first_last_name_officer=?", [params1], cb)
     },
+
     getUsers: (id, cb) => {
         return db.query("SELECT * FROM users WHERE id=?", [id], cb)
     },
