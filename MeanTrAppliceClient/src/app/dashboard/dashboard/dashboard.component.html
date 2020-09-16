@@ -1,33 +1,35 @@
-<h3 style="text-align:center"> חיפוש נוסחי אישום</h3>
-<div class="row justify-content-md-center ">
-    <div class="form-group col-md-3" style="text-align:right">
-        <a>
-            <label>מילת חיפוש</label>
-            <input formControlName="serchword" class="form-control" />
-        </a>
+<div class="container">
+    <h3 style="text-align:center"> חיפוש נוסחי אישום</h3>
+    <div class="row justify-content-md-center ">
+        <div class="form-group col-md-3" style="text-align:right">
+            <a>
+                <label>מילת חיפוש</label>
+                <input formControlName="serchword" class="form-control" />
+            </a>
 
-    </div>
-    <div class="form-group col-md-3" style="text-align:right">
-        <a>
-            <label>ניקוד</label>
-            <input formControlName="number" class="form-control" />
-        </a>
-    </div>
-    <div class="form-group col-md-3" style="text-align:right">
-        <a>
-            <label>סמל סעיף</label>
-            <input formControlName="sumbol" class="form-control" />
-        </a>
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-row row justify-content-center">
-        <div class="col-md-9">
-            <button type="submit" class="btn btn-primary">חיפוש</button>
+        </div>
+        <div class="form-group col-md-3" style="text-align:right">
+            <a>
+                <label>ניקוד</label>
+                <input formControlName="number" class="form-control" />
+            </a>
+        </div>
+        <div class="form-group col-md-3" style="text-align:right">
+            <a>
+                <label>סמל סעיף</label>
+                <input formControlName="sumbol" class="form-control" />
+            </a>
         </div>
     </div>
-</div>
-<hr>
-<div class="pdf-container">
-    <pdf-viewer [src]="src" [original-size]="false"></pdf-viewer>
+    <div class="form-group">
+        <div class="form-row row justify-content-center">
+            <div class="col-md-9">
+                <button type="submit" class="btn btn-outline-success btn-lg">חיפוש</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="pdf-container">
+        <pdf-viewer [src]="src" [original-size]="false"></pdf-viewer>
+    </div>
 </div>

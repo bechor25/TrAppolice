@@ -1,0 +1,31 @@
+…or create a new repository on the command line
+echo "# ProjectTrAappolice" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/bechor25/ProjectTrAappolice.git
+git push -u origin master
+                
+…or push an existing repository from the command line
+git remote add origin https://github.com/bechor25/ProjectTrAappolice.git
+git push -u origin master
+
+שלבי עדכון
+git add .
+git commit -m ""
+git remote add origin https://github.com/bechor25/ProjectTrAappolice.git
+git push -u origin master
+
+
+----------------------------
+…or create a new repository on the command line
+echo "# ProjectTrAappolice" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/bechor25/ProjectTrAappolice.git
+git push -u origin master
+                
+…or push an existing repository from the command line
+git remote add origin https://github.com/bechor25/ProjectTrAappolice.git
+git push -u origin master

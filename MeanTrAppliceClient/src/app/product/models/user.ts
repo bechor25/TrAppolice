@@ -4,5 +4,7 @@ export interface User {
   password: string;
   first_name: string;
   last_name: string;
+  rank:string;
+  authorization:string;
   is_active: boolean;
 }

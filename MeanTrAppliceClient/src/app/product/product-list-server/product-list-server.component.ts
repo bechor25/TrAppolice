@@ -15,9 +15,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ProductListServerComponent implements OnInit {
   rows: Product[] = [];
   model: Product;
-  productFormDate: FormGroup;
-  date2:number;
-  date1:number;
+  productFormIDNumber: FormGroup;
+  idSearch:number;
 
 
   constructor(     private fb: FormBuilder,
@@ -26,27 +25,27 @@ export class ProductListServerComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.createFormDate();
-    this.getProductDate(this.date1,this.date2);
+    this.createFormIdNumber();
+    this.getProductIdSearch(this.idSearch);
   }
-  get fDate() { return this.productFormDate.controls; }
+  get fIdNumber() { return this.productFormIDNumber.controls; }
 
-  createFormDate() {
-    this.productFormDate = this.fb.group({
-      date1: ['', ],
-      date2: ['', ],
+  createFormIdNumber() {
+    this.productFormIDNumber = this.fb.group({
+      idSearch: ['', ],
+
 
     })
   }
-  onSubmitDate() {
-    this.model = this.productFormDate.value;
-    this.date1 = this.fDate.date1.value;
-    this.date2 = this.fDate.date2.value;
-    this.getProductDate(this.date1,this.date2);
+  onSubmitIdNumber() {
+    this.model = this.productFormIDNumber.value;
+    this.idSearch = this.fIdNumber.idSearch.value;
+
+    this.getProductIdSearch(this.idSearch);
 
   }
-  getProductDate(date1: number,date2:number) {
-    this.productService.getProductDate(date1,date2).subscribe(
+  getProductIdSearch(idSearch: number) {
+    this.productService.getProductIdSearch(idSearch).subscribe(
       result => {
         this.rows = result;
         console.log("sucsses");

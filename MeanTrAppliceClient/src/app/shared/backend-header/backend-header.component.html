@@ -1,35 +1,38 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 example-container mat-elevation-z8">
-    <a class="navbar-brand" routerLink="/backend/cms">TrAppolice</a>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark mb-4 example-container mat-elevation-z8">
+    <a class="navbar-brand mx-auto" routerLink="/backend/cms">
+        <img src="http://www.up2me.co.il/imgs/23749545.png" alt="Logo" style="width:140px;height: 50px;">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto ">
-            <li class="nav-item active ">
-                <a class="nav-link" routerLink="/backend/cms">עמוד ראשי</a>
+    <div class="collapse navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto ">
+            <li class="nav-item active " style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/cms">עמוד ראשי</button>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/backend/product">דוחות שהונפקו</a>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/product">דוחות שהונפקו</button>
             </li>
-            <li class="nav-item active">
-                <a routerLink="/backend/product/create" class="nav-link">הנפקת דוח</a>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/product/create">הנפקת דוח</button>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/backend/dashboard">חיפוש עבירה</a>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/dashboard">חיפוש עבירה</button>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/backend/auth">הרשמת שוטר למערכת</a>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/auth">הרשמת שוטר למערכת</button>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</a>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</button>
             </li>
-            <li class="nav-item active">
-                <a routerLink="/backend/product/userlist-server" class="nav-link ">רשימת דוחות שהונפקו מהשרת</a>
+            <li class="nav-item active " style="text-align: right;">
+                <button routerLink="/backend/product/userlist-server" class="btn btn-outline-warning btn-lg">test get req</button>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <button class="btn btn-danger" href="javaScript:void(0)" (click)="logout()">יציאה מהמערכת</button>
+            <li class="nav-item" style="text-align: right;">
+                <button class="btn btn-danger btn-lg" href="javaScript:void(0)" (click)="logout()"> <i class="glyphicon glyphicon-log-out"></i>
+                  יציאה מהמערכת</button>
             </li>
         </ul>
     </div>

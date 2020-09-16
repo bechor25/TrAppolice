@@ -45,11 +45,18 @@ export class ProductService {
       catchError(this.handleError('getProductDate', null))
     )
   }
-//get report name officer pilter
+//get report name officer filter
   getProductName(params1:string) :Observable<Product[]>{
     return this.http.get<Product[]>(`${this.apiUrl}/${params1}`)
     .pipe(
       catchError(this.handleError('getProductName', null))
+    )
+  }
+  //get report id number
+  getProductIdSearch(idSearch:number) :Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.apiUrl}/${idSearch}`)
+    .pipe(
+      catchError(this.handleError('getProductIdSearch', null))
     )
   }
 

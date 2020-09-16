@@ -2,7 +2,7 @@
     <div class="row">
 
         <div class="col-md-4 text-left ">
-            <a routerLink="/backend/product/create" class="btn btn-success btn-sm">הנפקת דוח</a>
+            <a routerLink="/backend/product/create" class="btn btn-outline-success btn-lg mr-2">הנפקת דוח</a>
         </div>
 
     </div>
@@ -19,7 +19,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <button class="btn btn-success mr-2">חיפוש</button>
+        <button class="btn btn-outline-success btn-lg mr-2">חיפוש</button>
     </form>
     <hr />
     <form [formGroup]="productFormDate" (ngSubmit)="onSubmitDate()">
@@ -43,9 +43,24 @@
                 </mat-form-field>
             </div>
         </div>
-        <button class="btn btn-success mr-2">חיפוש</button>
+        <button class="btn btn-outline-success btn-lg mr-2">חיפוש</button>
     </form>
     <hr />
+    <!--
+    <form [formGroup]="productFormIDNumber" (ngSubmit)="onSubmitIdNumber()">
+        <div class="form-group">
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label> ת.ז מקבל הדוח</mat-label>
+                    <input formControlName="idSearch" class="form-control" matInput>
+                    <small class="error" *ngIf="fIdNumber.idSearch.invalid && (fIdNumber.idSearch.dirty || fIdNumber.idSearch.touched)">
+          </small>
+                </mat-form-field>
+            </div>
+        </div>
+        <button class="btn btn-success mr-2">חיפוש</button>
+    </form>
+    -->
     <mat-form-field>
         <mat-label> סינון תוצאות לאחר חיפוש</mat-label>
 
@@ -75,17 +90,15 @@
             <ng-container matColumnDef="More_details">
                 <mat-header-cell *matHeaderCellDef> פרטים נוספים </mat-header-cell>
                 <mat-cell *matCellDef="let row">
-                    <button mat-button *ngIf="!viewDiteilsReport" class="btn btn-sm btn-info mr-2" (click)="viewDiteilsReport=true && viewId=row.id">פרטים נוספים</button>
-                    <button mat-button *ngIf="viewDiteilsReport && viewId==row.id" class="btn btn-sm btn-danger" (click)="viewDiteilsReport=false">סגור</button>
+                    <button mat-button *ngIf="!viewDiteilsReport" class="btn btn-lg btn-info " (click)="viewDiteilsReport=true && viewId=row.id">פרטים נוספים</button>
+                    <button mat-button *ngIf="viewDiteilsReport && viewId==row.id" class="btn btn-lg btn-danger" (click)="viewDiteilsReport=false">סגור</button>
                 </mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;">
             </mat-row>
-
-
-
         </mat-table>
+        <mat-paginator [pageSizeOptions]="[5,10,20]"></mat-paginator>
     </div>
 
     <div class="table table-stripped table-bordered table-responsive bg-light text-dark example-container mat-elevation-z8">
@@ -94,17 +107,17 @@
             <div class="table-responsive ">
                 <table class="table table-stripped table-bordered" *ngIf=" viewDiteilsReport && viewId==row.id">
 
-                    <div class=" row justify-content-md-center col-md-10">
+                    <div class=" row justify-content-md-center ">
                         <strong class=" row justify-content-md-center " style="color: red;">
                     דרגת השוטר ושם מלא:  {{row.Rank_first_last_name_officer}}</strong>
                     </div>
-                    <div class=" row justify-content-md-center col-md-16">
-                        <button class="btn btn-success btn-sm mr-2"> {{row.id}} - מספר דוח </button>
-                        <a [routerLink]="['/backend/product/edit', row.id]" class="btn btn-sm btn-info mr-2">{{row.id}} - עריכת דוח</a>
-                        <a href="javascript:void(0)" class="btn btn-sm btn-danger mr-2" (click)="deleteProduct(row.id)">{{row.id}} - מחיקת דוח</a>
+                    <div class=" row justify-content-md-center ">
+                        <button class="btn btn-success btn-lg mr-2"> {{row.id}} - מספר דוח </button>
+                        <a [routerLink]="['/backend/product/edit', row.id]" class="btn btn-lg btn-info mr-2">{{row.id}} - עריכת דוח</a>
+                        <a href="javascript:void(0)" class="btn btn-lg btn-danger mr-2" (click)="deleteProduct(row.id)">{{row.id}} - מחיקת דוח</a>
                     </div>
 
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark text-right">
                         <th>שם פרטי</th>
                         <th>מקבל הדוח</th>
                         <th>מספר רישיון נהיגה</th>
@@ -114,7 +127,7 @@
                         <td>{{row.Whom}}</td>
                         <td>{{row.DrivingLicenseNumber}}</td>
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
                         <th>מספר בית</th>
                         <th>תוצר הרכב</th>
                         <th>מספר דוח</th>
@@ -124,7 +137,7 @@
                         <td>{{row.Car_Manufacturer}}</td>
                         <td>{{row.id}}</td>
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
 
                         <th>רחוב</th>
                         <th>עיר</th>
@@ -138,7 +151,7 @@
                         <td>{{row.City}}</td>
                         <td>{{row.Last_Name}}</td>
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
 
                         <th>סוג לוחית</th>
                         <th>איימל</th>
@@ -151,7 +164,7 @@
                         <td>{{row.Phone_Number}}</td>
                     </tr>
 
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
                         <th>שעה</th>
                         <th>תאריך</th>
                         <th>צבע הרכב</th>
@@ -163,7 +176,7 @@
                         <td>{{row.Car_Color}}</td>
 
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
                         <th>נקודות</th>
                         <th>סעיפי עבירה</th>
                         <th>תיאור מיקום העבירה</th>
@@ -175,7 +188,7 @@
                         <td>{{row.Offense_Place_Description}}</td>
 
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
                         <th>סכום הקנס במילים</th>
                         <th>סכום הקנס בספרות</th>
                         <th>מכשור עזר בשימוש בדו"ח</th>
@@ -187,7 +200,7 @@
                     </tr>
 
 
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
 
                         <th>סמל סעיף</th>
                         <th>מקום העבירה</th>
@@ -200,7 +213,7 @@
                         <td>{{row.Car_Type}}</td>
 
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
                         <th>מ.א או ת.ז עד שני</th>
                         <th>שם מלא</th>
                         <th> מ.א או ת.ז עד ראשון</th>
@@ -212,7 +225,7 @@
                         <td>{{row.First_Witness_ID}}</td>
 
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
                         <th>מרחק במטרים</th>
                         <th>מהירות נסיעה</th>
                         <th>תאריך אחרון לתשלום</th>
@@ -224,7 +237,7 @@
 
 
                     </tr>
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
                         <th>חתימה</th>
                         <th> נסיבות מיוחדות של המקרה</th>
                         <th>שם מלא</th>
@@ -235,7 +248,7 @@
                         <td>{{row.Second_Witness_Full_Name}}</td>
                     </tr>
 
-                    <tr class="thead-dark col-md-12 text-right">
+                    <tr class="thead-dark  text-right">
 
                         <th>מספר רכב</th>
                         <th> תאריך אישור קבלת הדוח</th>

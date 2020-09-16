@@ -1,0 +1,47 @@
+בכדי להתחל את התקייה 
+npx sequelize-cli init
+
+בכדי ליצור מודל 
+npx sequelize-cli model:generate --name "שם המודל"
+
+בכדי ליצור מאפיינים
+--attributes firstName:string,lastName:string,email:string
+
+בכדי להכיל את השינויים במסד נתונים
+npx sequelize-cli db:migrate
+
+בכדי לחזור צד אחורה
+npx sequelize-cli db:migrate:undo
+ 
+ בכדי לחזור את כל הצעדים של המודל אחורה
+ npx sequelize-cli db:migrate:undo:all --to XXXXXXXXXXXXXX-create-posts.js
+ 
+ בכדי לבצע מיוש לטבלה בהדגמה
+ והכנסת ערכים לטבלה
+ npx sequelize-cli seed:generate --name "שם שרוצים"
+ 
+ לאחר מכן בקובץ סיד שנוצר אנו נכנס את הנתנוים שאנו רוצים לדוגמא:
+ module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert('Users', [{
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'example@example.com',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }]);
+  },
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete('Users', null, {});
+  }
+};
+
+בכדי להכניס את כל הסידים החדשים אנו נשתמש בפקודה הבאה
+npx sequelize-cli db:seed:all
+
+בכדי לבטל את הכנסת הסיד האחרונה נשתמש בפקודה הבאה
+npx sequelize-cli db:seed:undo
+
+בכדי לבטל את כל הכנסת הסידים נשתמש בפקודה הבאה
+npx sequelize-cli db:seed:undo:all
+

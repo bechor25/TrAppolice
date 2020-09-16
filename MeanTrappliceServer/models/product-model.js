@@ -11,6 +11,9 @@ let model = {
         return db.query("SELECT * FROM products LIMIT ?, ?", [+offset, +limit], cb)
     },
     */
+    getProductIdSearch: (idSearch, cb) => {
+        return db.query("SELECT * FROM products WHERE ID_Number=?", [idSearch], cb)
+    },
     getTotalProducts: (cb) => {
         return db.query("SELECT COUNT(*) AS total FROM products", cb);
     },

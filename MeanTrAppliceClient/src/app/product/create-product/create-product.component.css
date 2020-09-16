@@ -1,7 +1,8 @@
 .mat-stepper-vertical {
     margin-top: 2px;
     opacity: 1;
-    background-color: white;
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
 }
 
 .mat-form-field {

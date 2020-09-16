@@ -21,34 +21,49 @@ router.get('/:offset/:limit', function(req, res) {
         })
     })
     */
-//get report getProductDate officer
+//get report getProductName officer
+router.get('/:params1', function(req, res) {
+        let params1 = req.params.params1;
+        model.getProductName(params1, function(err, products) {
+            if (err) {
+                res.json(err)
+            } else {
+                res.json(products);
+            }
+        })
+
+    })
+    //get report getProductIdSearch 
+    /*
+router.get('/:idSearch', function(req, res) {
+        let idSearch = req.params.idSearch;
+        model.getProductIdSearch(idSearch, function(err, products) {
+            if (err) {
+                res.json(err)
+            } else {
+                res.json(products);
+            }
+        })
+
+    })
+    */
+    //get report getProductDate officer
 router.get('/:date1/:date2', function(req, res) {
     let date1 = req.params.date1;
     let date2 = req.params.date2;
     model.getProductDate(date1, date2, function(err, products) {
         if (err) {
-            console.log("1");
+
             res.json(err)
         } else {
-            console.log("2");
+
             res.json(products);
         }
     })
 
 })
 
-//get report getProductName officer
-router.get('/:params1', function(req, res) {
-    let params1 = req.params.params1;
-    model.getProductName(params1, function(err, products) {
-        if (err) {
-            res.json(err)
-        } else {
-            res.json(products);
-        }
-    })
 
-})
 router.get('/', function(req, res) {
     model.getUsur(function(err, result) {
         if (err) {

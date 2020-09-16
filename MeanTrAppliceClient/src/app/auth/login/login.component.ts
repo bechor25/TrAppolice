@@ -11,7 +11,7 @@ import { MessageService } from 'src/app/services/message.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  loading = false;
   loginForm: FormGroup;
   title: string;
 
@@ -39,12 +39,14 @@ export class LoginComponent implements OnInit {
   }
   get controlsLogin() { return this.loginForm.controls; }
   onSubmit() {
+    this.loading=true;
     this.authService.login({
       username: this.loginForm.get('username').value,
       password: this.loginForm.get('password').value
     }).subscribe(
       result => {
         if (result) {
+
           this.messageService.clear();
           this.router.navigateByUrl('/backend/cms');
         }

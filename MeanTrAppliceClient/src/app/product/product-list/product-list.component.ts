@@ -15,6 +15,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ProductListComponent implements OnInit {
   displayedColumns = ['More_details','Rank_first_last_name_officer','ID_Number','Date'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<Product>;
   title: string;
@@ -31,6 +32,9 @@ export class ProductListComponent implements OnInit {
   date2:number;
   date1:number;
 
+  productFormIDNumber: FormGroup;
+  idSearch:number;
+
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
@@ -46,9 +50,22 @@ export class ProductListComponent implements OnInit {
    this.getProductName(this.params1);
    this.createFormDate();
    this.getProductDate(this.date1,this.date2);
+   this.createFormIdNumber();
+    this.getProductIdSearch(this.idSearch);
   }
+
+  get fIdNumber() { return this.productFormIDNumber.controls; }
   get f() { return this.productForm.controls; }
   get fDate() { return this.productFormDate.controls; }
+
+
+  createFormIdNumber() {
+    this.productFormIDNumber = this.fb.group({
+      idSearch: ['', ],
+
+
+    })
+  }
 
   createFormDate() {
     this.productFormDate = this.fb.group({
@@ -64,6 +81,13 @@ export class ProductListComponent implements OnInit {
     })
   }
 
+  onSubmitIdNumber() {
+    this.model = this.productFormIDNumber.value;
+    this.idSearch = this.fIdNumber.idSearch.value;
+    this.getProductIdSearch(this.idSearch);
+
+  }
+
   onSubmitDate() {
     this.model = this.productFormDate.value;
     this.date1 = this.fDate.date1.value;
@@ -71,6 +95,7 @@ export class ProductListComponent implements OnInit {
     this.getProductDate(this.date1,this.date2);
 
   }
+
   onSubmit() {
     this.model = this.productForm.value;
     this.params1 = this.f.Rank_first_last_name_officer.value;
@@ -78,22 +103,38 @@ export class ProductListComponent implements OnInit {
   }
 
 
-  getProductDate(date1: number,date2:number) {
-    this.productService.getProductDate(date1,date2).subscribe(
+  getProductIdSearch(idSearch: number) {
+    this.productService.getProductIdSearch(idSearch).subscribe(
       result => {
         this.dataSource = new MatTableDataSource(result);
         this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
         this.rows = result;
         console.log("sucsses");
 
       }
     )
   }
+
+  getProductDate(date1: number,date2:number) {
+    this.productService.getProductDate(date1,date2).subscribe(
+      result => {
+        this.dataSource = new MatTableDataSource(result);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        this.rows = result;
+        console.log("sucsses");
+
+      }
+    )
+  }
+
   getProductName(params1: string) {
     this.productService.getProductName(params1).subscribe(
       result => {
         this.rows = result;
         this.dataSource = new MatTableDataSource(result);
+        this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         console.log("sucsses");
 
