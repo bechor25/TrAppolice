@@ -13,6 +13,8 @@ import { BackendLayoutComponent } from './layouts/backend-layout/backend-layout.
 import { SharedModule } from './shared/shared.module';
 import { httpInterceptorProviders } from './http-Interceptors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     SharedModule,
     MatStepperModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PDFExportModule
 
   ],
   providers: [

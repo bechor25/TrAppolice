@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgModel, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+
+
 
 import { MatStepperModule } from '@angular/material/stepper'
 import { MatSelectModule } from '@angular/material/select';
@@ -22,6 +25,8 @@ import {  MatFormFieldModule } from '@angular/material/form-field';
 import { ProductListServerComponent } from './product-list-server/product-list-server.component';
 
 
+
+
 @NgModule({
   declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent],
   imports: [
@@ -37,11 +42,7 @@ import { ProductListServerComponent } from './product-list-server/product-list-s
     MatSortModule,
     MatPaginatorModule,
     MatRadioModule,
-
-
-
-
-
+    PDFExportModule,
 
   ]
 })

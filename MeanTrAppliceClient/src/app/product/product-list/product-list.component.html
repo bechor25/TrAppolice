@@ -1,4 +1,4 @@
-<div class="container example-container mat-elevation-z8">
+<div class="form-3 ">
     <div class="row">
 
         <div class="col-md-4 text-left ">
@@ -6,7 +6,7 @@
         </div>
 
     </div>
-    <h1 style="text-align: center;">חיפוש דוחות לפי שם שוטר/ תאריך/ ת.ז מקבל הדוח</h1>
+    <h1 style="text-align: center;" class="heavy">חיפוש דוחות לפי שם שוטר/ תאריך/ ת.ז מקבל הדוח</h1>
     <hr />
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
         <div class="form-group ">
@@ -107,7 +107,7 @@
             <div class="table-responsive ">
                 <table class="table table-stripped table-bordered" *ngIf=" viewDiteilsReport && viewId==row.id">
 
-                    <div class=" row justify-content-md-center ">
+                    <div class=" row justify-content-md-center" id="content" #content>
                         <strong class=" row justify-content-md-center " style="color: red;">
                     דרגת השוטר ושם מלא:  {{row.Rank_first_last_name_officer}}</strong>
                     </div>
@@ -115,8 +115,12 @@
                         <button class="btn btn-success btn-lg mr-2"> {{row.id}} - מספר דוח </button>
                         <a [routerLink]="['/backend/product/edit', row.id]" class="btn btn-lg btn-info mr-2">{{row.id}} - עריכת דוח</a>
                         <a href="javascript:void(0)" class="btn btn-lg btn-danger mr-2" (click)="deleteProduct(row.id)">{{row.id}} - מחיקת דוח</a>
-                    </div>
+                        <a class="btn btn-success btn-lg mr-2" kendo-button>
+                              PDF ייצוא לקובץ
+                        </a>
 
+                    </div>
+                    <!--<kendo-pdf-export #pdf paperSize="A3" margin="2cm">-->
                     <tr class="thead-dark text-right">
                         <th>שם פרטי</th>
                         <th>מקבל הדוח</th>
@@ -261,9 +265,10 @@
                         <td>{{row. GivenNotGiven_Continuation_Of_The_Case}}</td>
                     </tr>
 
-
+                    <!-- </kendo-pdf-export>-->
                 </table>
             </div>
+
         </ng-container>
     </div>
 

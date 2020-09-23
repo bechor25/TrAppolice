@@ -2,10 +2,11 @@
     <app-message></app-message>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="trappolice"></div>
-            <hr />
+
             <div class="signup-form">
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="loginForm" class="form-2" (ngSubmit)="onSubmit()">
+                    <div class="trappolice"></div>
+                    <hr />
                     <div class="form-group">
                         <div class="form-row row justify-content-center ">
                             <mat-form-field class="col-md-5">

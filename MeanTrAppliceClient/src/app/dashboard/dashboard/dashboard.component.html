@@ -1,32 +1,18 @@
-<div class="container">
+<div class="form-3 ">
     <h3 style="text-align:center"> חיפוש נוסחי אישום</h3>
     <div class="row justify-content-md-center ">
-        <div class="form-group col-md-3" style="text-align:right">
-            <a>
-                <label>מילת חיפוש</label>
-                <input formControlName="serchword" class="form-control" />
-            </a>
 
-        </div>
-        <div class="form-group col-md-3" style="text-align:right">
-            <a>
-                <label>ניקוד</label>
-                <input formControlName="number" class="form-control" />
-            </a>
-        </div>
-        <div class="form-group col-md-3" style="text-align:right">
-            <a>
-                <label>סמל סעיף</label>
-                <input formControlName="sumbol" class="form-control" />
-            </a>
-        </div>
     </div>
     <div class="form-group">
         <div class="form-row row justify-content-center">
-            <div class="col-md-9">
-                <button type="submit" class="btn btn-outline-success btn-lg">חיפוש</button>
-            </div>
+
         </div>
+    </div>
+    <div class="mb form-row row justify-content-center">
+        <mat-form-field>
+            <input #queryInp matInput id="pdfQueryInput" type="text" placeholder="הזן סמל סעיף" [value]="pdfQuery" (input)="searchQueryChanged($event.target.value)" (keyup.enter)="searchQueryChanged(queryInp.value)">
+            <mat-label>חיפוש בחוברת נוסחי אישום</mat-label>
+        </mat-form-field>
     </div>
     <hr>
     <div class="pdf-container">

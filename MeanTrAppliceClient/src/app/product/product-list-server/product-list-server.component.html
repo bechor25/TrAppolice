@@ -1,25 +1,27 @@
-<div class="container">
-    <form [formGroup]="productFormIDNumber" (ngSubmit)="onSubmitIdNumber()">
-        <div class="form-group justify-content-md-center col-md-10">
-            <div class="form-row">
-                <mat-form-field>
-                    <mat-label>ת.ז</mat-label>
-                    <input formControlName="idSearch" class="form-control" matInput>
-                    <small class="error" *ngIf="fIdNumber.idSearch.invalid && (fIdNumber.idSearch.dirty || fIdNumber.idSearch.touched)">
-            </small>
-                </mat-form-field>
-            </div>
+<div class="example-config">
+    <button kendo-button (click)="pdf.saveAs('invoice.pdf')">
+    Save As PDF...
+  </button>
+</div>
+
+<kendo-pdf-export #pdf paperSize="A4" margin="2cm">
+    <div class="header">
+        Blauer See Delikatessen
+    </div>
+
+    <div class="address">
+        <div class="for">
+            <h3>Invoice For</h3>
+            <p>
+                Antonio Moreno<br /> Naucalpan de Juárez<br /> México D.F., Mexico, 53500
+            </p>
         </div>
 
-        <ng-container *ngFor="let row of rows">
-            <table class="table table-stripped table-bordered">
-                <tr class="thead-dark col-md-12 text-right">
-                    <td>{{row.First_Name}}</td>
-                    <td>{{row.Whom}}</td>
-                    <td>{{row.DrivingLicenseNumber}}</td>
-                </tr>
-            </table>
-        </ng-container>
-        <button class="btn btn-success btn-lg mr-2">חיפוש</button>
-    </form>
-</div>
+        <div class="from">
+            <h3>From</h3>
+            <p>
+                Hanna Moos <br /> Lützowplatz 456<br /> Berlin, Germany, 10785
+            </p>
+        </div>
+    </div>
+</kendo-pdf-export>

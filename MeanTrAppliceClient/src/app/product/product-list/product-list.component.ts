@@ -1,5 +1,5 @@
 
-import { Component, OnInit ,ViewChild} from '@angular/core';
+import { Component, OnInit ,ViewChild,ElementRef} from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,6 +7,8 @@ import { MatSort, Sort } from '@angular/material/sort';
 import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { jsPDF } from 'jspdf';
+
 
 @Component({
   selector: 'app-product-list',
@@ -17,6 +19,7 @@ export class ProductListComponent implements OnInit {
   displayedColumns = ['More_details','Rank_first_last_name_officer','ID_Number','Date'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
   dataSource: MatTableDataSource<Product>;
   title: string;
 
