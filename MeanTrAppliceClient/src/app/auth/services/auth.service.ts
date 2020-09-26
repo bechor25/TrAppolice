@@ -1,8 +1,8 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError, tap, mapTo } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { catchError, tap, mapTo, map } from 'rxjs/operators';
 import { HttpErrorHandler, HandleError } from '../../services/http-error-handler.service';
 import { environment } from '../../../environments/environment';
 import { User } from '../models/user';
@@ -22,15 +22,23 @@ export class AuthService {
       'Content-Type': 'application/json'
     })
   };
-
+  private userSubject: BehaviorSubject<User>;
+  public user: Observable<User>;
   redirectUrl: string;
+
 
   constructor(
     private http: HttpClient,
     private httpErrorHandler: HttpErrorHandler
   ) {
-    this.handleError = this.httpErrorHandler.createHandleError('AuthService')
+    this.handleError = this.httpErrorHandler.createHandleError('AuthService');
+
+    this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
+    this.user = this.userSubject.asObservable();
   }
+  public get userValue(): User {
+    return this.userSubject.value;
+}
 
   signup(data: User) {
     return this.http.post(`${this.apiUrl}/signup`, data, this.httpOptions)
@@ -49,16 +57,19 @@ export class AuthService {
   }
 
   doLogin(user: any) {
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    localStorage.setItem('user', JSON.stringify(user));
+    this.userSubject.next(user);
+    return user;
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('currentUser'));
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   getDecodeToken(token: string) {
     return jwt_decode(token);
   }
+
 
   isLoggedIn() {
     const currentUser = this.getCurrentUser();
@@ -75,7 +86,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('user');
   }
 
 }

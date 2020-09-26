@@ -4,7 +4,7 @@
         <div class="col-md-12">
 
             <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-                <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                <mat-vertical-stepper [linear]="isLinear" #stepper>
 
 
                     <mat-step [stepControl]="productForm">
@@ -709,7 +709,7 @@
                             </div>
                         </div>
                     </mat-step>
-                </mat-horizontal-stepper>
+                </mat-vertical-stepper>
 
             </form>
 
@@ -720,32 +720,12 @@
         </div>
     </div>
 </div>
+<!--<strong class=" row justify-content-md-center col-md-10">חתימת המקבל/ת</strong>
+                        <div class="form-group row justify-content-md-center col-md-10">
+                            <div class="form-row">
 
-<!------------
-                <div class="form-group">
-                    <div class="form-row">
-                        <label class="col-md-3">First_Name <span class="error">*</span></label>
-                        <div class="col-md-9">
-                            <input formControlName="price" class="form-control" />
-                            <small class="error" *ngIf="f.First_Name.invalid && (f.First_Name.dirty || f.First_Name.touched)">
-                              <div *ngIf="f.First_Name.hasError('required')">This field is required.</div>
-                              <div *ngIf="f.First_Name.hasError('pattern')">Only number and decimal is allowed.</div>
-                          </small>
-                        </div>
-                    </div>
-                </div>
-                -->
-<!--------
-                        <div class="form-group">
-                    <div class="form-row">
-                        <div class="col-md-9">
-                            <input formControlName="name" class="form-control" />
-                            <small class="error" *ngIf="f.Whom.invalid && (f.Whom.dirty || f.Whom.touched)">
-                          <div *ngIf="f.Whom.hasError('required')">This field is required.</div>
-                      </small>
-                        </div>
-                        <label class="col-md-3">Whom <span class="error">*</span></label>
+                                <ng-signature-pad format="base64" (done)="saveImage($event)">
+                                </ng-signature-pad>
 
-                    </div>
-                </div>
-                    ---->
+                            </div>
+                        </div>-->

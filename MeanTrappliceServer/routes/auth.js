@@ -27,7 +27,10 @@ router.post('/login', function(req, res, next) {
 
         const payload = {
             username: user.username,
-            email: user.email
+            authorization: user.authorization,
+            rank: user.rank,
+            first_name: user.first_name,
+            last_name: user.last_name
         }
         const options = {
             subject: `${user.id}`,
@@ -35,7 +38,7 @@ router.post('/login', function(req, res, next) {
         }
         const token = jwt.sign(payload, 'secret123', options);
 
-        res.json({ token });
+        res.json({ token, payload });
 
     })(req, res, next);
 })

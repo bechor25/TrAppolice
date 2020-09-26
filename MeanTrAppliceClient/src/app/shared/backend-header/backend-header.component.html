@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark mb-4 example-container mat-elevation-z8">
-    <a class="navbar-brand mx-auto" routerLink="/backend/cms">
-        <img src="http://www.up2me.co.il/imgs/23749545.png" alt="Logo" style="width:140px;height: 50px;">
+    <a class="navbar-brand mx-auto" routerLink="/backend/cms" style="font-size: 16px;">
+        TrAapolice
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <div class="collapse navbar-collapse collapse w-0 order-3 dual-collapse2" id="navbarCollapse">
+    <div class="collapse navbar-collapse collapse " id="navbarCollapse">
         <ul class="navbar-nav ml-auto ">
             <li class="nav-item active " style="text-align: right;">
                 <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/cms">עמוד ראשי</button>
@@ -25,13 +25,25 @@
             <li class="nav-item active" style="text-align: right;">
                 <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</button>
             </li>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/product/phone-list">כתובות וטלפונים</button>
+            </li>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-primary btn-lg mr-2" routerLink="/backend/product/product-about">אודות</button>
+            </li>
             <li class="nav-item active " style="text-align: right;">
                 <button routerLink="/backend/product/userlist-server" class="btn btn-outline-warning btn-lg">test get req</button>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ">
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-danger btn-lg mr-2" *ngIf="user.payload.authorization === 'Admin'">מחובר כקצין</button>
+            </li>
+            <li class="nav-item active" style="text-align: right;">
+                <button class="btn btn-outline-success btn-lg mr-2" *ngIf="user.payload.authorization === 'User'">מחובר כשוטר</button>
+            </li>
             <li class="nav-item" style="text-align: right;">
-                <button class="btn btn-danger btn-lg" href="javaScript:void(0)" (click)="logout()"> <i class="glyphicon glyphicon-log-out"></i>
+                <button class="btn btn-danger btn-lg  mr-2" href="javaScript:void(0)" (click)="logout()"> <i class="glyphicon glyphicon-log-out"></i>
                   יציאה מהמערכת</button>
             </li>
         </ul>

@@ -31,7 +31,7 @@ export interface Product {
  Distance:number;
  Kmh:number;
  Last_Date_To_Pay:string;
- Citizen_Signture:string;
+ Citizen_Signture:any;
  Full_Description:string;
  Second_Witness_Full_Name:string;
  Car_Number:number;

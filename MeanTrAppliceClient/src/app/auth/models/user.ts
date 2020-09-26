@@ -5,5 +5,7 @@ export interface User {
   first_name: string;
   last_name: string;
   authorization:string;
+  rank:string;
+  token:string;
   is_active: boolean;
 }

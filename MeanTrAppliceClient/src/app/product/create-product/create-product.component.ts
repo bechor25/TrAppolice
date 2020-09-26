@@ -1,5 +1,6 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild,AfterViewInit} from '@angular/core';
+import SignaturePad from 'signature_pad';
 import {  FormBuilder, FormGroup, Validators, FormsModule, FormControl,NgForm } from '@angular/forms';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
@@ -11,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./create-product.component.css']
 })
 export class CreateProductComponent implements OnInit {
+  @ViewChild('sPad', {static: true}) signaturePadElement;
   isLinear = false;
   productForm: FormGroup;
   model: Product;
@@ -33,6 +35,9 @@ export class CreateProductComponent implements OnInit {
     if(this.productId) {
       this.getProduct();
     }
+  }
+  saveImage(data) {
+    this.productForm.controls.Citizen_Signture = data;
   }
 
   get f() { return this.productForm.controls; }

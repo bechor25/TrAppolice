@@ -13,8 +13,33 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+@font-face {
+    font-family: "DejaVu Sans";
+    src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    font-weight: bold;
+    src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    font-style: italic;
+    src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    font-weight: bold;
+    font-style: italic;
+    src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
+
 p {
     margin: 10px 0;
+    font-family: "DejaVu Sans", "italic", sans-serif;
     white-space: nowrap;
 }
 
@@ -39,7 +64,7 @@ p {
 }
 
 .form-2 {
-    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-family: "DejaVu Sans", "italic", sans-serif;
     font-weight: 400;
     /* Size and position */
     width: 60%;
@@ -55,7 +80,7 @@ p {
 }
 
 .form-3 {
-    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-family: "DejaVu Sans", "italic", sans-serif;
     font-weight: 400;
     /* Size and position */
     width: 80%;
@@ -71,6 +96,7 @@ p {
 }
 
 .h1 {
+    font-family: "DejaVu Sans", "italic", sans-serif;
     color: white;
 }
 
@@ -111,8 +137,7 @@ html {
 }
 
 body {
-    background-color: #485461;
-    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    background-image: url('../../MeanTrAppliceClient/src/assets/bg.jpg');
     width: 100%;
     height: 100%;
     overflow: auto;

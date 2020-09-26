@@ -6,7 +6,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { ProductListServerComponent } from './product-list-server/product-list-server.component';
-
+import { PhoneListComponent } from './phone-list/phone-list.component';
+import { ProductAboutComponent } from './product-about/product-about.component';
 const routes: Routes = [
   {
     path: '',
@@ -20,6 +21,14 @@ const routes: Routes = [
       {
         path: 'userlist',
         component: UserListComponent
+      },
+      {
+        path: 'phone-list',
+        component: PhoneListComponent
+      },
+      {
+        path: 'product-about',
+        component: ProductAboutComponent
       },
       {
         path: 'userlist-server',

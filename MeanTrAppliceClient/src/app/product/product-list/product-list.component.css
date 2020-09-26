@@ -9,7 +9,8 @@ p {
 }
 
 .kendo-pdf-export {
-    font-family: 'Open Sans Hebrew Condensed', serif;
+    direction: rtl;
+    font-family: "DejaVu Sans", "italic", sans-serif;
     font-size: 12px;
 }
 
@@ -25,7 +26,13 @@ p {
 
 .mat-form-field {
     font-size: 18px;
-    width: 100%;
+    padding: 20px 40px;
+    text-align: right;
+}
+
+.btn {
+    font-size: 18px;
+    padding: 10px 40px;
     text-align: right;
 }
 

@@ -1,12 +1,10 @@
 <div class="form-3 ">
     <div class="row">
 
-        <div class="col-md-4 text-left ">
-            <a routerLink="/backend/product/create" class="btn btn-outline-success btn-lg mr-2">הנפקת דוח</a>
-        </div>
+
 
     </div>
-    <h1 style="text-align: center;" class="heavy">חיפוש דוחות לפי שם שוטר/ תאריך/ ת.ז מקבל הדוח</h1>
+    <h1 style="text-align: center;" class="heavy">חיפוש דוחות </h1>
     <hr />
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
         <div class="form-group ">
@@ -19,7 +17,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <button class="btn btn-outline-success btn-lg mr-2">חיפוש</button>
+        <button class="btn btn-outline-success">חיפוש</button>
     </form>
     <hr />
     <form [formGroup]="productFormDate" (ngSubmit)="onSubmitDate()">
@@ -41,9 +39,11 @@
                     <small class="error" *ngIf="fDate.date2.invalid && (fDate.date2.dirty || fDate.date2.touched)">
       </small>
                 </mat-form-field>
+
             </div>
+            <button class="btn btn-outline-success ">חיפוש</button>
         </div>
-        <button class="btn btn-outline-success btn-lg mr-2">חיפוש</button>
+
     </form>
     <hr />
     <!--
@@ -61,12 +61,14 @@
         <button class="btn btn-success mr-2">חיפוש</button>
     </form>
     -->
-    <mat-form-field>
-        <mat-label> סינון תוצאות לאחר חיפוש</mat-label>
-
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="הזן סינון רצוי">
-    </mat-form-field>
-
+    <div class="form-group ">
+        <div class="form-row">
+            <mat-form-field>
+                <mat-label> סינון תוצאות לאחר חיפוש</mat-label>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="הזן סינון רצוי">
+            </mat-form-field>
+        </div>
+    </div>
     <hr />
 
     <div class="table table-stripped table-bordered table-responsive bg-light text-dark example-container mat-elevation-z8">
@@ -115,157 +117,159 @@
                         <button class="btn btn-success btn-lg mr-2"> {{row.id}} - מספר דוח </button>
                         <a [routerLink]="['/backend/product/edit', row.id]" class="btn btn-lg btn-info mr-2">{{row.id}} - עריכת דוח</a>
                         <a href="javascript:void(0)" class="btn btn-lg btn-danger mr-2" (click)="deleteProduct(row.id)">{{row.id}} - מחיקת דוח</a>
-                        <a class="btn btn-success btn-lg mr-2" kendo-button>
-                              PDF ייצוא לקובץ
-                        </a>
+                        <button class="btn btn-success btn-lg mr-2" dir="rtl" (click)="pdf.saveAs('דוח מספר`.pdf')" kendo-button>
+                            <!--(click)="pdf.saveAs('דוח מספר`.pdf')"-->
+                            PDF ייצוא לקובץ
+                        </button>
 
                     </div>
-                    <!--<kendo-pdf-export #pdf paperSize="A3" margin="2cm">-->
-                    <tr class="thead-dark text-right">
-                        <th>שם פרטי</th>
-                        <th>מקבל הדוח</th>
-                        <th>מספר רישיון נהיגה</th>
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.First_Name}}</td>
-                        <td>{{row.Whom}}</td>
-                        <td>{{row.DrivingLicenseNumber}}</td>
-                    </tr>
-                    <tr class="thead-dark  text-right">
-                        <th>מספר בית</th>
-                        <th>תוצר הרכב</th>
-                        <th>מספר דוח</th>
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.Home_Number}}</td>
-                        <td>{{row.Car_Manufacturer}}</td>
-                        <td>{{row.id}}</td>
-                    </tr>
-                    <tr class="thead-dark  text-right">
 
-                        <th>רחוב</th>
-                        <th>עיר</th>
-                        <th>שם משפחה</th>
+                    <kendo-pdf-export #pdf paperSize="A3" charset="utf-8" dir="rtl" margin=" 2cm ">
+                        <tr class="thead-dark text-right ">
+                            <th>שם פרטי</th>
+                            <th>מקבל הדוח</th>
+                            <th>מספר רישיון נהיגה</th>
+                        </tr>
+                        <tr class="text-right ">
+                            <td>{{row.First_Name}}</td>
+                            <td>{{row.Whom}}</td>
+                            <td>{{row.DrivingLicenseNumber}}</td>
+                        </tr>
+                        <tr class="thead-dark text-right ">
+                            <th>מספר בית</th>
+                            <th>תוצר הרכב</th>
+                            <th>מספר דוח</th>
+                        </tr>
+                        <tr class="text-right ">
+                            <td>{{row.Home_Number}}</td>
+                            <td>{{row.Car_Manufacturer}}</td>
+                            <td>{{row.id}}</td>
+                        </tr>
+                        <tr class="thead-dark text-right ">
 
-                    </tr>
+                            <th>רחוב</th>
+                            <th>עיר</th>
+                            <th>שם משפחה</th>
 
-                    <tr class="text-right">
+                        </tr>
 
-                        <td>{{row.Street}}</td>
-                        <td>{{row.City}}</td>
-                        <td>{{row.Last_Name}}</td>
-                    </tr>
-                    <tr class="thead-dark  text-right">
+                        <tr class="text-right ">
 
-                        <th>סוג לוחית</th>
-                        <th>איימל</th>
-                        <th>שם נייד</th>
-                    </tr>
-                    <tr class="text-right">
+                            <td>{{row.Street}}</td>
+                            <td>{{row.City}}</td>
+                            <td>{{row.Last_Name}}</td>
+                        </tr>
+                        <tr class="thead-dark text-right ">
 
-                        <td>{{row.Plate_Type}}</td>
-                        <td>{{row.EMail}}</td>
-                        <td>{{row.Phone_Number}}</td>
-                    </tr>
+                            <th>סוג לוחית</th>
+                            <th>איימל</th>
+                            <th>שם נייד</th>
+                        </tr>
+                        <tr class="text-right ">
 
-                    <tr class="thead-dark  text-right">
-                        <th>שעה</th>
-                        <th>תאריך</th>
-                        <th>צבע הרכב</th>
+                            <td>{{row.Plate_Type}}</td>
+                            <td>{{row.EMail}}</td>
+                            <td>{{row.Phone_Number}}</td>
+                        </tr>
 
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.Hour}}</td>
-                        <td>{{row.Date}}</td>
-                        <td>{{row.Car_Color}}</td>
+                        <tr class="thead-dark text-right ">
+                            <th>שעה</th>
+                            <th>תאריך</th>
+                            <th>צבע הרכב</th>
 
-                    </tr>
-                    <tr class="thead-dark  text-right">
-                        <th>נקודות</th>
-                        <th>סעיפי עבירה</th>
-                        <th>תיאור מיקום העבירה</th>
+                        </tr>
+                        <tr class="text-right ">
+                            <td>{{row.Hour}}</td>
+                            <td>{{row.Date}}</td>
+                            <td>{{row.Car_Color}}</td>
 
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.Points}}</td>
-                        <td>{{row.Offense_Description}}</td>
-                        <td>{{row.Offense_Place_Description}}</td>
+                        </tr>
+                        <tr class="thead-dark text-right ">
+                            <th>נקודות</th>
+                            <th>סעיפי עבירה</th>
+                            <th>תיאור מיקום העבירה</th>
 
-                    </tr>
-                    <tr class="thead-dark  text-right">
-                        <th>סכום הקנס במילים</th>
-                        <th>סכום הקנס בספרות</th>
-                        <th>מכשור עזר בשימוש בדו"ח</th>
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.Report_Amount_inWords}}</td>
-                        <td>{{row.Report_Amount}}</td>
-                        <td>{{row.Speedometer_Type}}</td>
-                    </tr>
+                        </tr>
+                        <tr class="text-right ">
+                            <td>{{row.Points}}</td>
+                            <td>{{row.Offense_Description}}</td>
+                            <td>{{row.Offense_Place_Description}}</td>
 
-
-                    <tr class="thead-dark  text-right">
-
-                        <th>סמל סעיף</th>
-                        <th>מקום העבירה</th>
-                        <th>סוג הרכב</th>
-                    </tr>
-                    <tr class="text-right">
-
-                        <td>{{row.Offense_Number}}</td>
-                        <td>{{row.Offense_Place}}</td>
-                        <td>{{row.Car_Type}}</td>
-
-                    </tr>
-                    <tr class="thead-dark  text-right">
-                        <th>מ.א או ת.ז עד שני</th>
-                        <th>שם מלא</th>
-                        <th> מ.א או ת.ז עד ראשון</th>
-
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.Second_Witness_ID}}</td>
-                        <td>{{row.First_Witness_Full_Name}}</td>
-                        <td>{{row.First_Witness_ID}}</td>
-
-                    </tr>
-                    <tr class="thead-dark  text-right">
-                        <th>מרחק במטרים</th>
-                        <th>מהירות נסיעה</th>
-                        <th>תאריך אחרון לתשלום</th>
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.Distance}}</td>
-                        <td>{{row.Kmh}}</td>
-                        <td>{{row.Last_Date_To_Pay}}</td>
+                        </tr>
+                        <tr class="thead-dark text-right ">
+                            <th>סכום הקנס במילים</th>
+                            <th>סכום הקנס בספרות</th>
+                            <th>מכשור עזר בשימוש בדו"ח</th>
+                        </tr>
+                        <tr class="text-right">
+                            <td>{{row.Report_Amount_inWords}}</td>
+                            <td>{{row.Report_Amount}}</td>
+                            <td>{{row.Speedometer_Type}}</td>
+                        </tr>
 
 
-                    </tr>
-                    <tr class="thead-dark  text-right">
-                        <th>חתימה</th>
-                        <th> נסיבות מיוחדות של המקרה</th>
-                        <th>שם מלא</th>
-                    </tr>
-                    <tr class="text-right">
-                        <td>{{row.Citizen_Signture}}</td>
-                        <td>{{row.Full_Description}}</td>
-                        <td>{{row.Second_Witness_Full_Name}}</td>
-                    </tr>
+                        <tr class="thead-dark  text-right">
 
-                    <tr class="thead-dark  text-right">
+                            <th>סמל סעיף</th>
+                            <th>מקום העבירה</th>
+                            <th>סוג הרכב</th>
+                        </tr>
+                        <tr class="text-right">
 
-                        <th>מספר רכב</th>
-                        <th> תאריך אישור קבלת הדוח</th>
-                        <th>חתימה</th>
-                    </tr>
-                    <tr class="text-right">
+                            <td>{{row.Offense_Number}}</td>
+                            <td>{{row.Offense_Place}}</td>
+                            <td>{{row.Car_Type}}</td>
 
-                        <td>{{row.Car_Number}}</td>
-                        <td>{{row.Citizen_Date_Confirmed}}</td>
-                        <td>{{row. GivenNotGiven_Continuation_Of_The_Case}}</td>
-                    </tr>
+                        </tr>
+                        <tr class="thead-dark  text-right">
+                            <th>מ.א או ת.ז עד שני</th>
+                            <th>שם מלא</th>
+                            <th> מ.א או ת.ז עד ראשון</th>
 
-                    <!-- </kendo-pdf-export>-->
+                        </tr>
+                        <tr class="text-right">
+                            <td>{{row.Second_Witness_ID}}</td>
+                            <td>{{row.First_Witness_Full_Name}}</td>
+                            <td>{{row.First_Witness_ID}}</td>
+
+                        </tr>
+                        <tr class="thead-dark  text-right">
+                            <th>מרחק במטרים</th>
+                            <th>מהירות נסיעה</th>
+                            <th>תאריך אחרון לתשלום</th>
+                        </tr>
+                        <tr class="text-right">
+                            <td>{{row.Distance}}</td>
+                            <td>{{row.Kmh}}</td>
+                            <td>{{row.Last_Date_To_Pay}}</td>
+
+
+                        </tr>
+                        <tr class="thead-dark  text-right">
+                            <th>חתימה</th>
+                            <th> נסיבות מיוחדות של המקרה</th>
+                            <th>שם מלא</th>
+                        </tr>
+                        <tr class="text-right">
+                            <td>{{row.Citizen_Signture}}</td>
+                            <td>{{row.Full_Description}}</td>
+                            <td>{{row.Second_Witness_Full_Name}}</td>
+                        </tr>
+
+                        <tr class="thead-dark  text-right">
+
+                            <th>מספר רכב</th>
+                            <th> תאריך אישור קבלת הדוח</th>
+                            <th>חתימה</th>
+                        </tr>
+                        <tr class="text-right">
+
+                            <td>{{row.Car_Number}}</td>
+                            <td>{{row.Citizen_Date_Confirmed}}</td>
+                            <td>{{row. GivenNotGiven_Continuation_Of_The_Case}}</td>
+                        </tr>
+
+                    </kendo-pdf-export>
                 </table>
             </div>
 
