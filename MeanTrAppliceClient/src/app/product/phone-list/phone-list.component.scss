@@ -1,0 +1,57 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.container {
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #b8c6db 74%);
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    text-align: right;
+    font-family: 'Open Sans Hebrew', serif;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+    text-align: right;
+    font-family: 'Open Sans Hebrew', serif;
+}
+
+.mat-header-cell {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: #333;
+    font-family: 'Open Sans Hebrew', serif;
+}
+
+h1 {
+    font-family: 'Open Sans Hebrew', serif;
+    font-size: 24px;
+}
+
+p {
+    font-family: 'Open Sans Hebrew', serif;
+    font-size: 16px;
+}
+
+.mat-cell {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans Hebrew', serif;
+}

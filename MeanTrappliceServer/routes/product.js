@@ -81,9 +81,15 @@ router.get('/:id', function(req, res) {
     })
 })
 
-
+//add report
 router.post('/add', function(req, res) {
-    model.addProduct(req.body, function(err, result) {
+        model.addProduct(req.body, function(err, result) {
+            res.json({ data: result, error: err });
+        })
+    })
+    //add case
+router.post('/add-Case', function(req, res) {
+    model.addContact(req.body, function(err, result) {
         res.json({ data: result, error: err });
     })
 })

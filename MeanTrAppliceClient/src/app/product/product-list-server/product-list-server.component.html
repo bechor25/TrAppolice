@@ -1,17 +1,21 @@
-<h1 class="text-center">Angular 9 Signature Pad</h1>
-<div class="signature-pad">
-    <div class="signature-pad--body" style="text-align: center;">
-        <canvas #sPad width="400" height="300" style="touch-action: none;"></canvas>
+<div class="form-3 ">
+    <h3 style="text-align:center"> חיפוש נוסחי אישום</h3>
+    <div class="row justify-content-md-center ">
+
+    </div>
+    <div class="form-group">
+        <div class="form-row row justify-content-center">
+
+        </div>
+    </div>
+    <div class="mb form-row row justify-content-center">
+        <mat-form-field>
+            <input #queryInp matInput id="pdfQueryInput" type="text" placeholder="הזן סמל סעיף" [value]="pdfQuery" (input)="searchQueryChanged($event.target.value)" (keyup.enter)="searchQueryChanged(queryInp.value)">
+            <mat-label>חיפוש בחוברת נוסחי אישום</mat-label>
+        </mat-form-field>
+    </div>
+    <hr>
+    <div class="pdf-container">
+        <pdf-viewer [src]="src" [page]="1" [original-size]="true"></pdf-viewer>
     </div>
 </div>
-<br>
-<br>
-<section class="container-fluid">
-
-    <div class="col-6">
-        <button class="btn btn-block btn-danger" (click)="clear()">Clear</button>
-
-
-    </div>
-
-</section>

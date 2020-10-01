@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
     private authService: AuthService,
   ) {
     this.user = this.authService.userValue;
+
   }
 
   ngOnInit(): void {

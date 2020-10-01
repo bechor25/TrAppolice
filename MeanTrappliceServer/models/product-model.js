@@ -32,6 +32,20 @@ let model = {
     getUsers: (id, cb) => {
         return db.query("SELECT * FROM users WHERE id=?", [id], cb)
     },
+
+    addContact: (input, cb) => {
+
+        let currentDate = dateFormat(new Date(), 'yyyy-mm-dd h:MM:ss');
+
+        let data = {
+            Type_Contact: input.Type_Contact,
+            description: input.description,
+            Contact_email: input.Contact_email,
+
+            created_at: currentDate
+        }
+        return db.query("INSERT INTO contact SET ?", [data], cb)
+    },
     addProduct: (input, cb) => {
 
         let currentDate = dateFormat(new Date(), 'yyyy-mm-dd h:MM:ss');

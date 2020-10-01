@@ -7,6 +7,7 @@ import { HttpErrorHandler, HandleError } from '../../services/http-error-handler
 import { environment } from '../../../environments/environment';
 import { Product } from '../models/product';
 import { User } from '../models/user';
+import { Case } from '../models/case';
 
 @Injectable({
   providedIn: 'root'
@@ -73,6 +74,7 @@ export class ProductService {
       catchError(this.handleError('getUser', []))
     )
   }
+
   getUsers(id: number) {
     return this.http.get<User>(`${this.apiUrl}/${id}`)
     .pipe(
@@ -85,6 +87,13 @@ export class ProductService {
     return this.http.post<Product>(`${this.apiUrl}/add`, product, this.httpOptions)
     .pipe(
       catchError(this.handleError('addProduct', null))
+    )
+  }
+
+  addContact(caseOen: Case) {
+    return this.http.post<Case>(`${this.apiUrl}/add-Case`, caseOen, this.httpOptions)
+    .pipe(
+      catchError(this.handleError('addContact', null))
     )
   }
 

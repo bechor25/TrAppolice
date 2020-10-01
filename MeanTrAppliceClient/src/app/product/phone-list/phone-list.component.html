@@ -1,0 +1,37 @@
+<div class="form-4 ">
+    <div class=" justify-content-md-center ">
+        <div style="text-align: center;">
+            <h1>כתובות וטלפונים</h1>
+            <p>כאן תוכלו למצוא כתובות וטלפונים של תחנות משטרה ברחבי הארץ.</p>
+            <p> באפשרותכם לחפש לפי עיר / ישוב / תחנה</p>
+        </div>
+        <hr>
+        <div style="text-align: center;">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="הזן מילת חיפוש">
+            </mat-form-field>
+        </div>
+        <hr>
+        <div class="table table-stripped table-bordered table-responsive bg-light text-dark  mat-elevation-z8">
+            <mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="tal">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> מספר טלפון </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> <a href="tel:{{row.tal}}" class="Blondie">{{row.tal}}</a> </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="addres">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> כתובת </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.addres}} </mat-cell>
+                </ng-container>
+
+
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;">
+                </mat-row>
+
+            </mat-table>
+        </div>
+        <mat-paginator [pageSizeOptions]="[5,10,20]"></mat-paginator>
+    </div>
+</div>

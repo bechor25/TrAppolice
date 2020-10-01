@@ -22,7 +22,6 @@
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
-    "@ng-plus/signature-pad": "0.0.5",
     "@progress/kendo-angular-common": "^1.2.3",
     "@progress/kendo-angular-grid": "^4.8.0",
     "@progress/kendo-angular-intl": "^2.0.3",
@@ -31,6 +30,7 @@
     "@progress/kendo-angular-pdf-export": "^2.0.4",
     "@progress/kendo-drawing": "^1.9.1",
     "@progress/kendo-theme-default": "latest",
+    "@sweetalert2/ngx-sweetalert2": "^8.1.1",
     "angular2-signaturepad": "^2.11.0",
     "bootstrap": "^4.5.2",
     "intl": "^1.2.5",
@@ -40,6 +40,7 @@
     "ng2-pdf-viewer": "^6.3.2",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^10.3.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

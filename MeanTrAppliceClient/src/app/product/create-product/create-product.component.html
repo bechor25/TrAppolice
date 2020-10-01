@@ -10,7 +10,10 @@
                     <mat-step [stepControl]="productForm">
                         <ng-template matStepLabel>פרטים אישיים</ng-template>
                         <!--step 1-->
-                        <h1 style="text-align: center">טופס הנפקת דוחות</h1>
+                        <div class="header" style="text-align: center;">
+                            <div><span>הנפקת </span>דוח</div>
+                        </div>
+
                         <hr />
                         <div class="form-group row justify-content-md-center col-md-10">
                             <div class="form-row">
@@ -555,10 +558,11 @@
                         <strong class=" row justify-content-md-center col-md-10">חתימת המקבל/ת</strong>
                         <div class="form-group row justify-content-md-center col-md-10">
                             <div class="form-row">
-                                <mat-form-field>
-                                    <mat-label>חתימה</mat-label>
-                                    <input formControlName="Citizen_Signture" class="form-control" matInput>
-                                </mat-form-field>
+                                <div class="signature-pad">
+                                    <div class="signature-pad--body" style="text-align: center;">
+                                        <canvas #sPad width="200" height="100" style="touch-action: none;"></canvas>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -672,14 +676,14 @@
                                     <td>{{productForm.value.Second_Witness_Full_Name}}</td>
                                 </tr>
                                 <tr class="thead-dark text-right">
-                                    <th>חתימה</th>
+
                                     <th>מספר רכב</th>
                                     <th> תאריך אישור קבלת הדוח</th>
 
-                                    <th>חתימה</th>
+                                    <th>המשך נסיבות המקרה</th>
                                 </tr>
                                 <tr class="text-right">
-                                    <td>{{productForm.value.Citizen_Signture}}</td>
+
                                     <td>{{productForm.value.Car_Number}}</td>
                                     <td>{{productForm.value.Citizen_Date_Confirmed}}</td>
 
@@ -703,7 +707,7 @@
                         <div class="form-group">
                             <div class="form-row">
 
-                                <button class="btn btn-outline-success btn-lg mr-2" [disabled]="!productForm.valid">הנפקה</button>
+                                <button class="btn btn-outline-success btn-lg mr-2">הנפקה</button>
                                 <button class="btn btn-outline-danger btn-lg mr-2" (click)="goBack()">ביטול</button>
 
                             </div>

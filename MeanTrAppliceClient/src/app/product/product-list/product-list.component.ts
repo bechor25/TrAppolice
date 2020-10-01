@@ -8,8 +8,8 @@ import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { jsPDF } from 'jspdf';
-
-
+declare let html2canvas: any;
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-list',
@@ -24,9 +24,13 @@ export class ProductListComponent implements OnInit {
   dataSource: MatTableDataSource<Product>;
   title: string;
 
+
   params1:string;
   productForm: FormGroup;
   rows: Product[] = [];
+
+  imagePath: any;
+  imageArry:any;
 
   viewDiteilsReport:boolean=false;
   viewId:number=null;
@@ -39,16 +43,23 @@ export class ProductListComponent implements OnInit {
   productFormIDNumber: FormGroup;
   idSearch:number;
 
+
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) {
+
+
 
    }
 
+
   ngOnInit() {
+
+
     this.createForm();
     this.title = 'פרטי דוחות';
    this.getProductName(this.params1);
@@ -57,6 +68,7 @@ export class ProductListComponent implements OnInit {
    this.createFormIdNumber();
     this.getProductIdSearch(this.idSearch);
   }
+
 
   get fIdNumber() { return this.productFormIDNumber.controls; }
   get f() { return this.productForm.controls; }
@@ -152,8 +164,6 @@ export class ProductListComponent implements OnInit {
     this.dataSource.filter = filterValue;
 
   }
-
-
 
 
   deleteProduct(id: number) {

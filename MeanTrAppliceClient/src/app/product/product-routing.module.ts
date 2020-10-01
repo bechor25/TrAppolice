@@ -8,6 +8,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { ProductListServerComponent } from './product-list-server/product-list-server.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { ProductAboutComponent } from './product-about/product-about.component';
+import { ProductHelpComponent } from './product-help/product-help.component';
+import { ProductConactComponent } from './product-conact/product-conact.component';
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,14 @@ const routes: Routes = [
       {
         path: 'userlist',
         component: UserListComponent
+      },
+      {
+        path: 'product-conact',
+        component: ProductConactComponent
+      },
+      {
+        path: 'product-help',
+        component: ProductHelpComponent
       },
       {
         path: 'phone-list',

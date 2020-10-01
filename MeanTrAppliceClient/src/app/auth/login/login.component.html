@@ -1,54 +1,63 @@
-<div class="container">
-    <app-message></app-message>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-
-            <div class="signup-form">
-                <form [formGroup]="loginForm" class="form-2" (ngSubmit)="onSubmit()">
-                    <div class="trappolice"></div>
-                    <hr />
-                    <div class="form-group">
-                        <div class="form-row row justify-content-center ">
-                            <mat-form-field class="col-md-5">
-                                <mat-label>שם משתמש</mat-label>
-                                <input formControlName="username" class="form-control" required matInput>
-                                <small class="error" *ngIf="controlsLogin.username.invalid && (controlsLogin.username.dirty || controlsLogin.username.touched)">
-                                  <div *ngIf="controlsLogin.username.hasError('required')">אנא הזן שם משתמש</div>
-
-                              </small>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-row row justify-content-center ">
-                            <mat-form-field class="col-md-5">
-                                <mat-label>סיסמא</mat-label>
-                                <input formControlName="password" type="password" class="form-control" required matInput>
-                                <small class="error" *ngIf="controlsLogin.password.invalid && (controlsLogin.password.dirty || controlsLogin.password.touched)">
-                                  <div *ngIf="controlsLogin.password.hasError('required')">אנא הזן סיסמא</div>
-
-                              </small>
-                            </mat-form-field>
-
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-row row justify-content-center ">
-
-                            <div class="col-md-6">
-                                <button class="btn btn-info btn-lg" type="submit">
-                                  <i class="glyphicon glyphicon-log-in"></i>
-                                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                                  התחבר
-                                </button>
-
-                            </div>
+<app-message> </app-message>
+<div class="row justify-content-center">
+    <div class="form-2">
 
 
-                        </div>
-                    </div>
-                </form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="trappolice"></div>
+
+            <hr />
+            <div class="login">
+                <br>
+                <br>
+                <br>
+                <br>
+                <mat-form-field>
+                    <label for="username">שם משתמש</label>
+                    <input type="text" formControlName="username" class="form-control" required matInput>
+                    <small class="error" *ngIf="controlsLogin.username.invalid && (controlsLogin.username.dirty || controlsLogin.username.touched)">
+            <div *ngIf="controlsLogin.username.hasError('required')">אנא הזן שם משתמש</div>
+
+          </small>
+                </mat-form-field>
+
+                <br>
+
+
+                <mat-form-field>
+                    <label for="password">סיסמא</label>
+                    <input formControlName="password" type="password" class="form-control" required matInput>
+                    <small class="error" *ngIf="controlsLogin.password.invalid && (controlsLogin.password.dirty || controlsLogin.password.touched)">
+            <div *ngIf="controlsLogin.password.hasError('required')">אנא הזן סיסמא</div>
+
+          </small>
+                </mat-form-field>
+
+
+                <br>
+
+                <button class="btn btn-success" type="submit">
+          <i class="glyphicon glyphicon-log-in"></i>
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          התחבר
+        </button>
+
+
+
+
+
+
             </div>
-        </div>
+
+        </form>
+
     </div>
+
 </div>
+<p class="login-text row justify-content-center">
+    <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <i class="fa fa-lock fa-stack-1x"></i>
+  </span>
+</p>
+<div class="shadow"></div>

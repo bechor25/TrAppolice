@@ -13,10 +13,11 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns = ['last_name','first_name','rank'];
+  displayedColumns = ['rank','first_name','last_name'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<User>;
+
   rows: User[] = [];
   desserts :User[]= [];
   sortedData :User[] = [];

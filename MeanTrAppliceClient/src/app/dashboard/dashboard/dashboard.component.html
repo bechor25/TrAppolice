@@ -1,5 +1,7 @@
 <div class="form-3 ">
-    <h3 style="text-align:center"> חיפוש נוסחי אישום</h3>
+    <div class="header" style="text-align: center;">
+        <div><span>חיפוש </span>עבירה</div>
+    </div>
     <div class="row justify-content-md-center ">
 
     </div>
@@ -16,6 +18,6 @@
     </div>
     <hr>
     <div class="pdf-container">
-        <pdf-viewer [src]="src" [original-size]="false"></pdf-viewer>
+        <pdf-viewer [src]="src" [stick-to-page]="true" [page]="1" [original-size]="true"></pdf-viewer>
     </div>
 </div>

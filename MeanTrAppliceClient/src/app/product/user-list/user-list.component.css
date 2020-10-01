@@ -15,18 +15,23 @@
 }
 
 .mat-form-field {
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
     text-align: right;
+    font-family: 'Open Sans Hebrew', serif;
 }
 
 .mat-table {
     overflow: auto;
     max-height: 500px;
     text-align: right;
+    font-size: 16px;
+    font-family: 'Open Sans Hebrew', serif;
 }
 
 .mat-header-cell {
+    font-size: 16px;
+    font-family: 'Open Sans Hebrew', serif;
     display: flex;
     justify-content: center;
     padding: 1.5rem 0;
@@ -36,6 +41,8 @@
 }
 
 .mat-cell {
+    font-size: 16px;
+    font-family: 'Open Sans Hebrew', serif;
     display: flex;
     justify-content: center;
 }

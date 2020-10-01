@@ -1,0 +1,54 @@
+<div class="form-3 ">
+    <h1 class=" row justify-content-md-center">
+        צור קשר / פנייה
+    </h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row justify-content-md-start">
+
+            <mat-form-field>
+                <mat-label for="Type_Contact">סוג פנייה</mat-label>
+                <mat-select formControlName="Type_Contact" required>
+                    <mat-option>----</mat-option>
+                    <mat-option value="דיווח על תקלה">דיווח על תקלה</mat-option>
+                    <mat-option value="שיפור המערכת">שיפור המערכת</mat-option>
+                    <mat-option value="פניה למפתחים">פניה למפתחים</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+        <div class="form-group row justify-content-md-start">
+            <mat-form-field style="width:80%">
+                <mat-label>תיאור הפנייה</mat-label>
+                <textarea rows="10" cols="50" formControlName="description" class="form-control" required pattern="[\u0590-\u05FF\s]{1,}" matInput></textarea>
+                <small class="error" *ngIf="f.description.invalid && (f.description.dirty || f.description.touched)">
+                    <div *ngIf="f.description.hasError('required')">שדה חובה</div>
+                    <div *ngIf="f.description.hasError('pattern')">נא להזין אותיות בעברית בלבד</div>
+                </small>
+            </mat-form-field>
+
+        </div>
+        <div class="form-group row justify-content-md-start ">
+
+            <mat-form-field style="width:50%">
+                <mat-label>איימל</mat-label>
+                <input formControlName="Contact_email" class="form-control" placeholder="example@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" matInput>
+                <small class="error" *ngIf="f.Contact_email.invalid && (f.Contact_email.dirty || f.Contact_email.touched)">
+
+                    <div *ngIf="f.Contact_email.hasError('pattern')">נא להזין איימל תקין</div>
+                </small>
+            </mat-form-field>
+
+
+        </div>
+        <div class="form-group row justify-content-md-center">
+            <div class="form-row">
+                <button class="btn btn-success">שלח</button>
+            </div>
+        </div>
+    </form>
+
+
+    <hr>
+    <div class="trappolice"></div>
+
+</div>

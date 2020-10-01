@@ -5,7 +5,8 @@ import {  FormBuilder, FormGroup, Validators, FormsModule, FormControl,NgForm } 
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { SweetAlertOptions } from 'sweetalert2';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-create-product',
   templateUrl: './create-product.component.html',
@@ -13,39 +14,77 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CreateProductComponent implements OnInit {
   @ViewChild('sPad', {static: true}) signaturePadElement;
+alertOpt: SweetAlertOptions = {};
+  signaturePad: any;
   isLinear = false;
   productForm: FormGroup;
   model: Product;
   title: string;
+
+  dataURL:any;
   productId: number;
 
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+
   ) { }
 
+
   ngOnInit() {
+
     this.title = "טופס הנפקת דוחות";
     this.createForm();
-
-    // edit product
+    this.signaturePad = this.signaturePadElement.nativeElement;
     this.productId = +this.route.snapshot.paramMap.get('id');
     if(this.productId) {
       this.getProduct();
     }
   }
-  saveImage(data) {
-    this.productForm.controls.Citizen_Signture = data;
+
+  ngAfterViewInit(): void {
+    this.signaturePad = new SignaturePad(this.signaturePadElement.nativeElement);
   }
 
+  //download signature
+  download(dataURL, filename) {
+    if (navigator.userAgent.indexOf('Safari') > -1 && navigator.userAgent.indexOf('Chrome') === -1) {
+      window.open(dataURL);
+    } else {
+      const blob = this.dataURLToBlob(dataURL);
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+
+      document.body.appendChild(a);
+      a.click();
+
+      window.URL.revokeObjectURL(url);
+    }
+  }
+
+  dataURLToBlob(dataURL) {
+    const parts = dataURL.split(';base64,');
+    const contentType = parts[0].split(':')[1];
+    const raw = window.atob(parts[1]);
+    const rawLength = raw.length;
+    const uInt8Array = new Uint8Array(rawLength);
+    for (let i = 0; i < rawLength; ++i) {
+      uInt8Array[i] = raw.charCodeAt(i);
+    }
+    return new Blob([uInt8Array], { type: contentType });
+  }
+
+//controls form
   get f() { return this.productForm.controls; }
-
+//navigat page
   goBack() {
-    this.router.navigateByUrl('/backend/product');
+    this.router.navigateByUrl('/backend/cms');
   }
-
+//array report
   createForm() {
     this.productForm = this.fb.group({
       Whom: ['', Validators.required],
@@ -89,8 +128,10 @@ export class CreateProductComponent implements OnInit {
       is_active: [1]
     })
   }
-
+//send array
   onSubmit() {
+       this.dataURL = this.signaturePad.toDataURL();
+      console.log(`${this.dataURL}`);
     this.model = this.productForm.value;
     if (this.productId) {
       this.updateProduct();
@@ -98,15 +139,30 @@ export class CreateProductComponent implements OnInit {
       this.addProduct();
     }
   }
-
+//send
   addProduct() {
+    this.productForm.value.Citizen_Signture = this.dataURL
     this.model = this.productForm.value;
     this.productService.addProduct(this.model).subscribe(
       result => {
         console.log(result);
         if ( ! result.error) {
-          alert(`הדוח נשלח בהצלחה`);
-          this.router.navigateByUrl('/backend/cms');
+          Swal.fire({
+            title: 'האם להנפיק דוח זה?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: `הנפקה`,
+            denyButtonText: `חזור לדוח`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire('הופק', '', 'success')
+              this.router.navigateByUrl('/backend/cms');
+            } else if (result.isDenied) {
+              Swal.fire('הדוח לא נשמר בהצלחה', '', 'info')
+            }
+          })
+
         } else {
           alert('הדוח לא הונפק בהצלחה');
         }

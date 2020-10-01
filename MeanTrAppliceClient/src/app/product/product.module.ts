@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgModel, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
-import { SignaturePadModule } from '@ng-plus/signature-pad';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { RTL } from '@progress/kendo-angular-l10n';
 import { MatStepperModule } from '@angular/material/stepper'
@@ -25,12 +25,14 @@ import {  MatFormFieldModule } from '@angular/material/form-field';
 import { ProductListServerComponent } from './product-list-server/product-list-server.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { ProductAboutComponent } from './product-about/product-about.component';
-
+import { ProductHelpComponent } from './product-help/product-help.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ProductConactComponent } from './product-conact/product-conact.component';
 
 
 
 @NgModule({
-  declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent, PhoneListComponent, ProductAboutComponent],
+  declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent, PhoneListComponent, ProductAboutComponent, ProductHelpComponent, ProductConactComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -45,7 +47,9 @@ import { ProductAboutComponent } from './product-about/product-about.component';
     MatPaginatorModule,
     MatRadioModule,
     PDFExportModule,
-    SignaturePadModule
+    SweetAlert2Module.forRoot(),
+ PdfViewerModule
+
 
   ],
   providers:    [{ provide: RTL, useValue: true }],

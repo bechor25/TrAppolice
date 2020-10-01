@@ -1,5 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+    background-size: 100%;
+    overflow-x: hidden
+}
+
+body {
+    background-color: #4834d4;
+    background-image: linear-gradient(315deg, #4834d4 0%, #0c0c0c 74%);
+    background-size: 100%;
+    overflow-x: hidden
+}
+
+btn {
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 960px) {
+    #wrapper {
+        width: 758px;
+        overflow: hidden;
+    }
+    section {
+        width: 420px;
+    }
+    aside {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 758px) {
+    #wrapper {
+        width: 480px;
+    }
+    section,
+    aside {
+        float: none;
+        width: 440px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #wrapper {
+        max-width: 480px;
+        width: auto;
+        margin: 20px;
+    }
+    section,
+    aside {
+        float: none;
+        width: 92%;
+        padding: 4%;
+    }
+}
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 .label {
     color: white;
@@ -67,13 +121,13 @@ p {
     font-family: "DejaVu Sans", "italic", sans-serif;
     font-weight: 400;
     /* Size and position */
-    width: 60%;
+    width: 300px;
+    height: 500px;
     position: relative;
-    margin: 60px auto 30px;
     padding: 10px;
     overflow: hidden;
     /* Styles */
-    background: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+    background: linear-gradient(315deg, #b8c6db 0%, #b8c6db 74%);
     border-radius: 0.4em;
     border: 1px solid #191919;
     box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.08), 0 16px 10px -8px rgba(0, 0, 0, 0.6);
@@ -83,20 +137,36 @@ p {
     font-family: "DejaVu Sans", "italic", sans-serif;
     font-weight: 400;
     /* Size and position */
-    width: 80%;
+    width: 70%;
+    position: relative;
+    margin: 60px auto 30px;
+    padding: 30px;
+    overflow: hidden;
+    /* Styles */
+    background: linear-gradient(315deg, #b8c6db 0%, #b8c6db 74%);
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.08), 0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+
+.form-4 {
+    font-family: "DejaVu Sans", "italic", sans-serif;
+    font-weight: 400;
+    /* Size and position */
+    width: 60%;
     position: relative;
     margin: 60px auto 30px;
     padding: 10px;
     overflow: hidden;
     /* Styles */
-    background: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+    background: linear-gradient(315deg, #b8c6db 0%, #b8c6db 74%);
     border-radius: 0.4em;
     border: 1px solid #191919;
     box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.08), 0 16px 10px -8px rgba(0, 0, 0, 0.6);
 }
 
 .h1 {
-    font-family: "DejaVu Sans", "italic", sans-serif;
+    font-family: 'Open Sans Hebrew', serif;
     color: white;
 }
 
@@ -130,19 +200,6 @@ p {
     color: #ff0000
 }
 
-html {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-}
-
-body {
-    background-image: url('../../MeanTrAppliceClient/src/assets/bg.jpg');
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-}
-
 .trappolice {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -150,7 +207,7 @@ body {
     background-size: 20;
     background-repeat: no-repeat;
     background-position: top center;
-    height: 170px;
+    height: 180px;
 }
 
 .notfuond404 {
@@ -159,52 +216,4 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     height: 400px;
-}
-
-@media screen and (max-width: 960px) {
-    #wrapper {
-        width: 758px;
-        overflow: hidden;
-    }
-    section {
-        width: 420px;
-    }
-    aside {
-        width: 230px;
-    }
-}
-
-@media screen and (max-width: 758px) {
-    #wrapper {
-        width: 480px;
-    }
-    section,
-    aside {
-        float: none;
-        width: 440px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #wrapper {
-        max-width: 480px;
-        width: auto;
-        margin: 20px;
-    }
-    section,
-    aside {
-        float: none;
-        width: 92%;
-        padding: 4%;
-    }
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

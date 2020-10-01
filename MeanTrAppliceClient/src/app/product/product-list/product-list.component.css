@@ -10,7 +10,7 @@ p {
 
 .kendo-pdf-export {
     direction: rtl;
-    font-family: "DejaVu Sans", "italic", sans-serif;
+    font-family: 'Open Sans Hebrew', serif;
     font-size: 12px;
 }
 
@@ -28,21 +28,42 @@ p {
     font-size: 18px;
     padding: 20px 40px;
     text-align: right;
+    font-family: 'Open Sans Hebrew', serif;
 }
 
 .btn {
+    font-family: 'Open Sans Hebrew', serif;
     font-size: 18px;
-    padding: 10px 40px;
-    text-align: right;
+    width: 200px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: auto;
+    margin: 4px;
 }
 
 .mat-table {
+    font-family: 'Open Sans Hebrew', serif;
     overflow: auto;
     max-height: 500px;
     text-align: right;
 }
 
+.header div {
+    float: center;
+    color: #fff;
+    top: calc(60% - 35px);
+    left: calc(50% - 255px);
+    font-family: 'Open Sans Hebrew', serif;
+    font-size: 35px;
+    font-weight: 200;
+}
+
+.header div span {
+    color: #5379fa !important;
+}
+
 .mat-header-cell {
+    font-family: 'Open Sans Hebrew', serif;
     display: flex;
     justify-content: center;
     padding: 1.5rem 0;
@@ -52,6 +73,7 @@ p {
 }
 
 .mat-cell {
+    font-family: 'Open Sans Hebrew', serif;
     display: flex;
     justify-content: center;
 }
