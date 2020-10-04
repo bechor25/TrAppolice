@@ -10,6 +10,7 @@ import { PhoneListComponent } from './phone-list/phone-list.component';
 import { ProductAboutComponent } from './product-about/product-about.component';
 import { ProductHelpComponent } from './product-help/product-help.component';
 import { ProductConactComponent } from './product-conact/product-conact.component';
+import { ProductUpdateComponent } from './product-update/product-update.component';
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: '',
         component: ProductListComponent
+      },
+      {
+        path: 'product-update',
+        component: ProductUpdateComponent
       },
       {
         path: 'userlist',

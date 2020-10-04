@@ -15,6 +15,9 @@ import { Case } from '../models/case';
 export class ProductService {
 
   private apiUrl = `${environment.apiUrl}/product`;
+  private apiUrlCount = `${environment.apiUrl}/product-dashbord`;
+  private apiUrlCountSim = `${environment.apiUrl}/product-countSympol`;
+
   private handleError: HandleError;
 
   httpOptions = {
@@ -31,14 +34,20 @@ export class ProductService {
   ) {
     this.handleError = this.httpErrorHandler.createHandleError('ProductService')
   }
-/*
-  getProducts(offset: number, limit: number) {
-    return this.http.get(`${this.apiUrl}/${offset}/${limit}`)
+
+  getCountSim() {
+    return this.http.get(`${this.apiUrlCountSim}`)
     .pipe(
-      catchError(this.handleError('getProducts', null))
+      catchError(this.handleError('getCountSim', null))
     )
   }
-  */
+
+  getCountProducts() {
+    return this.http.get(`${this.apiUrlCount}`)
+    .pipe(
+      catchError(this.handleError('getCountProducts', null))
+    )
+  }
   //get all reports between
   getProductDate(date1:number,date2:number) :Observable<Product[]>{
     return this.http.get<Product[]>(`${this.apiUrl}/${date1}/${date2}`)

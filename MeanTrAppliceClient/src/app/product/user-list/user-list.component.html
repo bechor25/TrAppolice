@@ -25,6 +25,13 @@
                 <mat-cell *matCellDef="let row"> {{row.rank}} </mat-cell>
             </ng-container>
 
+            <ng-container matColumnDef="id_rank">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>מספר אישי </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.id_rank}} </mat-cell>
+            </ng-container>
+
+
+
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;">
             </mat-row>

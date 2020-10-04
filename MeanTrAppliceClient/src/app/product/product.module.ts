@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgModel, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { RTL } from '@progress/kendo-angular-l10n';
@@ -13,6 +13,8 @@ import { MatOptionModule } from '@angular/material/core';
 import {   MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+
+
 
 
 import { ProductRoutingModule } from './product-routing.module';
@@ -28,11 +30,13 @@ import { ProductAboutComponent } from './product-about/product-about.component';
 import { ProductHelpComponent } from './product-help/product-help.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ProductConactComponent } from './product-conact/product-conact.component';
-
+import {GoogleCharts} from 'google-charts';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { ProductUpdateComponent } from './product-update/product-update.component';
 
 
 @NgModule({
-  declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent, PhoneListComponent, ProductAboutComponent, ProductHelpComponent, ProductConactComponent],
+  declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent, PhoneListComponent, ProductAboutComponent, ProductHelpComponent, ProductConactComponent, ProductUpdateComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -46,9 +50,12 @@ import { ProductConactComponent } from './product-conact/product-conact.componen
     MatSortModule,
     MatPaginatorModule,
     MatRadioModule,
-    PDFExportModule,
+
+    GoogleChartsModule,
     SweetAlert2Module.forRoot(),
- PdfViewerModule
+    MatFormFieldModule,
+ PdfViewerModule,
+
 
 
   ],

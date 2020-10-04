@@ -7,8 +7,9 @@ html {
 
 body {
     background-color: #4834d4;
-    background-image: linear-gradient(315deg, #4834d4 0%, #0c0c0c 74%);
+    background-image: url("https://images.vexels.com/media/users/3/174109/raw/9c4c064f2263249de7cef1c49162597d-black-abstract-background-design.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
     overflow-x: hidden
 }
 

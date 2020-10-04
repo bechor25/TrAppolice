@@ -1,21 +1,16 @@
-<div class="form-3 ">
-    <h3 style="text-align:center"> חיפוש נוסחי אישום</h3>
-    <div class="row justify-content-md-center ">
+<div class="form-3">
+    <div class="row justify-content-center">
+        <google-chart #chart [title]="title" [type]="type" [data]="dataTableData" [options]="options" [width]="width" [height]="height">
+
+        </google-chart>
 
     </div>
-    <div class="form-group">
-        <div class="form-row row justify-content-center">
+    <h1 style="color: white;" *ngFor="let itam of total">
+        {{itam.Rank_first_last_name_officer}} {{itam.total}}
 
-        </div>
-    </div>
-    <div class="mb form-row row justify-content-center">
-        <mat-form-field>
-            <input #queryInp matInput id="pdfQueryInput" type="text" placeholder="הזן סמל סעיף" [value]="pdfQuery" (input)="searchQueryChanged($event.target.value)" (keyup.enter)="searchQueryChanged(queryInp.value)">
-            <mat-label>חיפוש בחוברת נוסחי אישום</mat-label>
-        </mat-form-field>
-    </div>
-    <hr>
-    <div class="pdf-container">
-        <pdf-viewer [src]="src" [page]="1" [original-size]="true"></pdf-viewer>
-    </div>
+    </h1>
+
+    <h1 style="color: white;" *ngFor="let itam of totalSim">
+        {{itam.Offense_Number}} {{itam.total}}
+    </h1>
 </div>

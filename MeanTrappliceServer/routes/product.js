@@ -62,6 +62,17 @@ router.get('/:date1/:date2', function(req, res) {
     })
 
 })
+router.get('/userlist', function(req, res) {
+    model.getCountProducts(function(err, result) {
+        if (err) {
+            res.json(err)
+        } else {
+            console.log(result)
+            res.json({ total: result });
+        }
+    })
+})
+
 
 
 router.get('/', function(req, res) {

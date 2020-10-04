@@ -8,8 +8,8 @@ var passport = require('passport');
 
 require('./passport-config');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var productCountSympolRouter = require('./routes/product-countSympol');
+var productDashbordRouter = require('./routes/product-dashbord');
 var authRouter = require('./routes/auth');
 var productRouter = require('./routes/product');
 
@@ -26,10 +26,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+
 app.use('/auth', authRouter);
 app.use('/product', passport.authenticate('jwt', { session: false }), productRouter);
+app.use('/product-dashbord', passport.authenticate('jwt', { session: false }), productDashbordRouter);
+app.use('/product-countSympol', passport.authenticate('jwt', { session: false }), productCountSympolRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
