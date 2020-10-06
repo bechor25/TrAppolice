@@ -14,9 +14,6 @@ import {   MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-
-
-
 import { ProductRoutingModule } from './product-routing.module';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -36,7 +33,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 
 
 @NgModule({
-  declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent, PhoneListComponent, ProductAboutComponent, ProductHelpComponent, ProductConactComponent, ProductUpdateComponent],
+  declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent, PhoneListComponent, ProductAboutComponent, ProductHelpComponent, ProductConactComponent,ProductUpdateComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -50,6 +47,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     MatSortModule,
     MatPaginatorModule,
     MatRadioModule,
+
 
     GoogleChartsModule,
     SweetAlert2Module.forRoot(),

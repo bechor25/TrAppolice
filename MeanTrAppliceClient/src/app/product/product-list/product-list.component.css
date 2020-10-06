@@ -8,12 +8,6 @@ p {
     font-family: Lato;
 }
 
-.kendo-pdf-export {
-    direction: rtl;
-    font-family: 'Open Sans Hebrew', serif;
-    font-size: 12px;
-}
-
 .example-container {
     flex-direction: column;
     min-width: 300px;
@@ -29,6 +23,8 @@ p {
     padding: 20px 40px;
     text-align: right;
     font-family: 'Open Sans Hebrew', serif;
+    border-radius: 12px;
+    box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
 }
 
 .btn {
@@ -39,6 +35,8 @@ p {
     border-radius: 12px;
     margin-bottom: auto;
     margin: 4px;
+    border-radius: 12px;
+    box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
 }
 
 .mat-table {
@@ -63,10 +61,10 @@ p {
 }
 
 .mat-header-cell {
+    font-size: 16px;
     font-family: 'Open Sans Hebrew', serif;
     display: flex;
     justify-content: center;
-    padding: 1.5rem 0;
     color: rgb(255, 255, 255);
     text-align: center;
     background-color: #333;
@@ -76,4 +74,47 @@ p {
     font-family: 'Open Sans Hebrew', serif;
     display: flex;
     justify-content: center;
+}
+
+hr {
+    width: 300px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    overflow: auto;
+    max-height: 500px;
+}
+
+table tr:nth-child(2n-1) td {
+    background: #F5F5F5;
+}
+
+table th,
+table td {
+    text-align: center;
+}
+
+table th {
+    padding: 5px 20px;
+    width: 120px;
+    height: 30px;
+    color: #ebebeb;
+    background-color: #5379fa;
+    border: 1px solid #1c374d;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+table td {
+    padding: 5px 20px;
+    width: 120px;
+    height: 30px;
+    color: #050505;
+    border: 1px solid #1c374d;
+    white-space: nowrap;
+    font-weight: normal;
 }

@@ -8,4 +8,5 @@ export interface User {
   rank:string;
   token:string;
   is_active: boolean;
+  id_rank:number;
 }

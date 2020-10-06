@@ -1,11 +1,12 @@
-import { Component, ElementRef, OnInit ,ViewChild,AfterViewInit} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-
-import { jsPDF } from 'jspdf';
-import { Product } from '../models/product';
+import { TotalSim } from '../models/totalSim';
+import { MatSort, Sort } from '@angular/material/sort';
+import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { TotalUser } from '../models/totalUser';
 import { ProductService } from '../services/product.service';
-declare var jQuery: any;
+
 
 
 @Component({
@@ -14,36 +15,48 @@ declare var jQuery: any;
   styleUrls: ['./product-list-server.component.scss']
 })
 export class ProductListServerComponent implements OnInit {
-  title = 'כמות דוחות לפי שוטרים';
-  type = 'ColumnChart';
+
+  displayedColumns = ['Rank_first_last_name_officer','total'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  dataSource: MatTableDataSource<TotalUser>;
+  desserts : TotalUser[]=[];
+  sortedData : TotalUser[]=[];
+  total: TotalUser[]=[];
 
 
-  columnNames = ['שמות שוטרים'];
-  options = {
-  };
-  width = 550;
-  height = 400;
+  dataSourceSim: MatTableDataSource<TotalSim>;
+  dessertsSim : TotalSim[]=[];
+  sortedDataSim : TotalSim[]=[];
+  totalSim: TotalSim []=[];
+  @ViewChild(MatPaginator) paginatorSim: MatPaginator;
+  @ViewChild(MatSort) sortSim: MatSort;
+  displayedColumnSim = ['Offense_Number','total'];
 
-  dataTableData:any;
-  total: any;
-  totalSim:any;
-  rows: Product[] = [];
+
   constructor(
     private productService: ProductService,
     private router: Router
-    ) {
-
-    }
+  ) {
+    this.sortedData = this.desserts.slice();
+    this.sortedDataSim = this.dessertsSim.slice();
+  }
 
   ngOnInit(): void {
     this.getCountProducts();
     this.getCountSim();
+
   }
 
   getCountSim() {
     this.productService.getCountSim().subscribe(
       result => {
         this.totalSim = result.total;
+        this.dessertsSim = result.total;
+        this.sortedDataSim= result.total;
+        this.dataSourceSim = new MatTableDataSource(result.total);
+        this.dataSourceSim.paginator = this.paginatorSim;
+        this.dataSourceSim.sort = this.sortSim;
       }
     )
   }
@@ -52,15 +65,11 @@ export class ProductListServerComponent implements OnInit {
     this.productService.getCountProducts().subscribe(
       result => {
         this.total = result.total;
-
-        this.dataTableData = ([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ])
-
+        this.desserts = result.total;
+        this.sortedData= result.total;
+        this.dataSource = new MatTableDataSource(result.total);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       }
     )
   }

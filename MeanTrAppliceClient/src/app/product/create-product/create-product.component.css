@@ -1,9 +1,31 @@
 .mat-stepper-vertical {
     margin-top: 2px;
     opacity: 1;
+    font-size: 16px;
+    text-align: right;
     background-color: #b8c6db;
     background-image: linear-gradient(315deg, #b8c6db 0%, #b8c6db 74%);
     font-family: 'Open Sans Hebrew', serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    overflow: auto;
+    max-height: 500px;
+    background-color: #ebebeb;
+}
+
+th {
+    background-color: #303031;
+    border: 1px solid #3079b4;
+    color: #ebebeb;
+}
+
+td {
+    border: 1px solid #3079b4;
 }
 
 .header div {
@@ -22,16 +44,32 @@
 }
 
 .mat-form-field {
-    font-size: 16px;
+    font-size: 18px;
     text-align: right;
     font-family: 'Open Sans Hebrew', serif;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
+}
+
+.strong {
+    width: 80%;
 }
 
 .mat-radio-button {
+    font-size: 18px;
     background-color: transparent;
     font-family: 'Open Sans Hebrew', serif;
 }
 
 canvas {
     border: 1px solid rgb(197, 3, 3);
+}
+
+.btn {
+    font-family: 'Open Sans Hebrew', serif;
+    font-size: 18px;
+    width: 150px;
+    border-radius: 12px;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
 }

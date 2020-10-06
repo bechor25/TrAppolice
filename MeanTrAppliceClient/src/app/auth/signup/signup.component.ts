@@ -38,6 +38,7 @@ export class SignupComponent implements OnInit {
       last_name: [''],
       authorization: ['', Validators.required],
       rank: ['', Validators.required],
+      id_rank: ['', Validators.required],
     }, { validators: passwordMatchValidator })
   }
 

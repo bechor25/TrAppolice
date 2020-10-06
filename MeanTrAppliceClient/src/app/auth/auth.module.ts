@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
     AuthRoutingModule,
     SharedModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ]
 })
 export class AuthModule { }

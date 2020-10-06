@@ -1,10 +1,10 @@
-<nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class=" navbar navbar-expand-md navbar-light  border-bottom ">
     <div class="header " routerLink="/backend/cms">
         <div>TrAap<span>police</span></div>
     </div>
 
-    <button class="navbar-toggler md-form my-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler md-form my-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" ></span>
   </button>
 
     <div class="navbar-collapse " id="navbarCollapse">
@@ -17,19 +17,20 @@
                 <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              אפשרויות
               </a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a *ngIf="user.payload.authorization === 'Admin'" class="dropdown-item" routerLink="/backend/product">דוחות שהונפקו</a>
-                    <a class="dropdown-item" routerLink="/backend/product/create">הנפקת דוח</a>
-                    <a class="dropdown-item" routerLink="/backend/dashboard">חיפוש עבירה</a>
-                    <a class="dropdown-item" routerLink="/backend/product/product-update">עידכונים ונהלים חדשים</a>
-                    <a *ngIf="user.payload.authorization === 'Admin'" class="dropdown-item" routerLink="/backend/auth">הרשמת שוטר למערכת</a>
-                    <a *ngIf="user.payload.authorization === 'Admin'" class="dropdown-item" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</a>
-                    <a class="dropdown-item" routerLink="/backend/product/phone-list">כתובות וטלפונים</a>
-                    <a class="dropdown-item" routerLink="/backend/product/product-about">אודות</a>
-                    <a class="dropdown-item" routerLink="/backend/product/product-help">עזרה</a>
-                    <a class="dropdown-item" routerLink="/backend/product/product-conact">צור קשר</a>
+                <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product">דוחות שהונפקו</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/product/create">הנפקת דוח</a></li>
+                    <li><a *ngIf="user.payload.authorization === 'Admin'" routerLink="/backend/product/userlist-server" class=" btn btn-info">סטטיסטקת דוחות</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/dashboard">חיפוש עבירה</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/product/product-update">עידכונים ונהלים חדשים</a></li>
+                    <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/auth">הרשמת שוטר למערכת</a></li>
+                    <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/product/phone-list">כתובות וטלפונים</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/product/product-about">אודות</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/product/product-help">עזרה</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/product/product-conact">צור קשר</a></li>
 
-                    <a routerLink="/backend/product/userlist-server" class="dropdown-item">בדיקות</a>
+
 
 
                 </div>
@@ -49,5 +50,6 @@
         </ul>
     </div>
 </nav>
+
 
 <app-message></app-message>

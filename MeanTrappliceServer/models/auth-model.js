@@ -10,6 +10,7 @@ let model = {
             last_name: input.last_name,
             authorization: input.authorization,
             rank: input.rank,
+            id_rank: input.id_rank,
             is_active: 1
         };
 

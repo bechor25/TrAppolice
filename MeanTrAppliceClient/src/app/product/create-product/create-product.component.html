@@ -1,7 +1,7 @@
-<div class="form-3 ">
+<div class="form-3 row justify-content-center " style="overflow-x:auto;">
 
     <div class="row" style="text-align: right;">
-        <div class="col-md-12">
+        <div class=" table-responsive-xl ">
 
             <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
                 <mat-vertical-stepper [linear]="isLinear" #stepper>
@@ -15,7 +15,7 @@
                         </div>
 
                         <hr />
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label for="Whom">מקבל הדוח</mat-label>
@@ -31,7 +31,7 @@
                         </div>
 
 
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>מספר רשיון נהיגה</mat-label>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>מספר ת.ז</mat-label>
@@ -58,7 +58,7 @@
                         </div>
 
 
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>שם פרטי</mat-label>
@@ -71,7 +71,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>שם משפחה</mat-label>
@@ -84,7 +84,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>עיר</mat-label>
@@ -97,7 +97,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>רחוב</mat-label>
@@ -111,7 +111,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>מספר בית</mat-label>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>נייד</mat-label>
@@ -138,7 +138,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>איימל</mat-label>
@@ -155,7 +155,7 @@
                     </mat-step>
                     <mat-step [stepControl]="productForm">
                         <ng-template matStepLabel>פרטי הרכב</ng-template>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label for="Plate_Type">סוג לוחית</mat-label>
@@ -172,7 +172,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>תוצר הרכב</mat-label>
@@ -185,7 +185,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>סוג הרכב</mat-label>
@@ -198,7 +198,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>צבע הרכב</mat-label>
@@ -211,7 +211,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>מספר הרכב</mat-label>
@@ -228,10 +228,10 @@
                     </mat-step>
                     <mat-step [stepControl]="productForm">
                         <ng-template matStepLabel>פרטי העבירה</ng-template>
-                        <strong class=" row justify-content-md-center col-md-10">
-                            :תיאור העובדות המהוות את העבירה
+                        <strong class=" row justify-content-md-center  ">
+                              תיאור העובדות המהוות את העבירה
                         </strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
 
                             <div class="form-row">
 
@@ -246,7 +246,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>שעה</mat-label>
@@ -259,7 +259,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label for="Offense_Place">מקום העבירה</mat-label>
@@ -274,7 +274,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>תיאור מיקום העבירה</mat-label>
@@ -286,10 +286,10 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <strong class="row justify-content-md-center col-md-10">
+                        <strong class="row justify-content-md-center  ">
                             סעיפי העבירה
                         </strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>עבירה על</mat-label>
@@ -302,7 +302,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>נקודות חובה</mat-label>
@@ -315,7 +315,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10 ">
+                        <div class="form-group row justify-content-md-center   ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>סמל סעיף</mat-label>
@@ -328,7 +328,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label for="Speedometer_Type">מכשור עזר בשימוש בדו"ח</mat-label>
@@ -343,10 +343,10 @@
 
                             </div>
                         </div>
-                        <strong class="row justify-content-md-center col-md-10">
-                          :את הקנס שנקבע לעבירה בחוק בסך
+                        <strong class="row justify-content-md-center ">
+                          את הקנס שנקבע לעבירה בחוק בסך
                         </strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>סכום הקנס בספרות</mat-label>
@@ -359,7 +359,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>סכום הקנס במילים</mat-label>
@@ -372,10 +372,10 @@
 
                             </div>
                         </div>
-                        <strong class="row justify-content-md-center col-md-10">
-                          :עליך לשלם במזומן תוך 90 ימים מקבלת הודעה זו, ולא יאוחר מיום
+                        <strong class="row justify-content-md-center ">
+                            עליך לשלם במזומן תוך 90 ימים מקבלת הודעה זו, ולא יאוחר מיום
                         </strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>תאריך אחרון לתשלום</mat-label>
@@ -388,15 +388,15 @@
 
                             </div>
                         </div>
-                        <strong class="row justify-content-md-center col-md-10">
+                        <strong class="row justify-content-md-center ">
                           .זולת אם תוך מועד זה תודיע/י שברצונך להישפט בבית משפט על העבירה
                         </strong>
                     </mat-step>
                     <!--step 4-->
                     <mat-step [stepControl]="productForm">
                         <ng-template matStepLabel> פרטי נסיבות\ העדים </ng-template>
-                        <strong class="row justify-content-md-center col-md-10">פרטי העדים</strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <strong class="row justify-content-md-center ">פרטי העדים</strong>
+                        <div class="form-group row justify-content-md-center ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>ת.ז או מ.א</mat-label>
@@ -410,7 +410,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>שם העד</mat-label>
@@ -423,7 +423,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>ת.ז או מ.א</mat-label>
@@ -436,7 +436,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>שם העד</mat-label>
@@ -449,7 +449,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>נסיבות מיוחדות של המקרה</mat-label>
@@ -466,9 +466,9 @@
                     </mat-step>
                     <mat-step [stepControl]="productForm">
                         <ng-template matStepLabel>נסיבות נוספות</ng-template>
-                        <strong class=" row justify-content-md-center col-md-10">
+                        <strong class=" row justify-content-md-center  ">
                         בעבירת מהירות - המהירות שהוצגה במכשיר</strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>קמ"ש</mat-label>
@@ -481,9 +481,9 @@
 
                             </div>
                         </div>
-                        <strong class=" row justify-content-md-center col-md-10">
+                        <strong class=" row justify-content-md-center  ">
                           בעבירת מהירות שנמדדה באמצעות ממל"ז - המרחק שהוצג במכשיר</strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>מטר</mat-label>
@@ -496,7 +496,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label for="GivenNotGiven_Continuation_Of_The_Case">המשך נסיבות המקרה</mat-label>
@@ -513,7 +513,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>דברי מקבל הדוח</mat-label>
@@ -526,9 +526,9 @@
 
                             </div>
                         </div>
-                        <strong class=" row justify-content-md-center col-md-10">
+                        <strong class=" row justify-content-md-center  ">
                          מאשר/ת קבלת ההודעה בתאריך</strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>מאשר קבלת מתאריך</mat-label>
@@ -541,7 +541,7 @@
 
                             </div>
                         </div>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <mat-form-field>
                                     <mat-label>דרגת השוטר ושם מלא</mat-label>
@@ -555,8 +555,8 @@
                             </div>
                         </div>
 
-                        <strong class=" row justify-content-md-center col-md-10">חתימת המקבל/ת</strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+                        <strong class=" row justify-content-md-center  ">חתימת המקבל/ת</strong>
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
                                 <div class="signature-pad">
                                     <div class="signature-pad--body" style="text-align: center;">
@@ -571,129 +571,160 @@
                     </mat-step>
                     <mat-step [stepControl]="productForm">
                         <ng-template matStepLabel>שליחת הדוח</ng-template>
-                        <strong class=" row justify-content-md-center col-md-12" style="color: red;">
+                        <strong class=" row justify-content-center   " style="color: red;">
                            !אנא וודא שכל פרטי הדוח תקינים ונכונים ואשר מטה</strong>
-                        <strong class=" row justify-content-md-center col-md-12" style="color: red;">
-                          דרגת השוטר ושם מלא:  {{productForm.value.Rank_first_last_name_officer}}</strong>
+                        <strong class=" row justify-content-center   " style="color: red;">
+                          דרגת השוטר ושם מלא    {{productForm.value.Rank_first_last_name_officer}}</strong>
 
-                        <div class="table-responsive ">
-                            <table class="table table-stripped table-bordered">
-                                <tr class="thead-dark text-right">
+                        <div>
+                            <table class="table table-responsive-xl  table-bordered" style="min-width: 200px;">
+                                <tr>
                                     <th>שם פרטי</th>
                                     <th>מספר ת.ז</th>
                                     <th>מספר רשיון נהיגה</th>
-                                    <th>מקבל הדוח</th>
+
                                 </tr>
-                                <tr class="text-right">
+                                <tr>
                                     <td>{{productForm.value.First_Name}}</td>
                                     <td>{{productForm.value.ID_Number}}</td>
                                     <td>{{productForm.value.DrivingLicenseNumber}}</td>
-                                    <td>{{productForm.value.Whom}}</td>
+
                                 </tr>
-                                <tr class="thead-dark text-right">
+                                <tr>
                                     <th>מספר בית</th>
                                     <th>רחוב</th>
                                     <th>עיר</th>
-                                    <th>שם משפחה</th>
+
 
                                 </tr>
-                                <tr class="text-right">
+                                <tr>
                                     <td>{{productForm.value.Home_Number}}</td>
                                     <td>{{productForm.value.Street}}</td>
                                     <td>{{productForm.value.City}}</td>
-                                    <td>{{productForm.value.Last_Name}}</td>
+
                                 </tr>
-                                <tr class="thead-dark text-right">
+                                <tr>
                                     <th>תוצר הרכב</th>
                                     <th>סוג לוחית</th>
                                     <th>איימל</th>
-                                    <th>שם נייד</th>
+
                                 </tr>
-                                <tr class="text-right">
+                                <tr>
                                     <td>{{productForm.value.Car_Manufacturer}}</td>
                                     <td>{{productForm.value.Plate_Type}}</td>
                                     <td>{{productForm.value.EMail}}</td>
+
+                                </tr>
+                                <tr>
+                                    <th>מקבל הדוח</th>
+                                    <th>שם משפחה</th>
+                                    <th>שם נייד</th>
+                                </tr>
+
+                                <tr>
+                                    <td>{{productForm.value.Whom}}</td>
+                                    <td>{{productForm.value.Last_Name}}</td>
                                     <td>{{productForm.value.Phone_Number}}</td>
                                 </tr>
-                                <tr class="thead-dark text-right">
+
+
+                                <tr>
                                     <th>שעה</th>
                                     <th>תאריך</th>
                                     <th>צבע הרכב</th>
-                                    <th>סוג הרכב</th>
+
                                 </tr>
-                                <tr class="text-right">
+                                <tr>
                                     <td>{{productForm.value.Hour}}</td>
                                     <td>{{productForm.value.Date}}</td>
                                     <td>{{productForm.value.Car_Color}}</td>
-                                    <td>{{productForm.value.Car_Type}}</td>
+
                                 </tr>
-                                <tr class="thead-dark text-right">
+                                <tr>
                                     <th>נקודות</th>
                                     <th>סעיפי עבירה</th>
                                     <th>תיאור מיקום העבירה</th>
-                                    <th>מקום העבירה</th>
+
                                 </tr>
-                                <tr class="text-right">
+                                <tr>
                                     <td>{{productForm.value.Points}}</td>
                                     <td>{{productForm.value.Offense_Description}}</td>
                                     <td>{{productForm.value.Offense_Place_Description}}</td>
-                                    <td>{{productForm.value.Offense_Place}}</td>
+
                                 </tr>
-                                <tr class="thead-dark text-right">
+                                <tr>
                                     <th>סכום הקנס במילים</th>
                                     <th>סכום הקנס בספרות</th>
                                     <th>מכשור עזר בשימוש בדו"ח</th>
-                                    <th>סמל סעיף</th>
+
                                 </tr>
-                                <tr class="text-right">
+                                <tr>
                                     <td>{{productForm.value.Report_Amount_inWords}}</td>
                                     <td>{{productForm.value.Report_Amount}}</td>
                                     <td>{{productForm.value.Speedometer_Type}}</td>
+
+                                </tr>
+                                <tr>
+                                    <th>סוג הרכב</th>
+                                    <th>מקום העבירה</th>
+                                    <th>סמל סעיף</th>
+                                </tr>
+                                <tr>
+                                    <td>{{productForm.value.Car_Type}}</td>
+                                    <td>{{productForm.value.Offense_Place}}</td>
                                     <td>{{productForm.value.Offense_Number}}</td>
                                 </tr>
-                                <tr class="thead-dark text-right">
-                                    <th>מ.א או ת.ז עד שני</th>
+                                <tr>
+
                                     <th>שם מלא</th>
                                     <th> מ.א או ת.ז עד ראשון</th>
                                     <th>תאריך אחרון לתשלום</th>
                                 </tr>
-                                <tr class="text-right">
-                                    <td>{{productForm.value.Second_Witness_ID}}</td>
+                                <tr>
+
                                     <td>{{productForm.value.First_Witness_Full_Name}}</td>
                                     <td>{{productForm.value.First_Witness_ID}}</td>
                                     <td>{{productForm.value.Last_Date_To_Pay}}</td>
                                 </tr>
-                                <tr class="thead-dark text-right">
-                                    <th>מרחק במטרים</th>
+                                <tr>
+
                                     <th>מהירות נסיעה</th>
                                     <th> נסיבות מיוחדות של המקרה</th>
                                     <th>שם מלא</th>
                                 </tr>
-                                <tr class="text-right">
-                                    <td>{{productForm.value.Distance}}</td>
+                                <tr>
+
                                     <td>{{productForm.value.Kmh}}</td>
                                     <td>{{productForm.value.Full_Description}}</td>
                                     <td>{{productForm.value.Second_Witness_Full_Name}}</td>
                                 </tr>
-                                <tr class="thead-dark text-right">
+                                <tr>
 
                                     <th>מספר רכב</th>
                                     <th> תאריך אישור קבלת הדוח</th>
+                                    <th>דברי מקבל הדוח</th>
 
-                                    <th>המשך נסיבות המקרה</th>
                                 </tr>
-                                <tr class="text-right">
-
+                                <tr>
                                     <td>{{productForm.value.Car_Number}}</td>
                                     <td>{{productForm.value.Citizen_Date_Confirmed}}</td>
+                                    <td>{{productForm.value. Citizen_Testimony}}</td>
 
+                                </tr>
+                                <tr>
+                                    <th>מ.א או ת.ז עד שני</th>
+                                    <th>מרחק במטרים</th>
+                                    <th>המשך נסיבות המקרה</th>
+                                </tr>
+                                <tr>
+                                    <td>{{productForm.value.Second_Witness_ID}}</td>
+                                    <td>{{productForm.value.Distance}}</td>
                                     <td>{{productForm.value. GivenNotGiven_Continuation_Of_The_Case}}</td>
-
                                 </tr>
 
                             </table>
                         </div>
-                        <div class="form-group row justify-content-md-center  ">
+                        <div class="form-group row justify-content-center  ">
                             <div class="form-row">
                                 <mat-radio-group formControlName="is_active" aria-label="Select an option">
                                     <mat-label class="form-row">האם אתה מאשר דוח זה</mat-label>
@@ -705,10 +736,10 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="form-row">
+                            <div class="form-row justify-content-center">
 
-                                <button class="btn btn-outline-success btn-lg mr-2">הנפקה</button>
-                                <button class="btn btn-outline-danger btn-lg mr-2" (click)="goBack()">ביטול</button>
+                                <button class="btn btn-success  mr-2">הנפקה</button>
+                                <button class="btn btn-danger  mr-2" (click)="goBack()">ביטול</button>
 
                             </div>
                         </div>
@@ -724,8 +755,8 @@
         </div>
     </div>
 </div>
-<!--<strong class=" row justify-content-md-center col-md-10">חתימת המקבל/ת</strong>
-                        <div class="form-group row justify-content-md-center col-md-10">
+<!--<strong class=" row justify-content-md-center  ">חתימת המקבל/ת</strong>
+                        <div class="form-group row justify-content-md-center  ">
                             <div class="form-row">
 
                                 <ng-signature-pad format="base64" (done)="saveImage($event)">

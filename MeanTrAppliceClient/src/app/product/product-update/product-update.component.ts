@@ -12,7 +12,7 @@ export class ProductUpdateComponent implements OnInit {
   @ViewChild(PdfViewerComponent) private pdfComponent: PdfViewerComponent;
 
   src =
-  "https://raw.githubusercontent.com/bechor25/TrAppolice/2b89a224fd6e76aea276f831137fb1c456f74550/hana_v9.35.93s.pdf";
+  "https://raw.githubusercontent.com/bechor25/TrAppolice/d8f2121a2e8b399a37be309927e563814ed6f577/%D7%94%D7%A0%D7%97%D7%99%D7%99%D7%AA%20%D7%9E%D7%A0%D7%94%D7%9C%D7%AA%20%D7%A7%D7%95%D7%A8%D7%95%D7%A0%D7%94%20%D7%9E%D7%A1'%2030%20-%20%D7%94%D7%92%D7%91%D7%9C%D7%AA%20%D7%94%D7%A9%D7%94%D7%99%D7%99%D7%94%20%D7%91%D7%9E%D7%A8%D7%97%D7%91%20%D7%94%D7%A6%D7%99%D7%91%D7%95%D7%A8%D7%99%20%D7%95%D7%94%D7%92%D7%91%D7%9C%D7%AA%20%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA%20-%20....pdf";
 
   constructor() { }
 
