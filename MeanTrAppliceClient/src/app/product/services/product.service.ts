@@ -17,6 +17,8 @@ export class ProductService {
   private apiUrl = `${environment.apiUrl}/product`;
   private apiUrlCount = `${environment.apiUrl}/product-dashbord`;
   private apiUrlCountSim = `${environment.apiUrl}/product-countSympol`;
+  private apiUrlCountMoney = `${environment.apiUrl}/product-countMoney`;
+
 
   private handleError: HandleError;
 
@@ -35,6 +37,12 @@ export class ProductService {
     this.handleError = this.httpErrorHandler.createHandleError('ProductService')
   }
 
+  getCountMoney() {
+    return this.http.get(`${this.apiUrlCountMoney}`)
+    .pipe(
+      catchError(this.handleError('getCountMoney', null))
+    )
+  }
   getCountSim() {
     return this.http.get(`${this.apiUrlCountSim}`)
     .pipe(

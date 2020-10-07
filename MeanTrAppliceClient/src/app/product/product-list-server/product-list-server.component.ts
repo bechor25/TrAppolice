@@ -6,7 +6,7 @@ import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { TotalUser } from '../models/totalUser';
 import { ProductService } from '../services/product.service';
-
+import { TotalMoney } from '../models/totalMoney'
 
 
 @Component({
@@ -34,18 +34,28 @@ export class ProductListServerComponent implements OnInit {
   displayedColumnSim = ['Offense_Number','total'];
 
 
+  dataSourceMoney: MatTableDataSource<TotalMoney>;
+  dessertsMoney : TotalMoney[]=[];
+  sortedDataMoney : TotalMoney[]=[];
+  totalMoney: TotalMoney []=[];
+  @ViewChild(MatPaginator) paginatorMoney: MatPaginator;
+  @ViewChild(MatSort) sortMoney: MatSort;
+  displayedColumnMoney = ['Report_Amount','total'];
+
+
   constructor(
     private productService: ProductService,
     private router: Router
   ) {
     this.sortedData = this.desserts.slice();
     this.sortedDataSim = this.dessertsSim.slice();
+    this.sortedDataMoney = this.dessertsMoney.slice();
   }
 
   ngOnInit(): void {
     this.getCountProducts();
     this.getCountSim();
-
+this.getCountMoney();
   }
 
   getCountSim() {
@@ -57,6 +67,19 @@ export class ProductListServerComponent implements OnInit {
         this.dataSourceSim = new MatTableDataSource(result.total);
         this.dataSourceSim.paginator = this.paginatorSim;
         this.dataSourceSim.sort = this.sortSim;
+      }
+    )
+  }
+
+  getCountMoney() {
+    this.productService.getCountMoney().subscribe(
+      result => {
+        this.totalMoney = result.total;
+        this.dessertsMoney = result.total;
+        this.sortedDataMoney= result.total;
+        this.dataSourceMoney = new MatTableDataSource(result.total);
+        this.dataSourceMoney.paginator = this.paginatorMoney;
+        this.dataSourceMoney.sort = this.sortMoney;
       }
     )
   }

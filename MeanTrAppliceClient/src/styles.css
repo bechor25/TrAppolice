@@ -11,6 +11,9 @@ body {
     background-size: 100%;
     overflow-x: hidden;
     line-height: 1.25;
+    direction: rtl;
+    font-size: 3em;
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -90,12 +93,6 @@ btn {
 
 @import "https://fonts.googleapis.com/earlyaccess/opensanshebrew.css";
 @import "https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css";
-body {
-    direction: rtl;
-    font-size: 3em;
-    -webkit-font-smoothing: antialiased;
-}
-
 @font-face {
     font-family: "DejaVu Sans";
     src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype");

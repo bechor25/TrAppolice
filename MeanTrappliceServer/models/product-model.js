@@ -2,6 +2,9 @@ var db = require("../db");
 var dateFormat = require('dateformat')
 
 let model = {
+    getCountMoney: (cb) => {
+        return db.query("SELECT COUNT(id) AS total, Report_Amount FROM products GROUP BY Report_Amount", cb);
+    },
     getCountSim: (cb) => {
         return db.query("SELECT COUNT(id) AS total, Offense_Number FROM products GROUP BY Offense_Number", cb);
     },

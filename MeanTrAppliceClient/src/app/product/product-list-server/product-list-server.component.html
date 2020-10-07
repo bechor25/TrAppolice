@@ -1,4 +1,5 @@
 <div class="form-3  ">
+    <br>
     <div class="header" style="text-align: center;">
         <div><span>סטטיסטיקת </span>דוחות</div>
     </div>
@@ -12,53 +13,80 @@
         <div><span>מספר </span>דוחות לשוטר</div>
     </div>
     <hr>
-
-    <mat-table [dataSource]="dataSource" matSort class=" table table-bordered table-responsive-xl   ">
-
-
-        <ng-container matColumnDef="Rank_first_last_name_officer">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> שם השוטר </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Rank_first_last_name_officer}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="total">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> סהכ דוחות </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
-        </ng-container>
+    <div class="row justify-content-center">
+        <mat-table [dataSource]="dataSource" matSort class=" table table-bordered table-responsive-xl   ">
 
 
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;">
-        </mat-row>
+            <ng-container matColumnDef="Rank_first_last_name_officer">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> שם השוטר </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Rank_first_last_name_officer}} </mat-cell>
+            </ng-container>
 
-    </mat-table>
+            <ng-container matColumnDef="total">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> סהכ דוחות </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
+            </ng-container>
 
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+
+        </mat-table>
+    </div>
 
 
     <div class="header" style="text-align: center;">
         <div><span>מספר </span>דוחות לפי סעיפים</div>
     </div>
     <hr>
-    <mat-table [dataSource]="dataSourceSim" matSort class=" table table-bordered table-responsive-xl bg-light text-dark  mat-elevation-z8">
+    <div class="row justify-content-center">
+        <mat-table [dataSource]="dataSourceSim" matSort class=" table table-bordered table-responsive-xl bg-light text-dark  mat-elevation-z8">
 
 
-        <ng-container matColumnDef="Offense_Number">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> סמל סעיף </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Offense_Number}} </mat-cell>
-        </ng-container>
+            <ng-container matColumnDef="Offense_Number">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> סמל סעיף </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Offense_Number}} </mat-cell>
+            </ng-container>
 
-        <ng-container matColumnDef="total">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> סהכ דוחות </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
-        </ng-container>
+            <ng-container matColumnDef="total">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> סהכ דוחות </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
+            </ng-container>
 
 
-        <mat-header-row *matHeaderRowDef="displayedColumnSim"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumnSim;">
-        </mat-row>
+            <mat-header-row *matHeaderRowDef="displayedColumnSim"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumnSim;">
+            </mat-row>
 
-    </mat-table>
+        </mat-table>
+    </div>
 
+    <div class="header" style="text-align: center;">
+        <div><span>מספר </span>לפי סכום הקנס</div>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        <mat-table [dataSource]="dataSourceMoney" matSort class=" table table-bordered table-responsive-xl bg-light text-dark  mat-elevation-z8">
+
+
+            <ng-container matColumnDef="Report_Amount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> סכום הקנס </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Report_Amount}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="total">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> סהכ דוחות </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumnMoney"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumnMoney;">
+            </mat-row>
+
+        </mat-table>
+    </div>
 
 
 
