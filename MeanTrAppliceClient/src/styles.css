@@ -6,8 +6,8 @@ html {
 }
 
 body {
-    background-color: #1b2845;
-    background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #434343 100%);
     background-size: 100%;
     overflow-x: hidden;
     line-height: 1.25;
@@ -154,8 +154,9 @@ p {
     overflow: hidden;
     color: rgb(255, 245, 245);
     /* Styles */
-    background-color: #000000;
-    background-image: linear-gradient(147deg, #000000 0%, #434343 90%);
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+    box-shadow: 10px 50px 100px rgba(38, 57, 70, 0.7);
     border-radius: 0.4em;
     border: 1px solid #191919;
     box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.08), 0 16px 10px -8px rgba(0, 0, 0, 0.6);
