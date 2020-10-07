@@ -1,6 +1,14 @@
 <div class="form-3">
-    <h1 style="text-align: center;">חיפוש שוטרים לפי שם פרטי/ משפחה/ שם משתמש</h1>
-    <div class="example-header">
+    <br>
+    <div class="header" style="text-align: center;">
+        <div><span>חיפוש </span>שוטרים</div>
+
+        <br>
+        <p>אפשרויות חיפוש על פי</p>
+
+        <p>שם שוטר / מספר אישי / דרגה</p>
+    </div>
+    <div class="example-header row justify-content-center">
         <mat-form-field>
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="הזן מילת חיפוש">
         </mat-form-field>
