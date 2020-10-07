@@ -99,8 +99,8 @@
             <ng-container matColumnDef="More_details">
                 <mat-header-cell *matHeaderCellDef> פרטים נוספים </mat-header-cell>
                 <mat-cell *matCellDef="let row">
-                    <button mat-button *ngIf="!viewDiteilsReport" class="btn btn-lg btn-info " (click)="viewDiteilsReport=true && viewId=row.id">פרטים נוספים</button>
-                    <button mat-button *ngIf="viewDiteilsReport && viewId==row.id" class="btn btn-lg btn-danger" (click)="viewDiteilsReport=false">סגור</button>
+                    <button mat-button *ngIf="!viewDiteilsReport" class="btn btn-info btn-responsive" (click)="viewDiteilsReport=true && viewId=row.id">פרטים נוספים</button>
+                    <button mat-button *ngIf="viewDiteilsReport && viewId==row.id" class="btn btn-danger btn-responsive" (click)="viewDiteilsReport=false">סגור</button>
                 </mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -120,9 +120,9 @@
             </div>
 
             <tr>
-                <th><button class="btn btn-success "> {{row.id}} - מספר דוח </button></th>
-                <th><button [routerLink]="['/backend/product/edit', row.id]" class="btn btn-info ">{{row.id}} - עריכת דוח</button></th>
-                <th><button href="javascript:void(0)" class="btn btn-danger " (click)="deleteProduct(row.id)">{{row.id}} - מחיקת דוח</button></th>
+                <th><button class="btn btn-success btn-responsive"> {{row.id}} - מספר דוח </button></th>
+                <th><button [routerLink]="['/backend/product/edit', row.id]" class="btn btn-info btn-responsive">{{row.id}} - עריכת דוח</button></th>
+                <th><button href="javascript:void(0)" class="btn btn-danger btn-responsive" (click)="deleteProduct(row.id)">{{row.id}} - מחיקת דוח</button></th>
 
             </tr>
 

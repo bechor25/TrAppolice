@@ -8,13 +8,13 @@
 
     <ul class=" blue text-white d-flex align-items-center justify-content-between px-2 description-txt" style="text-align: center;">
         <li><a class="btn btn-info " routerLink="/backend/cms"> עמוד ראשי</a></li>
-        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product">דוחות שהונפקו</a></li>
-        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product/userlist-server"> סטטיסטקת דוחות</a></li>
         <li><a class="btn btn-info " routerLink="/backend/product/create">הנפקת דוח</a></li>
         <li> <a class="btn btn-info" routerLink="/backend/dashboard">חיפוש עבירה</a></li>
+        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product">דוחות שהונפקו</a></li>
+        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product/userlist-server"> סטטיסטקת דוחות</a></li>
         <li><a class="btn btn-info" routerLink="/backend/product/product-update">עידכונים ונהלים חדשים</a></li>
         <li *ngIf="user.payload.authorization === 'Admin'"> <a class="btn btn-info" routerLink="/backend/auth">הרשמת שוטר למערכת</a></li>
-        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</a></li>
+        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product/userlist">נתוני שוטרים במערת</a></li>
         <li> <a class="btn btn-info" routerLink="/backend/product/phone-list"> כתובות וטלפונים</a></li>
         <li><a class="btn btn-info" routerLink="/backend/product/product-about">אודות</a></li>
         <li><a class="btn btn-info" routerLink="/backend/product/product-help">עזרה</a></li>

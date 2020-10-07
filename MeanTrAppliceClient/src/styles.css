@@ -24,10 +24,6 @@ https://images3.alphacoders.com/708/thumb-1920-708746.jpg
 https://images6.alphacoders.com/101/thumb-1920-1016956.jpg
 */
 
-btn {
-    border-radius: 12px;
-}
-
 @media screen and (max-width: 960px) {
     #wrapper {
         width: 758px;
@@ -57,11 +53,33 @@ btn {
     .mat-cell,
     .mat-header-cell,
     .mat-table {
+        border-spacing: 1px;
+        margin-bottom: 20px;
+        max-height: 500px;
         width: 100%;
-        margin-bottom: 15px;
-        overflow-y: hidden;
         -ms-overflow-style: -ms-autohiding-scrollbar;
         border: 1px solid #ddd;
+        font-size: x-small;
+        margin: auto;
+        padding: auto;
+    }
+    th,
+    td {
+        font-size: x-small;
+        padding: 2px 10px;
+    }
+    table {
+        width: 100%;
+        max-width: 100%;
+    }
+    .btn {
+        border: 1px solid #ddd;
+        padding: 2px 4px;
+        font-size: 80%;
+        border-radius: 3px;
+    }
+    strong {
+        font-size: x-small;
     }
     #wrapper {
         max-width: 480px;
@@ -74,16 +92,6 @@ btn {
         width: 92%;
         padding: 4%;
     }
-}
-
-.table-responsive {
-    min-height: .01%;
-    overflow-x: auto;
-}
-
-.table {
-    width: 100%;
-    max-width: 100%;
 }
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
