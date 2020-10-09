@@ -69,8 +69,11 @@ https://images6.alphacoders.com/101/thumb-1920-1016956.jpg
         padding: 2px 10px;
     }
     table {
-        width: 100%;
-        max-width: 100%;
+        width: 50%;
+        border-spacing: 1px;
+        margin-bottom: 10px;
+        max-height: 100%;
+        max-width: 50%;
     }
     .btn {
         border: 1px solid #ddd;

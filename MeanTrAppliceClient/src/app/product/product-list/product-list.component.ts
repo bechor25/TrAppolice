@@ -7,16 +7,18 @@ import { MatSort, Sort } from '@angular/material/sort';
 import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { jsPDF } from 'jspdf';
-declare let html2canvas: any;
 import { DomSanitizer } from '@angular/platform-browser';
-
+const html2canvas = require('html2canvas');
+declare var require: any
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
+
+
   displayedColumns = ['More_details','Rank_first_last_name_officer','ID_Number','Date'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -68,7 +70,19 @@ export class ProductListComponent implements OnInit {
    this.createFormIdNumber();
     this.getProductIdSearch(this.idSearch);
   }
+  save(fileName){
+    // First we get our section to save from dom
+    let section = document.querySelector('#mainContainer');
 
+    // We pass that section to html2Canvase
+    html2canvas(section).then(canvas => {
+      var link = document.createElement('a');
+      link.href = canvas.toDataURL();
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+    });
+  }
 
   get fIdNumber() { return this.productFormIDNumber.controls; }
   get f() { return this.productForm.controls; }

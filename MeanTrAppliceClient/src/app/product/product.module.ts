@@ -19,6 +19,7 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { ProductListComponent } from './product-list/product-list.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
 import { UserListComponent } from './user-list/user-list.component';
 import {  MatFormFieldModule } from '@angular/material/form-field';
 import { ProductListServerComponent } from './product-list-server/product-list-server.component';
@@ -30,7 +31,7 @@ import { ProductConactComponent } from './product-conact/product-conact.componen
 import {GoogleCharts} from 'google-charts';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { ProductUpdateComponent } from './product-update/product-update.component';
-
+MatCardModule
 
 @NgModule({
   declarations: [CreateProductComponent, ProductListComponent, UserListComponent, ProductListServerComponent, PhoneListComponent, ProductAboutComponent, ProductHelpComponent, ProductConactComponent,ProductUpdateComponent],
@@ -47,6 +48,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     MatSortModule,
     MatPaginatorModule,
     MatRadioModule,
+    MatCardModule,
 
 
     GoogleChartsModule,

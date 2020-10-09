@@ -96,12 +96,13 @@ table td {
 }
 
 table th {
-    color: #ebebeb;
-    background-color: #5379fa;
-    border: 1px solid #1c374d;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
 }
 
 table td {
     color: #050505;
-    border: 1px solid #1c374d;
+    background-color: #5f5b5b;
+    border: 1px solid #000000;
 }

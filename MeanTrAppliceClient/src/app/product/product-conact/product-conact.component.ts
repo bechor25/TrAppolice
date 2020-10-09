@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-product-conact',
   templateUrl: './product-conact.component.html',
-  styleUrls: ['./product-conact.component.css']
+  styleUrls: ['./product-conact.component.scss']
 })
 export class ProductConactComponent implements OnInit {
   alertOpt: SweetAlertOptions = {};
