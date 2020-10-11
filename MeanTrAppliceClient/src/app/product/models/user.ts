@@ -7,7 +7,7 @@ export interface User {
   first_name: string;
   last_name: string;
   rank:string;
-  id_rank:string;
+  id_rank:number;
   authorization:string;
   is_active: boolean;
 }

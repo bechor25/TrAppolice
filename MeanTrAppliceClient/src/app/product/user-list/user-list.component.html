@@ -38,6 +38,12 @@
                 <mat-cell *matCellDef="let row"> {{row.id_rank}} </mat-cell>
             </ng-container>
 
+            <ng-container matColumnDef="Remove">
+                <mat-header-cell *matHeaderCellDef scope="col"> פעולות נוספות </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-button class="btn btn-danger " (click)="deleteUser(row.id_rank)">מחק שוטר</button>
+                </mat-cell>
+            </ng-container>
 
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -16,6 +16,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.mat-cell,
+.mat-header-cell,
+.mat-table {
+    font-size: medium;
+}
+
 
 /*
 https://wallpaperaccess.com/full/473032.jpg
@@ -49,6 +55,12 @@ https://images6.alphacoders.com/101/thumb-1920-1016956.jpg
 }
 
 @media screen and (max-width: 480px) {
+    #btnSize {
+        font-size: x-small;
+    }
+    .btn {
+        margin-bottom: 8px;
+    }
     .table-responsive-xl,
     .mat-cell,
     .mat-header-cell,

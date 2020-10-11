@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { MatSort, Sort } from '@angular/material/sort';
 import {  MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-
+import { SweetAlertOptions } from 'sweetalert2';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-user-list',
@@ -13,7 +14,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns = ['rank','id_rank','first_name','last_name'];
+  displayedColumns = ['Remove','rank','id_rank','first_name','last_name'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<User>;
@@ -49,6 +50,34 @@ export class UserListComponent implements OnInit {
     )
   }
 
+  deleteUser(id_rank: number) {
+      this.productService.deleteUser(id_rank).subscribe(
+        result => {
+          console.log(result);
+          if ( ! result.error) {
+            Swal.fire({
+              title: 'האם אתה בטוח שברצונך למחוק שוטר זה מהמערכת?',
+              showDenyButton: true,
+              showCancelButton: true,
+              confirmButtonText: `מחיקה`,
+              denyButtonText: `חזור לרשימה`,
+            }).then((result) => {
+              /* Read more about isConfirmed, isDenied below */
+              if (result.isConfirmed) {
+                Swal.fire('השוטר נמחק מהמערכת הבצלחה', '', 'success')
+              } else if (result.isDenied) {
+                Swal.fire('השוטר לא נמחק מהמערכת', '', 'info')
+              }
+              this.rows = this.rows.filter(item => item.id_rank != id_rank);
+              this.router.navigateByUrl('/backend/cms');
+            })
+
+          } else {
+            alert('משהו השתבש במחיקה');
+          }
+        }
+      )
+    }
 
 
 

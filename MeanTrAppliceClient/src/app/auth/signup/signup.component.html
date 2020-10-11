@@ -57,7 +57,6 @@
                                     <mat-option>----</mat-option>
                                     <mat-option value="Admin">קצין</mat-option>
                                     <mat-option value="User">שוטר</mat-option>
-
                                 </mat-select>
                                 <small class="error" *ngIf="f.authorization.invalid && (f.authorization.dirty || f.authorization.touched)">
                         <div *ngIf="f.authorization.hasError('required')">שדה חובה</div>
@@ -79,18 +78,58 @@
 
                         </div>
                     </div>
-                    <div class="form-group">
+
+
+
+                    <div class="form-group" *ngIf="f.authorization.value == 'Admin' ">
                         <div class="form-row row justify-content-center">
                             <mat-form-field>
-                                <mat-label>דרגה</mat-label>
-                                <input formControlName="rank" class="form-control" required matInput/>
+                                <mat-label for="rank">דרגת הקצין</mat-label>
+                                <mat-select formControlName="rank" required>
+                                    <mat-option>----</mat-option>
+                                    <mat-option value="צוער">צוער</mat-option>
+                                    <mat-option value="מפקח משנה">מפקח משנה</mat-option>
+                                    <mat-option value="מפקח">מפקח</mat-option>
+                                    <mat-option value="פקד">פקד</mat-option>
+                                    <mat-option value="רב פקד">רב פקד</mat-option>
+                                    <mat-option value="סגן ניצב">סגן ניצב</mat-option>
+                                    <mat-option value="ניצב משנה">ניצב משנה</mat-option>
+                                    <mat-option value="תת ניצב">תת ניצב</mat-option>
+                                    <mat-option value="ניצב">ניצב</mat-option>
+                                </mat-select>
                                 <small class="error" *ngIf="f.rank.invalid && (f.rank.dirty || f.rank.touched)">
-                                <div *ngIf="f.rank.hasError('required')">שדה חובה</div>
-
-                            </small>
+                      <div *ngIf="f.rank.hasError('required')">שדה חובה</div>
+                    </small>
                             </mat-form-field>
                         </div>
                     </div>
+
+                    <div class="form-group" *ngIf="f.authorization.value == 'User' ">
+                        <div class="form-row row justify-content-center">
+                            <mat-form-field>
+                                <mat-label for="rank">דרגת השוטר</mat-label>
+                                <mat-select formControlName="rank" required>
+                                    <mat-option>----</mat-option>
+
+                                    <mat-option value="שוטר">שוטר</mat-option>
+                                    <mat-option value="רב-שוטר">רב-שוטר</mat-option>
+                                    <mat-option value="סמל שני">סמל שני</mat-option>
+                                    <mat-option value="סמל ראשון">סמל ראשון</mat-option>
+                                    <mat-option value="רב-סמל">רב-סמל</mat-option>
+                                    <mat-option value="רב-סמל ראשון">רב-סמל ראשון</mat-option>
+                                    <mat-option value="רב-סמל מתקדם">רב-סמל מתקדם</mat-option>
+                                    <mat-option value="רב-סמל בכיר">רב-סמל בכיר</mat-option>
+                                    <mat-option value="רב-נגד">רב-נגד</mat-option>
+
+                                </mat-select>
+                                <small class="error" *ngIf="f.rank.invalid && (f.rank.dirty || f.rank.touched)">
+                    <div *ngIf="f.rank.hasError('required')">שדה חובה</div>
+                  </small>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <div class="form-row row justify-content-center">
                             <mat-form-field>

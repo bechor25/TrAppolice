@@ -6,6 +6,7 @@
     background-color: #b8c6db;
     background-image: linear-gradient(315deg, #b8c6db 0%, #b8c6db 74%);
     font-family: 'Open Sans Hebrew', serif;
+    box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
 }
 
 table {

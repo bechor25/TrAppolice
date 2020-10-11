@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { User } from '../models/user';
 import { passwordMatchValidator } from '../../shared/validators/password-match';
 import { AuthService } from '../services/auth.service';
+import { SweetAlertOptions } from 'sweetalert2';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-signup',
@@ -49,9 +51,23 @@ export class SignupComponent implements OnInit {
     this.authService.signup(this.model).subscribe(
       result => {
         //console.log(result);
-        if( ! result.error) {
-          alert(`הרשמה בוצע בהצלחה`);
-          this.router.navigateByUrl('/backend/cms');
+        if ( ! result.error) {
+          Swal.fire({
+            title: 'האם להכניס שוטר זה למערכת?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: `הכנס`,
+            denyButtonText: `חזור`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire('השוטר הוכנס למערכת', '', 'success')
+              this.router.navigateByUrl('/backend/cms');
+            } else if (result.isDenied) {
+              Swal.fire('השוטר לא הוכנס למערכת', '', 'info')
+            }
+          })
+
         }
         else{
           alert('הרשמה נכשלה נסה שנית');

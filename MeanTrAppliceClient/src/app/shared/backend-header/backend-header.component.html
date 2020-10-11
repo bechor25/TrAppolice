@@ -30,20 +30,17 @@
                     <li><a class=" btn btn-info" routerLink="/backend/product/product-help">עזרה</a></li>
                     <li><a class=" btn btn-info" routerLink="/backend/product/product-conact">צור קשר</a></li>
 
-
-
-
                 </div>
             </li>
         </ul>
-        <ul class="navbar-nav mr-auto ">
-            <li class="nav-item  " style="text-align: right;">
+        <ul class="navbar-nav mr-auto " style="text-align: right;">
+            <li>
                 <button class="btn btn-outline-danger  mr-2" *ngIf="user.payload.authorization === 'Admin'">מחובר כקצין</button>
             </li>
-            <li class="nav-item " style="text-align: right;">
+            <li>
                 <button class="btn btn-outline-success  mr-2" *ngIf="user.payload.authorization === 'User'">מחובר כשוטר</button>
             </li>
-            <li class="nav-item" style="text-align: right;">
+            <li>
                 <button class="btn btn-danger  mr-2" href="javaScript:void(0)" (click)="logout()"> <i class="glyphicon glyphicon-log-out"></i>
                   יציאה מהמערכת</button>
             </li>

@@ -18,6 +18,7 @@ export class ProductService {
   private apiUrlCount = `${environment.apiUrl}/product-dashbord`;
   private apiUrlCountSim = `${environment.apiUrl}/product-countSympol`;
   private apiUrlCountMoney = `${environment.apiUrl}/product-countMoney`;
+  private apiUrlUserRe = `${environment.apiUrl}/user-remove`;
 
 
   private handleError: HandleError;
@@ -125,6 +126,21 @@ export class ProductService {
     return this.http.delete(`${this.apiUrl}/delete/${id}`)
     .pipe(
       catchError(this.handleError('deleteProduct', null))
+    )
+  }
+////
+
+  updateUser(user: User) {
+    return this.http.put<User>(`${this.apiUrlUserRe}/update`, user, this.httpOptions)
+    .pipe(
+      catchError(this.handleError('updateUser', null))
+    )
+  }
+
+  deleteUser(id_rank: number) {
+    return this.http.delete(`${this.apiUrlUserRe}/delete/${id_rank}`)
+    .pipe(
+      catchError(this.handleError('deleteUser', null))
     )
   }
 

@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 const html2canvas = require('html2canvas');
 declare var require: any
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
