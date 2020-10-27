@@ -1,7 +1,7 @@
 <div class="form-3 table-responsive">
     <br>
     <div class="header" style="text-align: center;">
-        <div><span>נהלים </span>ועידכונים חדשים</div>
+        <div id="hello"><span id="hello">נהלים </span>ועידכונים חדשים</div>
     </div>
     <div class="row justify-content-md-center ">
 
@@ -14,7 +14,11 @@
     <div class="mb form-row row justify-content-center">
         <mat-form-field>
             <input #queryInp matInput id="pdfQueryInput" type="text" placeholder="הזן סמל סעיף" [value]="pdfQuery" (input)="searchQueryChanged($event.target.value)" (keyup.enter)="searchQueryChanged(queryInp.value)">
-            <mat-label>חיפוש עידכון \ נוהל</mat-label>
+            <mat-label>
+                <i class="material-icons mr-2" style=" display: inline-flex;
+                                  vertical-align: top;">
+                              search
+                                  </i> חיפוש עידכון \ נוהל</mat-label>
         </mat-form-field>
     </div>
     <hr>

@@ -1,24 +1,97 @@
 <div class="container">
     <div class="header" style="text-align: center;">
-        <div><span>ברוך הבא למערכת </span>{{user.payload.rank}} {{user.payload.first_name}} {{user.payload.last_name}} </div>
+        <div id="hello"><span id="hello">ברוך הבא למערכת </span>{{user.payload.rank}} {{user.payload.first_name}} {{user.payload.last_name}} </div>
     </div>
 
 
     <hr>
 
-    <ul class=" blue text-white d-flex align-items-center justify-content-between px-2 description-txt" style="text-align: center;">
-        <li><a class="btn btn-info " routerLink="/backend/cms"> עמוד ראשי</a></li>
-        <li><a class="btn btn-info " routerLink="/backend/product/create">הנפקת דוח</a></li>
-        <li> <a class="btn btn-info" routerLink="/backend/dashboard">חיפוש עבירה</a></li>
-        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product">דוחות שהונפקו</a></li>
-        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product/userlist-server"> סטטיסטקת דוחות</a></li>
-        <li><a class="btn btn-info" routerLink="/backend/product/product-update">עידכונים ונהלים חדשים</a></li>
-        <li *ngIf="user.payload.authorization === 'Admin'"> <a class="btn btn-info" routerLink="/backend/auth">הרשמת שוטר למערכת</a></li>
-        <li *ngIf="user.payload.authorization === 'Admin'"><a class="btn btn-info" routerLink="/backend/product/userlist">נתוני שוטרים במערכת</a></li>
-        <li> <a class="btn btn-info" routerLink="/backend/product/phone-list"> כתובות וטלפונים</a></li>
-        <li><a class="btn btn-info" routerLink="/backend/product/product-about">אודות</a></li>
-        <li><a class="btn btn-info" routerLink="/backend/product/product-help">עזרה</a></li>
-        <li><a class="btn btn-info" routerLink="/backend/product/product-conact">צור קשר</a></li>
+    <ul class=" blue text-white d-flex align-items-center justify-content-between px-2 description-txt" style="text-align: right;">
+
+        <li>
+            <a class="btn btn-info " routerLink="/backend/product/create">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         content_paste
+          </i> הנפקת דוח</a>
+        </li>
+        <li>
+            <a class="btn btn-info" routerLink="/backend/dashboard">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         search
+          </i> חיפוש עבירה</a>
+        </li>
+        <li *ngIf="user.payload.authorization === 'Admin'">
+            <a class="btn btn-info" routerLink="/backend/product">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        library_books
+          </i> דוחות שהונפקו</a>
+        </li>
+        <li *ngIf="user.payload.authorization === 'Admin'">
+            <a class="btn btn-info" routerLink="/backend/product/userlist-server">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         insert_chart
+          </i> סטטיסטקת דוחות</a>
+        </li>
+        <li>
+            <a class="btn btn-info" routerLink="/backend/product/product-update">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        update
+          </i> עידכונים ונהלים חדשים</a>
+        </li>
+        <li *ngIf="user.payload.authorization === 'Admin'">
+            <a class="btn btn-info" routerLink="/backend/auth">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        assignment_ind
+          </i> הרשמת שוטר למערכת</a>
+        </li>
+        <li *ngIf="user.payload.authorization === 'Admin'">
+            <a class="btn btn-info" routerLink="/backend/product/userlist">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         table_view
+          </i> נתוני שוטרים במערכת</a>
+        </li>
+        <li>
+            <a class="btn btn-info" routerLink="/backend/product/phone-list">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         local_phone
+          </i> כתובות וטלפונים</a>
+        </li>
+        <li>
+            <a class="btn btn-info" routerLink="/backend/product/product-about">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         info
+          </i> אודות</a>
+        </li>
+        <li>
+            <a class="btn btn-info" routerLink="/backend/product/product-help"> <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        not_listed_location
+          </i> עזרה</a>
+        </li>
+        <li>
+            <a class="btn btn-info" routerLink="/backend/product/product-conact">
+                <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        contact_mail
+          </i> צור קשר</a>
+        </li>
+        <!--test-->
+        <li>
+            <a class="btn btn-info" routerLink="/backend/product/product-help"> <i class="material-icons mr-2" style=" display: inline-flex;
+        vertical-align: top;">
+      not_listed_location
+        </i> עזרה</a>
+        </li>
+
 
     </ul>
 </div>

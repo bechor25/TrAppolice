@@ -32,6 +32,9 @@ export interface Product {
  Kmh:number;
  Last_Date_To_Pay:string;
  Citizen_Signture:any;
+ photo_1:any;
+ photo_2:any;
+ photo_3:any;
  Full_Description:string;
  Second_Witness_Full_Name:string;
  Car_Number:number;

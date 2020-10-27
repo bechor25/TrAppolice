@@ -9,8 +9,18 @@
     </div>
     <hr />
     <div class="row justify-content-center">
-        <button class="btn btn-success " id="btnSize" (click)="save('image.png')">ייצוא <b> דוח ל - PDF</b></button>
-        <button class="btn btn-success " id="btnSize" (click)="save('image.jpg')">ייצוא <b>דוח ל - JPG </b></button>
+        <button class="btn btn-success " id="btnSize" (click)="save('image.png')">
+          <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+       save_alt
+          </i>
+          ייצוא <b> דוח ל - PDF</b></button>
+        <button class="btn btn-success " id="btnSize" (click)="save('image.jpg')">
+          <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+       save_alt
+          </i>
+          ייצוא <b>דוח ל - JPG </b></button>
     </div>
     <br>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
@@ -25,7 +35,12 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <button id="btnSize" class="btn btn-success ">חיפוש</button>
+            <button id="btnSize" class="btn btn-success ">
+              <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+       search
+          </i>
+              חיפוש</button>
         </div>
     </form>
     <hr />
@@ -53,7 +68,12 @@
 
         </div>
         <div class="row justify-content-center">
-            <button id="btnSize" class="btn btn-success ">חיפוש</button>
+            <button id="btnSize" class="btn btn-success ">
+              <i class="material-icons mr-2" style=" display: inline-flex;
+              vertical-align: top;">
+           search
+              </i>
+              חיפוש</button>
         </div>
 
     </form>
@@ -120,16 +140,13 @@
 
     <ng-container *ngFor="let row of rows">
         <table class="table table-striped" *ngIf=" viewDiteilsReport && viewId==row.id" id="mainContainer">
-            <div class=" row justify-content-center">
-                <strong class=" row justify-content-center " style="color: red;">
-          דרגת השוטר ושם מלא: {{row.Rank_first_last_name_officer}}</strong>
-            </div>
+
             <thead>
                 <tr>
                     <th scope="col"><button id="btnSize" class="btn btn-success "> {{row.id}} - מספר דוח </button></th>
-                    <th scope="col"><button [routerLink]="['/backend/product/edit', row.id]" id="btnSize" class="btn btn-info ">{{row.id}} -
-              עריכת דוח</button></th>
-                    <th scope="col"><button href="javascript:void(0)" class="btn btn-danger " id="btnSize" (click)="deleteProduct(row.id)">{{row.id}} - מחיקת דוח</button></th>
+                    <th scope="col"><strong class=" row justify-content-center " style="color: red;">
+                      דרגת השוטר ושם מלא: {{row.Rank_first_last_name_officer}}</strong></th>
+                    <th scope="col"><button href="javascript:void(0)" class="btn btn-danger " id="btnSize" (click)="deleteProduct(row.id)">{{row.id}} - ביטול הדוח</button></th>
                 </tr>
             </thead>
 
@@ -296,6 +313,7 @@
             </thead>
             <thead>
                 <tr>
+
                     <td scope="row"><img [src]="row.Citizen_Signture" style="width: auto;height: auto;"></td>
                     <td>{{row.Full_Description}}</td>
                     <td>{{row.Second_Witness_Full_Name}}</td>
@@ -315,9 +333,21 @@
                     <td>{{row. GivenNotGiven_Continuation_Of_The_Case}}</td>
                 </tr>
             </thead>
+            <thead>
 
-
-
+                <tr>
+                    <th scope="col">תמונה - רשיונות</th>
+                    <th scope="col"> תמונה - מסמכים</th>
+                    <th scope="col">תמונה - רכב</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <td scope="row"><img [src]="row.photo_1" style="width: 100px;height: 100px;"></td>
+                    <td scope="row"><img [src]="row.photo_2" style="width: 100px;height: 100px;"></td>
+                    <td scope="row"><img [src]="row.photo_3" style="width: 100px;height: 100px;"></td>
+                </tr>
+            </thead>
         </table>
 
 

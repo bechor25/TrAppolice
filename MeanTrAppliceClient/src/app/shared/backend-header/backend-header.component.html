@@ -1,48 +1,132 @@
-<nav class=" navbar navbar-expand-md navbar-light  border-bottom ">
+<nav class=" navbar navbar-expand-md navbar-dark  border-bottom ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon "  ></span>
+  </button>
     <div class="header " routerLink="/backend/cms">
-        <div>TrAap<span>police</span></div>
+        <div id="hello">TrAp<span id="hello">police</span></div>
     </div>
 
-    <button class="navbar-toggler md-form my-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" ></span>
-  </button>
+
 
     <div class="navbar-collapse " id="navbarCollapse">
         <ul class="navbar-nav  ">
-            <li class="nav-item active " style="text-align: right;">
-                <a class="nav-link" routerLink="/backend/cms">עמוד ראשי</a>
+            <li class="nav-item  " style="text-align: right;">
+                <a class="nav-link " routerLink="/backend/cms" style="color: white;">
+                    <i class="material-icons " style=" display: inline-flex;
+                  vertical-align: bottom;">
+                  home
+                  </i>עמוד ראשי</a>
             </li>
 
             <li class="nav-item dropdown " style="text-align: right;">
-                <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             אפשרויות
-              </a>
+                <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                    <i class="material-icons " style=" display: inline-flex;
+                  vertical-align: bottom;">
+                  settings
+                  </i> אפשרויות
+                </a>
                 <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product">דוחות שהונפקו</a></li>
-                    <li><a class=" btn btn-info" routerLink="/backend/product/create">הנפקת דוח</a></li>
-                    <li><a *ngIf="user.payload.authorization === 'Admin'" routerLink="/backend/product/userlist-server" class=" btn btn-info">סטטיסטקת דוחות</a></li>
-                    <li><a class=" btn btn-info" routerLink="/backend/dashboard">חיפוש עבירה</a></li>
-                    <li><a class=" btn btn-info" routerLink="/backend/product/product-update">עידכונים ונהלים חדשים</a></li>
-                    <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/auth">הרשמת שוטר למערכת</a></li>
-                    <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product/userlist">רשימת שוטרים רשומים</a></li>
-                    <li><a class=" btn btn-info" routerLink="/backend/product/phone-list">כתובות וטלפונים</a></li>
-                    <li><a class=" btn btn-info" routerLink="/backend/product/product-about">אודות</a></li>
-                    <li><a class=" btn btn-info" routerLink="/backend/product/product-help">עזרה</a></li>
-                    <li><a class=" btn btn-info" routerLink="/backend/product/product-conact">צור קשר</a></li>
+                    <li>
+                        <a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+                      vertical-align: top;">
+                    library_books
+                      </i> דוחות שהונפקו</a>
+                    </li>
+                    <li>
+                        <a class=" btn btn-info" routerLink="/backend/product/create">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         content_paste
+          </i> הנפקת דוח</a>
+                    </li>
+                    <li>
+                        <a *ngIf="user.payload.authorization === 'Admin'" routerLink="/backend/product/userlist-server" class=" btn btn-info">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         insert_chart
+          </i> סטטיסטיקת דוחות</a>
+                    </li>
+                    <li>
+                        <a class=" btn btn-info" routerLink="/backend/dashboard">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+                      vertical-align: top;">
+                     search
+                      </i> חיפוש עבירה</a>
+                    </li>
+                    <li>
+                        <a class=" btn btn-info" routerLink="/backend/product/product-update">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        update
+          </i> עידכונים ונהלים חדשים</a>
+                    </li>
+                    <li>
+                        <a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/auth">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+                      vertical-align: top;">
+                    assignment_ind
+                      </i> הרשמת שוטר למערכת</a>
+                    </li>
+                    <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product/userlist"><i class="material-icons mr-2" style=" display: inline-flex;
+                      vertical-align: top;">
+                     table_view
+                      </i> רשימת שוטרים רשומים</a></li>
+                    <li><a class=" btn btn-info" routerLink="/backend/product/phone-list"><i class="material-icons mr-2" style=" display: inline-flex;
+                      vertical-align: top;">
+                     local_phone
+                      </i> כתובות וטלפונים</a></li>
+                    <li>
+                        <a class=" btn btn-info" routerLink="/backend/product/product-about">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+         info
+          </i> אודות</a>
+                    </li>
+                    <li>
+                        <a class=" btn btn-info" routerLink="/backend/product/product-help">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        not_listed_location
+          </i> עזרה</a>
+                    </li>
+                    <li>
+                        <a class=" btn btn-info" routerLink="/backend/product/product-conact">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+          vertical-align: top;">
+        contact_mail
+          </i> צור קשר</a>
+                    </li>
 
                 </div>
             </li>
         </ul>
         <ul class="navbar-nav mr-auto " style="text-align: right;">
             <li>
-                <button class="btn btn-outline-danger  mr-2" *ngIf="user.payload.authorization === 'Admin'">מחובר כקצין</button>
+                <button class="btn btn-outline-danger  mr-2" *ngIf="user.payload.authorization === 'Admin'">
+                  מחובר כקצין
+                  <i class="material-icons mr-2" style=" display: inline-flex;
+                  vertical-align: top;">
+                   admin_panel_settings
+                  </i>
+                </button>
             </li>
             <li>
-                <button class="btn btn-outline-success  mr-2" *ngIf="user.payload.authorization === 'User'">מחובר כשוטר</button>
+                <button class="btn btn-outline-success  mr-2" *ngIf="user.payload.authorization === 'User'">מחובר כשוטר
+                  <i class="material-icons mr-2" style=" display: inline-flex;
+                  vertical-align: top;">
+                  supervised_user_circle
+                  </i>
+                </button>
             </li>
             <li>
-                <button class="btn btn-danger  mr-2" href="javaScript:void(0)" (click)="logout()"> <i class="glyphicon glyphicon-log-out"></i>
-                  יציאה מהמערכת</button>
+                <button class="btn btn-danger  mr-2" href="javaScript:void(0)" (click)="logout()">
+                  יציאה מהמערכת
+                  <i class="material-icons mr-2" style=" display: inline-flex;
+                  vertical-align: top;">
+                    logout
+                  </i>
+                </button>
             </li>
         </ul>
     </div>

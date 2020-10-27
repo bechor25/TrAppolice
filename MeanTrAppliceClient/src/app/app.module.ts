@@ -29,7 +29,8 @@ import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
     SharedModule,
     MatStepperModule,
     BrowserAnimationsModule,
-    PDFExportModule
+    PDFExportModule,
+
 
   ],
   providers: [

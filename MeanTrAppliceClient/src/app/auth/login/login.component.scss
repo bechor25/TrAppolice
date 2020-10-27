@@ -1,22 +1,13 @@
     .mat-form-field {
         text-align: right;
-        font-family: 'Open Sans Hebrew', serif;
-        font-size: 14px;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 12px;
     }
 
     @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
     @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
     @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
     @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
-    body {
-        margin: 0;
-        padding: 0;
-        background: #fff;
-        color: #fff;
-        font-family: Arial;
-        font-size: 12px;
-    }
-
     .login-text {
         color: white;
         font-size: 2.5rem;
@@ -27,37 +18,10 @@
         }
     }
 
-    .grad {
-        top: -20px;
-        left: -20px;
-        right: -40px;
-        bottom: -40px;
-        width: auto;
-        height: auto;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
-        /* Chrome,Safari4+ */
-        z-index: 1;
-        opacity: 0.7;
-    }
-
-    .header div {
-        float: left;
-        color: #fff;
-        top: calc(60% - 35px);
-        left: calc(50% - 255px);
-        font-family: 'Exo', sans-serif;
-        font-size: 35px;
-        font-weight: 200;
-    }
-
-    .header div span {
-        color: #5379fa !important;
-    }
-
     .login {
-        font-family: 'Open Sans Hebrew', serif;
+        font-family: 'Varela Round', sans-serif;
         position: absolute;
-        top: calc(45% - 75px);
+        top: calc(35% - 75px);
         left: calc(35% - 50px);
         height: 150px;
         width: 350px;
@@ -72,7 +36,7 @@
         border: 1px solid rgba(255, 255, 255, 0.6);
         border-radius: 16px;
         color: rgb(0, 0, 0);
-        font-family: 'Open Sans Hebrew', serif;
+        font-family: 'Varela Round', sans-serif;
         font-size: 16px;
         font-weight: 400;
         padding: 2px;
@@ -85,7 +49,7 @@
         border: 1px solid rgba(255, 255, 255, 0.6);
         border-radius: 16px;
         color: rgb(0, 0, 0);
-        font-family: 'Open Sans Hebrew', serif;
+        font-family: 'Varela Round', sans-serif;
         font-size: 16px;
         font-weight: 400;
         padding: 2px;
@@ -94,8 +58,8 @@
     .login button[type=submit] {
         width: 180px;
         height: 35px;
-        font-family: 'Open Sans Hebrew', serif;
-        font-size: 16px;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 12px;
         font-weight: bold;
         color: #fff;
         text-decoration: none;
@@ -113,6 +77,17 @@
         border-bottom-left-radius: 5px;
         border-radius: 16px;
         box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+        &:hover {
+            color: #ff0000;
+        }
+    }
+
+    .btn-warning {
+        width: 180px;
+        border-radius: 16px;
+        &:hover {
+            color: #ff0000;
+        }
     }
 
     .login button[type=submit]:hover {

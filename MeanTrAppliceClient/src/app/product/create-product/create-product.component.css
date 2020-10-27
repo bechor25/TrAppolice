@@ -5,7 +5,7 @@
     text-align: right;
     background-color: #b8c6db;
     background-image: linear-gradient(315deg, #b8c6db 0%, #b8c6db 74%);
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: 'Varela Round', sans-serif;
     box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
 }
 
@@ -22,7 +22,7 @@ table {
 th {
     background-color: #303031;
     border: 1px solid #3079b4;
-    color: #ebebeb;
+    color: #000000;
 }
 
 td {
@@ -34,9 +34,8 @@ td {
     color: #fff;
     top: calc(60% - 35px);
     left: calc(50% - 255px);
-    font-family: 'Exo', sans-serif;
+    font-family: 'Varela Round', sans-serif;
     font-size: 35px;
-    font-family: 'Open Sans Hebrew', serif;
     font-weight: 200;
 }
 
@@ -47,8 +46,18 @@ td {
 .mat-form-field {
     font-size: 18px;
     text-align: right;
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: 'Varela Round', sans-serif;
     width: 220px;
+    border-radius: 12px;
+    box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
+}
+
+.ngx-mat-file-input {
+    font-size: 18px;
+    text-align: right;
+    font-family: 'Varela Round', sans-serif;
+    width: 260px;
+    height: 50px;
     border-radius: 12px;
     box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
 }
@@ -56,7 +65,7 @@ td {
 .mat-radio-button {
     font-size: 18px;
     background-color: transparent;
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: 'Varela Round', sans-serif;
 }
 
 canvas {
@@ -64,9 +73,37 @@ canvas {
 }
 
 .btn {
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: 'Varela Round', sans-serif;
     font-size: 18px;
     width: 150px;
     border-radius: 12px;
-    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
+    box-shadow: inset 0px 1px 0px #b1c7cf, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
+}
+
+#ph {
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    width: 240px;
+    height: 50px;
+    border-radius: 12px;
+    box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
+}
+
+#matstep {
+    color: white;
+    width: 180px;
+    background-image: linear-gradient(260deg, #2376ae 0%, #144f77 50%);
+    box-shadow: none;
+}
+
+agm-map {
+    height: 300px;
+}
+
+#map {
+    display: block;
+    height: 60vh;
+    border-radius: 20px;
 }

@@ -4,13 +4,19 @@
         <div class="header" style="text-align: center;">
             <div><span>כתובות </span>וטלפונים</div>
             <br>
-            <p>כאן תוכלו למצוא כתובות וטלפונים של תחנות משטרה ברחבי הארץ.</p>
+            <strong>כאן תוכלו למצוא כתובות וטלפונים של תחנות משטרה ברחבי הארץ.</strong>
             <p> באפשרותכם לחפש לפי עיר / ישוב / תחנה</p>
         </div>
         <hr>
         <div style="text-align: center;">
             <mat-form-field>
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="הזן מילת חיפוש">
+                <input matInput (keyup)="applyFilter($event.target.value)">
+                <mat-label>
+                    <i class="material-icons mr-2" style=" display: inline-flex;
+                                  vertical-align: top;">
+                              search
+                                  </i> הזן מילת חיפוש
+                </mat-label>
             </mat-form-field>
         </div>
         <hr>

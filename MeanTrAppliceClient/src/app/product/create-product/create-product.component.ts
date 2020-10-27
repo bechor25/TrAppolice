@@ -1,4 +1,4 @@
-
+import { NgxMatFileInputModule} from '@angular-material-components/file-input';
 import { Component, OnInit ,ViewChild,AfterViewInit} from '@angular/core';
 import SignaturePad from 'signature_pad';
 import {  FormBuilder, FormGroup, Validators, FormsModule, FormControl,NgForm } from '@angular/forms';
@@ -7,20 +7,39 @@ import { Product } from '../models/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SweetAlertOptions } from 'sweetalert2';
 import Swal from 'sweetalert2'
+declare const L: any;
+import { ipInfo } from '../models/ipinfo';
+
+
 @Component({
   selector: 'app-create-product',
   templateUrl: './create-product.component.html',
   styleUrls: ['./create-product.component.css']
 })
 export class CreateProductComponent implements OnInit {
+  //photo-1
+  url;
+  format;
+  url1;
+  format1;
+  url2;
+  format2;
+   //מיקום
+   lat:any;
+   lng:any;
+   location:object;
+   title:any;
+
   @ViewChild('sPad', {static: true}) signaturePadElement;
 alertOpt: SweetAlertOptions = {};
   signaturePad: any;
-  isLinear = false;
+  isLinear =false;
   productForm: FormGroup;
   model: Product;
-  title: string;
 
+  photoOen:any;
+  photoTwo:any;
+  photoThree:any;
   dataURL:any;
   productId: number;
 
@@ -30,12 +49,47 @@ alertOpt: SweetAlertOptions = {};
     private route: ActivatedRoute,
     private router: Router,
 
+
   ) { }
 
 
   ngOnInit() {
+         //מיקום
+         if (!navigator.geolocation) {
+          console.log('location is not supported');
+        }
+        navigator.geolocation.getCurrentPosition((position) => {
+          const coords = position.coords;
+          const latLong = [coords.latitude, coords.longitude];
+          console.log(
+            `lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`
+          );
+          let mymap = L.map('map').setView(latLong, 13);
 
-    this.title = "טופס הנפקת דוחות";
+          L.tileLayer(
+            'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3VicmF0MDA3IiwiYSI6ImNrYjNyMjJxYjBibnIyem55d2NhcTdzM2IifQ.-NnMzrAAlykYciP4RP9zYQ',
+            {
+              attribution:
+                '.TrAppolice 2020 - כל הזכויות שמורות &copy; ',
+              maxZoom: 18,
+              id: 'mapbox/streets-v11',
+              tileSize: 512,
+              zoomOffset: -1,
+              accessToken: 'your.mapbox.access.token',
+            }
+          ).addTo(mymap);
+
+          let marker = L.marker(latLong).addTo(mymap);
+
+          marker.bindPopup('<b>המיקום שלך</b>').openPopup();
+
+          let popup = L.popup()
+            .setLatLng(latLong)
+            .setContent('מיקום')
+            .openOn(mymap);
+        });
+        this.watchPosition();
+
     this.createForm();
     this.signaturePad = this.signaturePadElement.nativeElement;
     this.productId = +this.route.snapshot.paramMap.get('id');
@@ -44,6 +98,31 @@ alertOpt: SweetAlertOptions = {};
     }
   }
 
+  watchPosition() {
+    let desLat = 0;
+    let desLon = 0;
+    let id = navigator.geolocation.watchPosition(
+
+      (position) => {
+        this.lat= position.coords.latitude;
+        this.lng=position.coords.longitude;
+        console.log(
+          `lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`
+        );
+        if (position.coords.latitude === desLat) {
+          navigator.geolocation.clearWatch(id);
+        }
+      },
+      (err) => {
+        console.log(err);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      }
+    );
+  }
   ngAfterViewInit(): void {
     this.signaturePad = new SignaturePad(this.signaturePadElement.nativeElement);
   }
@@ -58,13 +137,61 @@ alertOpt: SweetAlertOptions = {};
       const a = document.createElement('a');
       a.href = url;
       a.download = filename;
-
       document.body.appendChild(a);
       a.click();
-
       window.URL.revokeObjectURL(url);
     }
   }
+//photo-1
+  onSelectFile(event) {
+    const file = event.target.files && event.target.files[0];
+    if (file) {
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      if(file.type.indexOf('image')> -1){
+        this.format = 'image';
+      } else if(file.type.indexOf('video')> -1){
+        this.format = 'video';
+      }
+      reader.onload = (event) => {
+        this.url = (<FileReader>event.target).result;
+      }
+    }
+  }
+
+    //photo-2
+    onSelectFile1(event) {
+      const file = event.target.files && event.target.files[0];
+      if (file) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        if(file.type.indexOf('image')> -1){
+          this.format1 = 'image';
+        } else if(file.type.indexOf('video')> -1){
+          this.format1 = 'video';
+        }
+        reader.onload = (event) => {
+          this.url1 = (<FileReader>event.target).result;
+        }
+      }
+    }
+
+    //photo-3
+    onSelectFile2(event) {
+      const file = event.target.files && event.target.files[0];
+      if (file) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        if(file.type.indexOf('image')> -1){
+          this.format2 = 'image';
+        } else if(file.type.indexOf('video')> -1){
+          this.format2 = 'video';
+        }
+        reader.onload = (event) => {
+          this.url2 = (<FileReader>event.target).result;
+        }
+      }
+    }
 
   dataURLToBlob(dataURL) {
     const parts = dataURL.split(';base64,');
@@ -125,13 +252,17 @@ alertOpt: SweetAlertOptions = {};
             Citizen_Date_Confirmed: [''],
             Car_Number: [''],
             Rank_first_last_name_officer: [''],
+            photo_1: [''],
+            photo_2: [''],
+            photo_3: [''],
+            lat1:[''],
+            lng2:[''],
       is_active: [1]
     })
   }
 //send array
-  onSubmit() {
-       this.dataURL = this.signaturePad.toDataURL();
-      console.log(`${this.dataURL}`);
+onSubmit() {
+    this.dataURL = this.signaturePad.toDataURL();
     this.model = this.productForm.value;
     if (this.productId) {
       this.updateProduct();
@@ -141,7 +272,12 @@ alertOpt: SweetAlertOptions = {};
   }
 //send
   addProduct() {
-    this.productForm.value.Citizen_Signture = this.dataURL
+    this.productForm.value.Citizen_Signture = this.dataURL;
+    this.productForm.value.photo_1 = this.url;
+    this.productForm.value.photo_2 = this.url1;
+    this.productForm.value.photo_3 = this.url2;
+    this.productForm.value.lat1 = this.lat;
+    this.productForm.value.lng2 = this.lng;
     this.model = this.productForm.value;
     this.productService.addProduct(this.model).subscribe(
       result => {

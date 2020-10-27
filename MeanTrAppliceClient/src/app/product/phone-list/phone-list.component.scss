@@ -25,22 +25,20 @@
     overflow: auto;
     max-height: 500px;
     text-align: right;
-    font-family: 'Open Sans Hebrew', serif;
+    font-size: 16px;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .mat-header-cell {
-    font-size: 16px;
-    display: flex;
+    font-family: 'Varela Round', sans-serif;
     justify-content: center;
     padding: 1.5rem 0;
     color: rgb(255, 255, 255);
-    text-align: center;
     background-color: #333;
-    font-family: 'Open Sans Hebrew', serif;
 }
 
 h1 {
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: 'Varela Round', sans-serif;
     font-size: 24px;
 }
 
@@ -49,7 +47,7 @@ h1 {
     color: #fff;
     top: calc(60% - 35px);
     left: calc(50% - 255px);
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: 'Varela Round', sans-serif;
     font-size: 35px;
     font-weight: 200;
 }
@@ -59,13 +57,11 @@ h1 {
 }
 
 p {
-    font-family: 'Open Sans Hebrew', serif;
-    font-size: 14px;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .mat-cell {
-    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
     display: flex;
     justify-content: center;
-    font-family: 'Open Sans Hebrew', serif;
 }

@@ -182,14 +182,14 @@ export class ProductListComponent implements OnInit {
 
 
   deleteProduct(id: number) {
-    if(confirm('?האם אתה בטוח במחיקת הדוח')) {
+    if(confirm('?האם אתה בטוח שברצונך למחוק את הדוח')) {
       this.productService.deleteProduct(id).subscribe(
         result => {
           console.log(result);
           if ( ! result.error) {
             this.rows = this.rows.filter(item => item.id != id)
           } else {
-            alert('משהו השתבש במחיקה');
+            alert('משהו השתבש בביטול הדוח');
           }
         }
       )

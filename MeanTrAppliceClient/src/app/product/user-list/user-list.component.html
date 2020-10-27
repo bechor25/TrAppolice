@@ -10,7 +10,13 @@
     </div>
     <div class="example-header row justify-content-center">
         <mat-form-field>
-            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="הזן מילת חיפוש">
+            <input matInput (keyup)="applyFilter($event.target.value)">
+            <mat-label>
+                <i class="material-icons mr-2" style=" display: inline-flex;
+                                  vertical-align: top;">
+                              search
+                                  </i> הזן מילת חיפוש
+            </mat-label>
         </mat-form-field>
     </div>
 
@@ -41,7 +47,12 @@
             <ng-container matColumnDef="Remove">
                 <mat-header-cell *matHeaderCellDef scope="col"> פעולות נוספות </mat-header-cell>
                 <mat-cell *matCellDef="let row">
-                    <button mat-button class="btn btn-danger " (click)="deleteUser(row.id_rank)">מחק שוטר</button>
+                    <button mat-button class="btn btn-danger " (click)="deleteUser(row.id_rank)">
+                      <i class="material-icons mr-2" style=" display: inline-flex;
+                                  vertical-align: top;">
+                              delete
+                                  </i>
+                      מחק שוטר</button>
                 </mat-cell>
             </ng-container>
 

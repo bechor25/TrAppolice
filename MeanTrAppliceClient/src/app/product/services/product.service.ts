@@ -15,6 +15,7 @@ import { Case } from '../models/case';
 export class ProductService {
 
   private apiUrl = `${environment.apiUrl}/product`;
+  private apiUrlSend = `${environment.apiUrl}`;
   private apiUrlCount = `${environment.apiUrl}/product-dashbord`;
   private apiUrlCountSim = `${environment.apiUrl}/product-countSympol`;
   private apiUrlCountMoney = `${environment.apiUrl}/product-countMoney`;
@@ -143,6 +144,7 @@ export class ProductService {
       catchError(this.handleError('deleteUser', null))
     )
   }
+
 
 }
 
