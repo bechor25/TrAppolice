@@ -103,7 +103,7 @@
         </ul>
         <ul class="navbar-nav mr-auto " style="text-align: right;">
             <li>
-                <button class="btn btn-outline-danger  mr-2" *ngIf="user.payload.authorization === 'Admin'">
+                <button class="btn btn-success mr-2" *ngIf="user.payload.authorization === 'Admin'">
                   מחובר כקצין
                   <i class="material-icons mr-2" style=" display: inline-flex;
                   vertical-align: top;">
@@ -112,7 +112,7 @@
                 </button>
             </li>
             <li>
-                <button class="btn btn-outline-success  mr-2" *ngIf="user.payload.authorization === 'User'">מחובר כשוטר
+                <button class="btn btn-success  mr-2" *ngIf="user.payload.authorization === 'User'">מחובר כשוטר
                   <i class="material-icons mr-2" style=" display: inline-flex;
                   vertical-align: top;">
                   supervised_user_circle

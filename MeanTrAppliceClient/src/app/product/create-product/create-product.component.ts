@@ -9,6 +9,7 @@ import { SweetAlertOptions } from 'sweetalert2';
 import Swal from 'sweetalert2'
 declare const L: any;
 import { ipInfo } from '../models/ipinfo';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 
 @Component({
@@ -17,6 +18,7 @@ import { ipInfo } from '../models/ipinfo';
   styleUrls: ['./create-product.component.css']
 })
 export class CreateProductComponent implements OnInit {
+  user:any;
   //photo-1
   url;
   format;
@@ -48,9 +50,10 @@ alertOpt: SweetAlertOptions = {};
     private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
+    private authService: AuthService,
 
 
-  ) { }
+  ) { this.user = this.authService.userValue;}
 
 
   ngOnInit() {
@@ -278,6 +281,7 @@ onSubmit() {
     this.productForm.value.photo_3 = this.url2;
     this.productForm.value.lat1 = this.lat;
     this.productForm.value.lng2 = this.lng;
+    this.productForm.value.Rank_first_last_name_officer = `${this.user.payload.rank} ${this.user.payload.first_name} ${this.user.payload.last_name}`
     this.model = this.productForm.value;
     this.productService.addProduct(this.model).subscribe(
       result => {

@@ -1,9 +1,11 @@
-<div class="form-3 ">
+<div class="form-3 " style="border-radius: 20px;border: 2px solid rgb(255, 255, 255);">
+
     <br>
     <h1 class=" row justify-content-center">
-        צור קשר / פנייה
+        <b>צור קשר - פנייה</b>
     </h1>
-    <hr>
+    <hr style="width: 300px;">
+
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group row justify-content-center">
 
@@ -19,9 +21,9 @@
 
         </div>
         <div class="form-group row justify-content-center">
-            <mat-form-field style="width:80%">
+            <mat-form-field style="width:80%;height: 150px;">
                 <mat-label>תיאור הפנייה</mat-label>
-                <textarea rows="10" cols="50" formControlName="description" class="form-control" required pattern="[\u0590-\u05FF\s]{1,}" matInput></textarea>
+                <textarea rows="5" cols="5" formControlName="description" class="form-control" required pattern="[\u0590-\u05FF\s]{1,}" matInput></textarea>
                 <small class="error" *ngIf="f.description.invalid && (f.description.dirty || f.description.touched)">
                     <div *ngIf="f.description.hasError('required')">שדה חובה</div>
                     <div *ngIf="f.description.hasError('pattern')">נא להזין אותיות בעברית בלבד</div>
@@ -54,12 +56,18 @@
         </div>
     </form>
 
-    <hr>
+    <mat-card style="background: linear-gradient(260deg, #f3f3ff 20%, #cee3f0 50%);border-radius: 20px;border: 1px solid #ddd;">
+        <div class="trappolice"></div>
+        <div class="row justify-content-center">
+            <strong>יצירת קשר עם המפתחים ב - Whatsapp וב - Email</strong>
+        </div>
+        <div class="row justify-content-center">
 
-    <div class="trappolice"></div>
-    <div class="row justify-content-center">
-        <a href="http://wa.me/972542160685"><i class="fab fa-whatsapp-square" style="font-size:50px;color:green;margin-left: 12px;"></i></a>
-        <a href="mailto: bechor21@gmail.com"><i class="fa fa-envelope-square" style="font-size:50px;"></i></a>
-    </div>
+            <a href="http://wa.me/972542160685"><i class="fab fa-whatsapp-square" style="font-size:50px;color:green;margin-left: 12px;"></i></a>
+            <a href="mailto: bechor21@gmail.com"><i class="fa fa-envelope-square" style="font-size:50px;"></i></a>
+
+
+        </div>
+    </mat-card>
 
 </div>

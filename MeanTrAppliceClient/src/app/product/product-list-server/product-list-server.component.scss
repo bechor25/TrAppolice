@@ -1,22 +1,25 @@
     p {
         font-family: 'Open Sans Hebrew', serif;
     }
-
+    
     .table {
         width: 400px;
         box-shadow: 0 20px 50px rgba(8, 112, 184, 0.7);
     }
-
+    
     .mat-table {
         text-align: right;
         font-size: 16px;
         font-family: 'Open Sans Hebrew', serif;
+        overflow: auto;
+        border-radius: 20px;
+        border: 2px solid rgb(255, 255, 255);
     }
-
+    
     hr {
         width: 300px;
     }
-
+    
     .mat-header-cell {
         font-size: 16px;
         font-family: 'Open Sans Hebrew', serif;
@@ -26,18 +29,18 @@
         text-align: center;
         background-color: rgb(48, 17, 160);
     }
-
+    
     .mat-cell {
         font-size: 16px;
         font-family: 'Open Sans Hebrew', serif;
         justify-content: center;
     }
-
+    
     .content {
         font-family: 'Varela Round', sans-serif;
         background: #fff;
     }
-
+    
     .header div {
         float: center;
         color: #fff;
@@ -47,16 +50,16 @@
         font-size: 20px;
         font-weight: 200;
     }
-
+    
     .header div span {
         color: #5379fa !important;
     }
-
+    
     .mat-card {
         width: 350px;
         height: 400px;
     }
-
+    
     .mat-table,
     .mat-cell,
     .mat-header-cell {

@@ -1,97 +1,103 @@
 <div class="container">
-    <div class="header" style="text-align: center;">
-        <div id="hello"><span id="hello">ברוך הבא למערכת </span>{{user.payload.rank}} {{user.payload.first_name}} {{user.payload.last_name}} </div>
-    </div>
+    <mat-card style="background: linear-gradient(260deg, #5d5fc2 20%, #314d5f 50%);border-radius: 20px;border: 1px solid #ddd;box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;">
+        <div class="header" style="text-align: center;">
+            <div id="hello"><span id="hello">ברוך הבא למערכת </span><br><br>{{user.payload.rank}} {{user.payload.first_name}} {{user.payload.last_name}} </div>
+        </div>
+        <hr style="width: 350px;">
+    </mat-card>
+    <br>
+    <br>
 
+    <mat-card style="background: linear-gradient(260deg, #5d5fc2 20%, #314d5f 50%);border-radius: 20px;border: 1px solid #ddd;box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;">
+        <ul class=" blue text-white d-flex align-items-center justify-content-between px-2 description-txt" style="text-align: right;">
 
-    <hr>
-
-    <ul class=" blue text-white d-flex align-items-center justify-content-between px-2 description-txt" style="text-align: right;">
-
-        <li>
-            <a class="btn btn-info " routerLink="/backend/product/create">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            <li>
+                <a class="btn btn-info " routerLink="/backend/product/create">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
          content_paste
           </i> הנפקת דוח</a>
-        </li>
-        <li>
-            <a class="btn btn-info" routerLink="/backend/dashboard">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li>
+                <a class="btn btn-info" routerLink="/backend/dashboard">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
          search
           </i> חיפוש עבירה</a>
-        </li>
-        <li *ngIf="user.payload.authorization === 'Admin'">
-            <a class="btn btn-info" routerLink="/backend/product">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li *ngIf="user.payload.authorization === 'Admin'">
+                <a class="btn btn-info" routerLink="/backend/product">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
         library_books
           </i> דוחות שהונפקו</a>
-        </li>
-        <li *ngIf="user.payload.authorization === 'Admin'">
-            <a class="btn btn-info" routerLink="/backend/product/userlist-server">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li *ngIf="user.payload.authorization === 'Admin'">
+                <a class="btn btn-info" routerLink="/backend/product/userlist-server">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
          insert_chart
           </i> סטטיסטקת דוחות</a>
-        </li>
-        <li>
-            <a class="btn btn-info" routerLink="/backend/product/product-update">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li>
+                <a class="btn btn-info" routerLink="/backend/product/product-update">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
         update
           </i> עידכונים ונהלים חדשים</a>
-        </li>
-        <li *ngIf="user.payload.authorization === 'Admin'">
-            <a class="btn btn-info" routerLink="/backend/auth">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li *ngIf="user.payload.authorization === 'Admin'">
+                <a class="btn btn-info" routerLink="/backend/auth">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
         assignment_ind
           </i> הרשמת שוטר למערכת</a>
-        </li>
-        <li *ngIf="user.payload.authorization === 'Admin'">
-            <a class="btn btn-info" routerLink="/backend/product/userlist">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li *ngIf="user.payload.authorization === 'Admin'">
+                <a class="btn btn-info" routerLink="/backend/product/userlist">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
          table_view
           </i> נתוני שוטרים במערכת</a>
-        </li>
-        <li>
-            <a class="btn btn-info" routerLink="/backend/product/phone-list">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li>
+                <a class="btn btn-info" routerLink="/backend/product/phone-list">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
          local_phone
           </i> כתובות וטלפונים</a>
-        </li>
-        <li>
-            <a class="btn btn-info" routerLink="/backend/product/product-about">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li>
+                <a class="btn btn-info" routerLink="/backend/product/product-about">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
          info
           </i> אודות</a>
-        </li>
-        <li>
-            <a class="btn btn-info" routerLink="/backend/product/product-help"> <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li>
+                <a class="btn btn-info" routerLink="/backend/product/product-help"> <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
         not_listed_location
           </i> עזרה</a>
-        </li>
-        <li>
-            <a class="btn btn-info" routerLink="/backend/product/product-conact">
-                <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <li>
+                <a class="btn btn-info" routerLink="/backend/product/product-conact">
+                    <i class="material-icons mr-2" style=" display: inline-flex;
           vertical-align: top;">
         contact_mail
           </i> צור קשר</a>
-        </li>
-        <!--test-->
-        <li>
-            <a class="btn btn-info" routerLink="/backend/product/product-help"> <i class="material-icons mr-2" style=" display: inline-flex;
+            </li>
+            <!--test-->
+            <li>
+                <a class="btn btn-info" routerLink="/backend/product/product-help"> <i class="material-icons mr-2" style=" display: inline-flex;
         vertical-align: top;">
       not_listed_location
         </i> עזרה</a>
-        </li>
+            </li>
 
 
-    </ul>
+        </ul>
+    </mat-card>
+    <br>
+    <br>
 </div>

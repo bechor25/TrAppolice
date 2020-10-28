@@ -106,3 +106,11 @@ table td {
     background-color: #5f5b5b;
     border: 1px solid #000000;
 }
+
+img:hover {
+    -ms-transform: scale(2.5);
+    /* IE 9 */
+    -webkit-transform: scale(2.5);
+    /* Safari 3-8 */
+    transform: scale(2.5);
+}

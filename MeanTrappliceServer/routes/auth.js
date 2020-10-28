@@ -34,7 +34,7 @@ router.post('/login', function(req, res, next) {
         }
         const options = {
             subject: `${user.id}`,
-            expiresIn: 3600
+            expiresIn: 1800
         }
         const token = jwt.sign(payload, 'secret123', options);
 
