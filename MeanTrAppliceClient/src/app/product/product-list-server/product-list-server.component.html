@@ -8,7 +8,7 @@
 
 
     <div class="row justify-content-center">
-        <mat-card style="background-color: rgb(70, 64, 64);border-radius: 20px;border: 2px solid rgb(255, 255, 255);">
+        <mat-card style="background: linear-gradient(260deg, #5d5fc2 20%, #314d5f 50%);border-radius: 20px;border: 2px solid rgb(255, 255, 255);width: 1000px;">
             <div class="header" style="text-align: center;">
                 <div><span>מספר </span>דוחות לשוטר</div>
             </div>
@@ -36,7 +36,11 @@
 
 
         </mat-card>
-        <mat-card style="background-color: rgb(70, 64, 64);border-radius: 20px;border: 2px solid rgb(255, 255, 255);">
+    </div>
+    <br>
+    <hr>
+    <div class="row justify-content-center">
+        <mat-card style="background: linear-gradient(260deg, #5d5fc2 20%, #314d5f 50%);border-radius: 20px;border: 2px solid rgb(255, 255, 255);width: 1000px;">
             <div class="header" style="text-align: center;">
                 <div><span>מספר </span>דוחות לפי סעיפים</div>
             </div>
@@ -45,6 +49,11 @@
                 <ng-container matColumnDef="Offense_Number">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> סמל סעיף </mat-header-cell>
                     <mat-cell *matCellDef="let row"> {{row.Offense_Number}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Offense_Description">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> תיאור הסעיף </mat-header-cell>
+                    <mat-cell *matCellDef="let row" style="justify-content: right"> {{row.Offense_Description}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="total">
@@ -56,7 +65,11 @@
                 </mat-row>
             </mat-table>
         </mat-card>
-        <mat-card style="background-color: rgb(70, 64, 64);border-radius: 20px;border: 2px solid rgb(255, 255, 255);">
+    </div>
+    <br>
+    <hr>
+    <div class="row justify-content-center">
+        <mat-card style="background: linear-gradient(260deg, #5d5fc2 20%, #314d5f 50%);border-radius: 20px;border: 2px solid rgb(255, 255, 255);width: 1000px;">
             <div class="header" style="text-align: center;">
                 <div><span>מספר </span>לפי סכום הקנס</div>
             </div>
@@ -67,7 +80,7 @@
 
                 <ng-container matColumnDef="Report_Amount">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> סכום הקנס </mat-header-cell>
-                    <mat-cell *matCellDef="let row"> {{row.Report_Amount}} </mat-cell>
+                    <mat-cell *matCellDef="let row"> ₪{{row.Report_Amount}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="total">
@@ -84,19 +97,11 @@
         </mat-card>
     </div>
 
-
+    <br>
+    <hr>
 
     <div class="row justify-content-center">
-        <mat-paginator [pageSizeOptions]="[5,10,20]"></mat-paginator>
+        <mat-paginator style="background: linear-gradient(260deg, #5d5fc2 20%, #314d5f 50%);color:white;border-radius: 20px;" [pageSizeOptions]="[5,10,20]"></mat-paginator>
     </div>
-    <!--
-    <h1 style="color: white;" *ngFor="let itam of total">
-        {{itam.Rank_first_last_name_officer}} {{itam.total}}
 
-    </h1>
-
-    <h1 style="color: white;" *ngFor="let itam of totalSim">
-        {{itam.Offense_Number}} {{itam.total}}
-    </h1>
--->
 </div>

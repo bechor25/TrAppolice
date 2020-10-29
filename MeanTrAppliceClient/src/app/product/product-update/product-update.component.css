@@ -21,5 +21,6 @@ pdf-viewer {
     font-size: 18px;
     padding: 20px 40px;
     text-align: right;
+    width: 400px;
     font-family: 'Varela Round', sans-serif;
 }

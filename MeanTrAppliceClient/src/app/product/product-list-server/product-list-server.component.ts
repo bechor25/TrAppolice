@@ -31,7 +31,7 @@ export class ProductListServerComponent implements OnInit {
   totalSim: TotalSim []=[];
   @ViewChild(MatPaginator) paginatorSim: MatPaginator;
   @ViewChild(MatSort) sortSim: MatSort;
-  displayedColumnSim = ['Offense_Number','total'];
+  displayedColumnSim = ['Offense_Number','total','Offense_Description'];
 
 
   dataSourceMoney: MatTableDataSource<TotalMoney>;

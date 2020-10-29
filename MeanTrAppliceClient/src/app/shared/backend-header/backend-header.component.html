@@ -27,19 +27,27 @@
                 </a>
                 <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
                     <li>
+                        <a class=" btn btn-info" routerLink="/backend/product/create">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+      vertical-align: top;">
+     content_paste
+      </i> הנפקת דוח</a>
+                    </li>
+                    <li>
+                        <a class=" btn btn-info" routerLink="/backend/dashboard">
+                            <i class="material-icons mr-2" style=" display: inline-flex;
+                    vertical-align: top;">
+                   search
+                    </i> חיפוש עבירה</a>
+                    </li>
+                    <li>
                         <a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product">
                             <i class="material-icons mr-2" style=" display: inline-flex;
                       vertical-align: top;">
                     library_books
                       </i> דוחות שהונפקו</a>
                     </li>
-                    <li>
-                        <a class=" btn btn-info" routerLink="/backend/product/create">
-                            <i class="material-icons mr-2" style=" display: inline-flex;
-          vertical-align: top;">
-         content_paste
-          </i> הנפקת דוח</a>
-                    </li>
+
                     <li>
                         <a *ngIf="user.payload.authorization === 'Admin'" routerLink="/backend/product/userlist-server" class=" btn btn-info">
                             <i class="material-icons mr-2" style=" display: inline-flex;
@@ -47,13 +55,7 @@
          insert_chart
           </i> סטטיסטיקת דוחות</a>
                     </li>
-                    <li>
-                        <a class=" btn btn-info" routerLink="/backend/dashboard">
-                            <i class="material-icons mr-2" style=" display: inline-flex;
-                      vertical-align: top;">
-                     search
-                      </i> חיפוש עבירה</a>
-                    </li>
+
                     <li>
                         <a class=" btn btn-info" routerLink="/backend/product/product-update">
                             <i class="material-icons mr-2" style=" display: inline-flex;
@@ -71,7 +73,7 @@
                     <li><a *ngIf="user.payload.authorization === 'Admin'" class=" btn btn-info" routerLink="/backend/product/userlist"><i class="material-icons mr-2" style=" display: inline-flex;
                       vertical-align: top;">
                      table_view
-                      </i> רשימת שוטרים רשומים</a></li>
+                      </i> נתוני שוטרים רשומים</a></li>
                     <li><a class=" btn btn-info" routerLink="/backend/product/phone-list"><i class="material-icons mr-2" style=" display: inline-flex;
                       vertical-align: top;">
                      local_phone

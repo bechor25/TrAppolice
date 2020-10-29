@@ -9,7 +9,7 @@ let model = {
         return db.query("SELECT COUNT(id) AS total, Report_Amount FROM products GROUP BY Report_Amount", cb);
     },
     getCountSim: (cb) => {
-        return db.query("SELECT COUNT(id) AS total, Offense_Number FROM products GROUP BY Offense_Number", cb);
+        return db.query("SELECT COUNT(id) AS total, Offense_Number, Offense_Description FROM products GROUP BY Offense_Number", cb);
     },
     getCountProducts: (cb) => {
         return db.query("SELECT COUNT(id) AS total, Rank_first_last_name_officer FROM products GROUP BY Rank_first_last_name_officer", cb);

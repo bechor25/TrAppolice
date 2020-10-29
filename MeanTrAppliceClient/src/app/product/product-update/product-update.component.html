@@ -13,7 +13,7 @@
     </div>
     <div class="mb form-row row justify-content-center">
         <mat-form-field>
-            <input #queryInp matInput id="pdfQueryInput" type="text" placeholder="הזן סמל סעיף" [value]="pdfQuery" (input)="searchQueryChanged($event.target.value)" (keyup.enter)="searchQueryChanged(queryInp.value)">
+            <input #queryInp matInput id="pdfQueryInput" type="text" placeholder="הזן מילת חיפוש רצויה" [value]="pdfQuery" (input)="searchQueryChanged($event.target.value)" (keyup.enter)="searchQueryChanged(queryInp.value)">
             <mat-label>
                 <i class="material-icons mr-2" style=" display: inline-flex;
                                   vertical-align: top;">
