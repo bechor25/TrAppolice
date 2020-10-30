@@ -62,7 +62,7 @@ td {
     box-shadow: inset 0px 1px 0px #548ca0, 0px 5px 0px 0px #497a78, 0px 5px 3px #999;
 }
 
-.mat-radio-button {
+.mat-checkbox {
     font-size: 18px;
     background-color: transparent;
     font-family: 'Varela Round', sans-serif;

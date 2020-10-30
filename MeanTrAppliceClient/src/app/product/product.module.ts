@@ -7,7 +7,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { RTL } from '@progress/kendo-angular-l10n';
 import { MatStepperModule } from '@angular/material/stepper'
 import { MatSelectModule } from '@angular/material/select';
-import { MatOptionModule } from '@angular/material/core';
+import { MatOptionModule, MatPseudoCheckboxModule } from '@angular/material/core';
 import {   MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -18,7 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { UserListComponent } from './user-list/user-list.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ProductListServerComponent } from './product-list-server/product-list-server.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { ProductAboutComponent } from './product-about/product-about.component';
@@ -51,6 +51,8 @@ import { TestComponent } from './test/test.component';
     SweetAlert2Module.forRoot(),
  PdfViewerModule,
  MatIconModule,
+ MatPseudoCheckboxModule,
+ MatCheckboxModule
 
 
 
