@@ -20,3 +20,12 @@ A system that gives police officers an easy technological solution to the paper 
 # About
 
 ![screencapture-localhost-4200-backend-product-product-about-2020-11-03-09_07_14](https://user-images.githubusercontent.com/48318320/97957505-fe6f7180-1db3-11eb-8950-78a53ff9285f.png)
+
+# Help page
+
+![screencapture-localhost-4200-backend-product-product-help-2020-11-03-09_12_34](https://user-images.githubusercontent.com/48318320/97957866-bbfa6480-1db4-11eb-9a79-09369d2ba8e9.png)
+
+# Contact page
+
+![screencapture-localhost-4200-backend-product-product-conact-2020-11-03-09_13_35](https://user-images.githubusercontent.com/48318320/97957962-e6e4b880-1db4-11eb-97c2-8f8f0bef4daf.png)
+
