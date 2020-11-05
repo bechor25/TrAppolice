@@ -1,6 +1,15 @@
 # TrAppolice
 A system that gives police officers an easy technological solution to the paper reports.
 
+Development of a system that aids police officers while in field. 
+The system includes both front end and back end development (Full-stack development).
+# In the server side (Nodejs)
+MVC architecture, use of authentications, routes, communication with MySQL, building API, queries, requests, sortings, deletions and edits.
+# In the client side (Angular)
+use of the OOP principle, services, models, http requests, routes, errors management, use of material library.
+
+In order for the system to be accessible in all of the platforms, and not only web, we used Cordova to adjust it to Android and iOS.
+
 # Login page
 
 ![screencapture-localhost-4200-auth-login-2020-11-03-09_02_06](https://user-images.githubusercontent.com/48318320/97957222-45a93280-1db3-11eb-8d2d-e9b5a3ede228.png)
