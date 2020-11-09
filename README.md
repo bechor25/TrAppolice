@@ -14,6 +14,10 @@ In order for the system to be accessible in all of the platforms, and not only w
 
 ![screencapture-localhost-4200-auth-login-2020-11-03-09_02_06](https://user-images.githubusercontent.com/48318320/97957222-45a93280-1db3-11eb-8d2d-e9b5a3ede228.png)
 
+# Main page
+
+![screencapture-localhost-4200-backend-cms-2020-11-09-11_50_26](https://user-images.githubusercontent.com/48318320/98525902-cb305500-2281-11eb-8f14-ebe02d994e87.png)
+
 # Report issuance page
 
 ![screencapture-localhost-4200-backend-product-create-2020-11-01-09_35_51](https://user-images.githubusercontent.com/48318320/97958098-3cb96080-1db5-11eb-8395-505705ccbcea.png)
