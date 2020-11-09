@@ -46,3 +46,7 @@ In order for the system to be accessible in all of the platforms, and not only w
 
 ![screencapture-localhost-4200-backend-product-product-conact-2020-11-03-09_13_35](https://user-images.githubusercontent.com/48318320/97957962-e6e4b880-1db4-11eb-97c2-8f8f0bef4daf.png)
 
+# Not found-404 page
+
+![screencapture-localhost-4200-backend-cms-404-2020-11-09-11_59_45](https://user-images.githubusercontent.com/48318320/98526946-1303ac00-2283-11eb-94f7-1e426a2c6a2d.png)
+
